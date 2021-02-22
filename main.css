@@ -13,6 +13,16 @@
 	--box-shadow-btn: 0 0 24px -8px var(--green-dark);
 }
 
+.light {
+	--bg: #f0f0f0;
+	--text: #1a1a1a;
+}
+
+.dark {
+	--bg: #141414;
+	--text: #c9c9c9;
+}
+
 * {
 	box-sizing: border-box;
 	font-family: var(--main-font);
@@ -26,6 +36,9 @@ main * + * {
 html,
 body {
 	margin: 0;
+	background: var(--bg);
+	color: var(--text);
+	transition: color 300ms ease-in-out, background 500ms ease-in-out;
 }
 
 h1,
@@ -126,4 +139,23 @@ ul ul li {
 
 body > div:last-child {
 	display: none;
+}
+
+#theme-switcher {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	width: 2em;
+	height: 2em;
+	background-color: var(--text);
+	border-radius: 50%;
+}
+
+.light #theme-switcher {
+	background: #252525;
+	box-shadow: 0 0 8px #000000;
+}
+.dark #theme-switcher {
+	background: #ebd472;
+	box-shadow: 0 0 16px #fad048;
 }
