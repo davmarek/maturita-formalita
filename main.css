@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+	--main-font: "Roboto", sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: var(--main-font);
+	margin: 0;
+}
+
+main * + * {
+	margin-top: 1em;
+}
+
+html,
+body {
+	margin: 0;
+}
+
+nav {
+	margin: 0 auto;
+	padding: 2em;
+	padding-bottom: 0;
+	max-width: 70ch;
+}
+nav a {
+	display: inline-block;
+
+	color: white;
+	background-color: #7fab64;
+	text-decoration: none;
+	font-weight: 700;
+
+	padding: 0.5em 0.8em;
+	margin: 4px 0;
+	border-radius: 4px;
+}
+nav a + a {
+	margin-left: 0.5em;
+}
+
+main {
+	line-height: 1.7;
+	margin: 0 auto;
+	padding: 2em 2em 4em;
+	max-width: 70ch;
+}
+
+main img {
+	width: 100%;
+	display: block;
+	margin: 1em auto;
+
+	border-radius: 8px;
+	box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+}
+
+main img.half {
+	width: 50%;
+}
+
+/* TEXTOVÉ CLASSKY */
+.b {
+	font-weight: 700;
+}
+.i {
+	font-style: italic;
+}
+
+/* LISTY */
+main > ul {
+	margin-top: 0.2em;
+}
+main > ul > * + li {
+	margin-top: 0.4em;
+}
+ul ul,
+ul ul li {
+	margin-top: 0;
+}
+
+.chronologie > li {
+	font-weight: 700;
+}
+
+body > div:last-child {
+	display: none;
+}
