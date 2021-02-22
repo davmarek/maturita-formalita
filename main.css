@@ -19,26 +19,24 @@ body {
 	margin: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-transform: uppercase;
+}
+h1 {
+	line-height: 1.2;
+}
+
 /* NAVIGACE nad zápisem */
 body > nav {
 	margin: 0 auto;
 	padding: 2em;
 	padding-bottom: 0;
 	max-width: 70ch;
-}
-body > nav a + a {
-	margin-left: 0.5em;
-}
-
-/* NAVIGACE NA Rozcestníku */
-main > nav {
-	display: flex;
-	justify-content: flex-start;
-	flex-wrap: wrap;
-}
-
-main > nav a {
-	margin-right: 0.5em;
 }
 
 /* ODKAZ V NAVIGACI */
@@ -51,7 +49,10 @@ nav a {
 	font-weight: 700;
 
 	padding: 0.5em 0.8em;
+
 	margin: 4px 0;
+	margin-right: 4px;
+
 	border-radius: 4px;
 }
 
@@ -64,7 +65,7 @@ nav a.disabled {
 main {
 	line-height: 1.7;
 	margin: 0 auto;
-	padding: 2em 2em 4em;
+	padding: 2em 2em 8em;
 	max-width: 70ch;
 }
 
