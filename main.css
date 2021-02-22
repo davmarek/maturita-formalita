@@ -2,6 +2,15 @@
 
 :root {
 	--main-font: "Roboto", sans-serif;
+
+	--green-light: #30ad66;
+	--green-dark: #0a7739;
+
+	--btn-background: #1b924f
+		linear-gradient(to bottom right, var(--green-light), var(--green-dark));
+
+	--box-shadow-img: 0 0 24px rgba(0, 0, 0, 0.1);
+	--box-shadow-btn: 0 0 24px -8px var(--green-dark);
 }
 
 * {
@@ -37,6 +46,7 @@ body > nav {
 	padding: 2em;
 	padding-bottom: 0;
 	max-width: 70ch;
+	text-transform: uppercase;
 }
 
 /* ODKAZ V NAVIGACI */
@@ -44,21 +54,25 @@ nav a {
 	display: inline-block;
 
 	color: white;
-	background: #1b924f linear-gradient(to bottom right, #30ad66, #0a7739);
+	background: var(--btn-background);
 	text-decoration: none;
 	font-weight: 700;
 
-	padding: 0.5em 0.8em;
+	padding: 0.6em 0.8em;
 
-	margin: 4px 0;
-	margin-right: 4px;
+	margin: 8px 0;
+	margin-right: 8px;
 
-	border-radius: 4px;
+	border-radius: 8px;
+
+	box-shadow: var(--box-shadow-btn);
 }
 
 nav a.disabled {
-	background: linear-gradient(to bottom right, #cccccc, #969696);
+	background: linear-gradient(to bottom right, #cccccc, #afafaf);
+	opacity: 0.5;
 	cursor: default;
+	box-shadow: none;
 }
 
 /* MAIN (to je to kde jsou ty zápisy už) */
@@ -76,7 +90,7 @@ main img {
 	margin: 1em auto;
 
 	border-radius: 8px;
-	box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+	box-shadow: var(--box-shadow-img);
 }
 
 main img.half {
