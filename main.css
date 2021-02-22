@@ -105,7 +105,9 @@ main img.half {
 .i {
 	font-style: italic;
 }
-
+.n {
+	font-weight: normal;
+}
 /* LISTY */
 main > ul {
 	margin-top: 0.2em;
