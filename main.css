@@ -87,7 +87,7 @@ main {
 main img {
 	width: 100%;
 	display: block;
-	margin: 1em auto;
+	margin: 1em auto 2em;
 
 	border-radius: 8px;
 	box-shadow: var(--box-shadow-img);
@@ -95,6 +95,7 @@ main img {
 
 main img.half {
 	width: 50%;
+	margin: 1em auto 1em;
 }
 
 /* TEXTOVÉ CLASSKY */
