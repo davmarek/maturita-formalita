@@ -133,10 +133,6 @@ ul ul li {
 	margin-top: 0;
 }
 
-.chronologie > li {
-	font-weight: 700;
-}
-
 body > div:last-child {
 	display: none;
 }
