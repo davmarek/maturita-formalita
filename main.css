@@ -20,7 +20,7 @@
 
 .dark {
 	--bg: #141414;
-	--text: #c9c9c9;
+	--text: #dddddd;
 }
 
 * {
@@ -83,7 +83,7 @@ nav a {
 
 nav a.disabled {
 	background: linear-gradient(to bottom right, #cccccc, #afafaf);
-	opacity: 0.5;
+	opacity: 0.3;
 	cursor: default;
 	box-shadow: none;
 }
