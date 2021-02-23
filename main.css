@@ -141,6 +141,7 @@ body > div:last-child {
 	display: none;
 }
 
+/* THEME SWITCHER (přepínař dark modu) */
 #theme-switcher {
 	position: absolute;
 	top: 1em;
@@ -149,6 +150,7 @@ body > div:last-child {
 	height: 2em;
 	background-color: var(--text);
 	border-radius: 50%;
+	cursor: pointer;
 }
 
 .light #theme-switcher {
