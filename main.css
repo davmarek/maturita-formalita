@@ -38,7 +38,7 @@ body {
 	margin: 0;
 	background: var(--bg);
 	color: var(--text);
-	transition: color 300ms ease-in-out, background 500ms ease-in-out;
+	transition: 300ms ease-in-out;
 }
 
 h1,
