@@ -123,14 +123,18 @@ main img.half {
 	text-transform: lowercase;
 }
 /* LISTY */
-main > ul {
+main > ul,
+main > ol {
 	margin-top: 0.2em;
 }
-main > ul > * + li {
+main > ul > * + li,
+main > ol > * + li {
 	margin-top: 0.4em;
 }
 ul ul,
-ul ul li {
+ul ul li,
+ol ol,
+ol ol li {
 	margin-top: 0;
 }
 
@@ -138,7 +142,8 @@ body > div:last-child {
 	display: none;
 }
 
-ul.hide-style {
+ul.hide-style,
+ol.hide-style {
 	list-style: none;
 }
 
