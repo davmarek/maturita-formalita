@@ -9,6 +9,10 @@ if (theme) {
 	body.classList.add("light");
 }
 
+setTimeout(() => {
+	body.style.transition = "300ms ease-in-out";
+}, 100);
+
 themeSwitcher.onclick = () => {
 	if (body.classList.contains("light")) {
 		body.classList.add("dark");

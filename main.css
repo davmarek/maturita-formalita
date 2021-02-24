@@ -38,7 +38,6 @@ body {
 	margin: 0;
 	background: var(--bg);
 	color: var(--text);
-	transition: 300ms ease-in-out;
 }
 
 h1,
@@ -51,6 +50,11 @@ h6 {
 }
 h1 {
 	line-height: 1.2;
+}
+h2,
+h3,
+h4 {
+	line-height: 1.35;
 }
 
 /* NAVIGACE nad zápisem */
@@ -120,6 +124,9 @@ main img.half {
 }
 .n {
 	font-weight: normal;
+}
+.low {
+	text-transform: lowercase;
 }
 /* LISTY */
 main > ul {
