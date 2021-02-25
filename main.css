@@ -109,6 +109,10 @@ main img.half {
 	margin: 1em auto 1em;
 }
 
+.dark img.invertable {
+	filter: invert(1);
+}
+
 /* TEXTOVÉ CLASSKY */
 .b {
 	font-weight: 700;
