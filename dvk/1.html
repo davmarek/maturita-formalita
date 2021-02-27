@@ -7,10 +7,28 @@
 		<title>1. Umění pravěku - doba kamenná, bronzová a železná</title>
 
 		<link rel="stylesheet" href="../main.css" />
-		<script src="../themer.js" defer></script>
+		<script src="../main.js" defer></script>
 	</head>
 	<body>
 		<div id="theme-switcher"></div>
+		<a id="scroll-up" href="#" class="hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="feather feather-arrow-up"
+			>
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</a>
+
 		<nav>
 			<a href="../">Rozcestník</a>
 			<a href="#paeolit">Paleolit</a>
@@ -95,7 +113,6 @@
 										<li>
 											<u><b>NEBYDLELI v jeskyních</b></u>
 										</li>
-										<li>např. Altamira, Lascaux, Niaux</li>
 										<li>
 											různé systémy, ovšem nerozumíme jim
 										</li>
@@ -117,6 +134,7 @@
 											prováděny štětci ze srsti, chomáče
 											rostlin, prsty
 										</li>
+										<li>př.: Altamira, Lascaux</li>
 										<li>
 											2 skupiny
 											<ul>
@@ -161,17 +179,23 @@
 					</ul>
 				</li>
 
-				<li>naleziště sošek → Hluboké Mašůvky</li>
-				<li>zvednutá hlava,nastavené ruce, ňadra jsou menší</li>
-				<li>nastavené ruce nejspíš souvisí s obětováním</li>
+				<li>
+					naleziště sošek → Hluboké Mašůvky
+					<ul>
+						<li>
+							zvednutá hlava, nastavené ruce, ňadra jsou menší
+						</li>
+						<li>nastavené ruce nejspíš souvisí s obětováním</li>
+					</ul>
+				</li>
 			</ul>
 
 			<h2 id="eneolit">ENEOLIT (pozdní doba kamenná)</h2>
 			<ul class="b">
 				<li>PRVNÍ KOVY → měď, zlato, stříbro</li>
 				<li>
-					přichází tzv. MEGALITICKÁ ARCHITEKTURA (mega - velká, litos
-					- kámen)
+					přichází tzv. <u>MEGALITICKÁ ARCHITEKTURA</u> (mega - velká,
+					litos - kámen)
 
 					<ul>
 						<li>
@@ -211,7 +235,7 @@
 			<ul class="b">
 				<li>bronz → měď + cín</li>
 				<li>objev hrnčířského kruhu</li>
-				<li>SKLO → první umělý materiál</li>
+				<li>SKLO → <span class="n">první umělý materiál</span></li>
 			</ul>
 
 			<h2 id="doba-zelez">DOBA ŽELEZNÁ</h2>
@@ -251,7 +275,9 @@
 
 		<script src="../smooth-scroll.min.js"></script>
 		<script>
-			var scroll = new SmoothScroll('a[href*="#"]');
+			var scroll = new SmoothScroll('a[href*="#"]', {
+				topOnEmptyHash: true,
+			});
 		</script>
 	</body>
 </html>

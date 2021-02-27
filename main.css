@@ -171,3 +171,26 @@ ol.hide-style {
 	background: #ebd472;
 	box-shadow: 0 0 16px #fad048;
 }
+
+#scroll-up {
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+	width: 2em;
+	height: 2em;
+
+	display: grid;
+	place-items: center;
+
+	color: var(--bg);
+	background-color: var(--text);
+	border-radius: 50%;
+	cursor: pointer;
+	opacity: 0.6;
+
+	transition: opacity 300ms ease-in-out;
+}
+
+#scroll-up.hidden {
+	opacity: 0;
+}
