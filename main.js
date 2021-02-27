@@ -46,5 +46,7 @@ themeSwitcher.onclick = () => {
 	}
 };
 
-updateScrollUpBtn();
-window.onscroll = () => updateScrollUpBtn();
+if (scrollUp != null) {
+	updateScrollUpBtn();
+	window.onscroll = () => updateScrollUpBtn();
+}
