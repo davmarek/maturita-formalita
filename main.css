@@ -85,6 +85,11 @@ nav a.disabled {
 	cursor: default;
 	box-shadow: none;
 }
+/* WORK IN PROGRESS LINK */
+nav a.wip {
+	background: linear-gradient(to bottom right, #ca8012, #884107);
+	box-shadow: none;
+}
 
 /* MAIN (to je to kde jsou ty zápisy už) */
 main {
