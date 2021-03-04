@@ -1,7 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/*@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap");*/
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;600&display=swap");
 
 :root {
-	--main-font: "Roboto", sans-serif;
+	--main-font: "Rubik", sans-serif;
 
 	--green-light: #30ad66;
 	--green-dark: #0a7739;
