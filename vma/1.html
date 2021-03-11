@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>1. Elektronická komunikace</title>
+
+		<link rel="stylesheet" href="../main.css" />
+		<script src="../main.js" defer></script>
+	</head>
+	<body>
+		<div id="theme-switcher"></div>
+		<a id="scroll-up" href="#" class="hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="feather feather-arrow-up"
+			>
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</a>
+
+		<nav>
+			<a href="../">Rozcestník</a>
+		</nav>
+
+		<main>
+			<h1>1. Elektronická komunikace</h1>
+			<h2>Internet - historie internetu</h2>
+			<p>
+				Internet je celosvětový systém propojených počítačových sítí, ve
+				kterých mezi sebou počítače komunikují pomocí rodiny protokolů
+				TCP/IP. Společným cílem všech lidí využívajících internet je
+				bezproblémová komunikace (výměna dat).
+			</p>
+			<p>
+				První pokusy s komunikací mezi počítači začaly na konci 50. let
+				20. století (radarová síť SAGE), kdy je využívala armáda. Přímým
+				impulsem byla studená válka (od roku 1947), kde protivníkům
+				hrozilo masivní ničení komunikační infrastruktury jadernými
+				zbraněmi. Odpovědí na toto riziko bylo v USA zadání agentury
+				DARPA na vývoj komunikační sítě pro počítače, která by neměla
+				žádné řídící uzly podobné telefonním ústřednám a místo toho by
+				bylo řízení sítě rozprostřeno (decentralizováno), takže by mohla
+				dále fungovat i při výpadku některých jejích částí. V 50. letech
+				a začátkem let 60., předtím než se rozšířilo síťování, které
+				vedlo k internetu, většina komunikačních sítí byla limitována v
+				tom, že komunikace byla povolena jen mezi stanicí a sítí.
+				Některé sítě měly mezi sebou brány nebo mosty, ale tyto mosty
+				byly často limitovány nebo stavěny na konkrétní situaci.
+			</p>
+
+			<h3>Hlavní události</h3>
+			<ul>
+				<li>
+					1962 - vzniká projekt počítačového výzkumu agentury ARPA
+					(agentura amerického ministerstva obrany)
+				</li>
+				<li>1969 - vytvořena experimentální síť ARPANET</li>
+				<li>1972 - Ray Tomlinson vyvíjí první e-mailový program</li>
+				<li>
+					1973 – zveřejněna idea vedoucí později k TCP/IP jako náhrady
+					za stávající protokol NCP
+				</li>
+				<li>
+					1983 – z ARPANETu oddělená síť MILNET (Military Network),
+					TCP/IP přeneseno do komerční sféry (Sun), zavedeno DNS
+					(Domain Name System)
+				</li>
+				<li>1987 – vzniká pojem „Internet“</li>
+				<li>1990 – končí ARPANET</li>
+				<li>1991 – nasazení WWW v evropské laboratoři CERN</li>
+				<li>
+					1993 – Marc Andreessen vyvíjí Mosaic, první WWW prohlížeč, a
+					dává ho zdarma k dispozici
+				</li>
+				<li>
+					1994 – vyvinut prohlížeč Netscape Navigator, internet se
+					komercionalizuje
+				</li>
+				<li>
+					2011 - přes 2 miliardy uživatelů, došlo k vyčerpání adres
+					protokolu IPv4 → IPv6
+				</li>
+			</ul>
+
+			<h2>Internetová doména</h2>
+
+			<p>
+				Je to označení jednoznačného jména (identifikátoru) počítače
+				nebo počítačové sítě, které jsou připojené do Internetu.
+			</p>
+			<p>
+				Doménové jméno je tvořeno posloupností několika částí oddělených
+				tečkami. Části jsou seřazeny podle obecnosti: první část (např.
+				cs) je nejkonkrétnější, může popisovat jeden konkrétní počítač,
+				druhá část (např. org) je nejobecnější, popisuje celou velkou
+				skupinu počítačů a sítí. Poslední částí je doména nejvyššího
+				řádu, která popisuje rozdělení na země a obecné skupiny
+				organizací. Části jsou také někdy číslovány (opět odzadu), takže
+				např. com je doména 1. úrovně, google.com je doména 2. úrovně.V
+				doménových jménech lze používat pouze malou část znaků kódu
+				ASCII: znaky anglické abecedy, číslice a pomlčku (každá část
+				jména však nesmí končit ani začínat pomlčkou). Jména nejsou
+				citlivá na velikost písmen (www.google.com je stejné jako
+				WWW.Google.CoM). V rámci rozšiřování Internetu do zemí, které
+				používají různá písma, se relativně nedávno začal zprovozňovat
+				systém IDN umožňující používání libovolných znaků Unicode v
+				doménových jménech.
+			</p>
+			<p>
+				Systém DNS : komunikace mezi počítači probíhá s využitím
+				protokolu IP, ve kterém se počítače označují číselnými adresami
+				(IP adresy). Proto je před zahájením komunikace nutno zjistit,
+				jaká IP adresa odpovídá zadanému doménovému jménu. K tomu slouží
+				síť specializovaných počítačů, které na žádost obsahující
+				doménové jméno zašlou odpověď obsahující příslušnou číselnou
+				adresu (a poskytují i opačnou službu).
+			</p>
+
+			<h2>IP adresa</h2>
+			<p>
+				IP adresa slouží k rozlišení síťových rozhraní připojených k
+				počítačové síti. Síťovým rozhraním může být síťová karta
+				(Ethernet, Wi-Fi), ale může se jednat i o virtuální zařízení.
+			</p>
+			<p>
+				Zkratka IP znamená Internet Protocol, což je protokol, pomocí
+				kterého spolu komunikují všechna zařízení v Internetu. Dnes
+				nejčastěji používaná je jeho čtvrtá verze (IPv4 = 192.168.0.2),
+				postupně se však přechází na novější verzi 6 (IPv6 =
+				2001:db8:0:1234:0:567:8:1).
+			</p>
+			<p>
+				IP protokol byl původně vyvinut pro potřeby komunikace v
+				Internetu. IP adresa musí být v dané síti jednoznačná (jedno
+				rozhraní může mít více IP adres, ale stejná IP adresa nemůže být
+				na více rozhraních), avšak lze používat NAT a privátní IP
+				adresy.
+			</p>
+			<p>
+				Jelikož by pro běžné uživatele počítačových sítí bylo velice
+				obtížné pamatovat si číselné adresy, existuje služba DNS (Domain
+				Name System), která umožňuje používat snadněji zapamatovatelná
+				doménová jména počítačů, která jsou automaticky převedena na IP
+				adresy (www.google.com).
+			</p>
+
+			<h2>Vyhledávače a vyhledávání informací na Internetu</h2>
+			<p>
+				Vyhledávač je počítačový systém či program, který umožňuje
+				uživateli zadat nějaký libovolný nebo specifikovaný vyhledávaný
+				výraz a získat z velkého objemu dat informace, které jsou v
+				souladu s tímto dotazem. Jako vyhledávač se označují i webové
+				stránky, jejichž hlavní funkcí je poskytování takového systému
+				či programu. Jako internetový vyhledávač se označuje buď
+				vyhledávač, na který se přistupuje přes internet, nebo
+				vyhledávač, jehož zdrojem vyhledávání je internet. Jako online
+				vyhledávač se označuje vyhledávač, při jehož výkonu činnosti
+				dochází k výměně dat v rámci nějaké počítačové sítě, nejčastěji
+				to je internetový vyhledávač. Fulltextový vyhledávač je
+				vyhledávač, který vykonává fulltextové vyhledávání.
+			</p>
+
+			<h2>Elektronická pošta</h2>
+			<p>
+				Elektronická pošta, zkráceně e-mail, je způsob odesílání,
+				doručování a přijímání zpráv přes elektronické komunikační
+				systémy. E-mailové služby se poprvé rozšířily mezi veřejnost až
+				díky vzniku jedné z prvních volných e-mailových služeb Hotmail v
+				roce 1996. Tu po jejím celosvětovém úspěchu zakoupila firma
+				Microsoft a později vznikly i další nyní známé služby.
+			</p>
+			<p>
+				Termín e-mail se používá jak pro internetový systém elektronické
+				pošty založený na protokolu SMTP (Simple Mail Transfer
+				Protocol), tak i pro intranetové systémy, které dovolují posílat
+				si vzájemně zprávy uživatelům uvnitř jedné společnosti nebo
+				organizace (tyto systémy často používají nestandardní protokoly,
+				mívají ovšem bránu, která jim dovoluje posílat a přijímat
+				e-maily z internetu).
+			</p>
+
+			<h2>Struktura emailové zprávy</h2>
+			<p>
+				<u>Hlavička</u> – předmět zprávy, odesílatel, příjemce a jiné
+				informace o e-mailu. Hlavičky obvykle obsahují alespoň 4 pole:
+			</p>
+			<ul>
+				<li>
+					Od (From): e-mailová adresa (popř. i jméno) odesílatele
+					zprávy (zpravidla vyplňuje program automaticky)
+				</li>
+				<li>
+					Komu (To): e-mailová adresa (popř. i jméno) příjemce zprávy,
+					adresátů může být více současně (vyplňuje odesílatel)
+				</li>
+				<li>
+					Předmět (Subject): stručný popis obsahu zprávy (vyplňuje
+					odesílatel, nepovinně)
+				</li>
+				<li>
+					Datum (Date): místní datum a čas odeslání zprávy (vyplňuje
+					program automaticky)
+				</li>
+			</ul>
+
+			<p>
+				<u>Tělo</u> – Samotná zpráva, obyčejně obsahuje na konci blok s
+				podpisem. Tělo e-mailu začíná zpravidla pozdravem.
+			</p>
+			<p>
+				Mezi počítači na internetu se vyměňují zprávy pomocí Simple Mail
+				Transfer Protocol a softwaru typu MTA jako např. Sendmail.
+			</p>
+			<p>
+				Uživatelé mívají na svém počítači nainstalován program, který se
+				nazývá e-mailový klient. Ten stahuje zprávy z poštovního serveru
+				použitím protokolů POP nebo IMAP, avšak v prostředí velkých
+				společností se stále vyskytuje použití některého komerčního
+				protokolu jako např. Lotus Notes nebo Microsoft Exchange Server.
+			</p>
+
+			<p>
+				Je možné ukládat e-maily buď na straně serveru, nebo na straně
+				klienta. Standardní formáty pro mailové schránky jsou např.
+				Maildir a mbox. Několik e-mailových klientů používá vlastní
+				formát a na konverzi mezi těmito formáty je potřebný speciální
+				program.
+			</p>
+
+			<p>
+				Někteří uživatelé nepoužívají e-mailového klienta, ale
+				přistupují ke zprávám umístěným na poštovním serveru přes webové
+				rozhraní. Tento postup se často používá zejména u freemailových
+				(bezplatných) služeb.
+			</p>
+
+			<h2>Spam</h2>
+			<p>
+				Spam je nevyžádaná reklamní pošta. Nízké náklady na odeslání
+				zprávy umožňují spammerům odeslat stovky miliónů elektronických
+				zpráv denně pomocí laciného internetového připojení. Stovky
+				aktivních spammerů způsobují přetížení počítačů v internetu,
+				které takto dostávají desítky či stovky nevyžádaných e-mailů
+				denně.
+			</p>
+			<h2>Phishing</h2>
+			<p>
+				Phishing je podvodná technika používaná na Internetu k získávání
+				citlivých údajů (hesla, čísla kreditních karet apod.) v
+				elektronické komunikaci. K nalákání důvěřivé veřejnosti
+				komunikace předstírá, že pochází z populárních sociálních sítí,
+				aukčních webů, on-line platebních portálů, úřadů státní správy
+				nebo od IT administrátorů.
+			</p>
+			<p>
+				Principem phishingu je typicky rozesílání e-mailových zpráv nebo
+				instant messaging, které často vyzývají adresáta k zadání
+				osobních údajů na falešnou stránku, jejíž podoba je takřka
+				identická s tou oficiální. Stránka může například napodobovat
+				přihlašovací okno internetového bankovnictví. Uživatel do něj
+				zadá své přihlašovací jméno a heslo. Tím tyto údaje prozradí
+				útočníkům, kteří jsou poté schopni mu z účtu vykrást peníze.
+			</p>
+
+			<p>
+				Phishing je příkladem techniky sociálního inženýrství používané
+				k oklamání uživatelů za využití slabých míst současných
+				bezpečnostních technologií (jejich implementací). Ochrana proti
+				rostoucímu množství nahlášených případů phishingu zahrnuje
+				legislativu, trénování uživatelů, veřejnou osvětu a technická
+				opatření.
+			</p>
+
+			<h2>Netikete</h2>
+			<p>
+				Netiketa je souhrn všeobecných pravidel slušného chování
+				uživatelů na Internetu. Slovo Netiquette je spojením dvou
+				anglických slov net a slova etiquette (česky etiketa), česká
+				varianta je pak Netiketa.
+			</p>
+			<p>
+				Definici netikety vytvořil S. Hambridge ze společnosti Intel,
+				která byla přijata jako standard RFC 1855 Netiquette
+				Guidelines.Dokument vznikl pro potřebu moderování diskuzních
+				skupin na Usenet, BBS a mailových konferencí.
+			</p>
+			<p>
+				Je třeba si uvědomit, že v internetovém světě bychom se měli
+				chovat podobně jako ve světě reálném, tedy jako civilizovaní
+				lidé. Za tím účelem existuje netiketa, pravidla slušného chování
+				na Internetu.
+			</p>
+
+			<h2>Komunikace přes Internet</h2>
+			<p>
+				Rozděluje se na dva typy: asynchronní komunikace a synchronní
+				komunikace.
+			</p>
+			<ul>
+				<li>
+					Asynchronní komunikace: Nevyžaduje okamžitou reakci
+					adresáta. Nejčastěji se v ní využívají nejrůznější diskusní
+					fóra nebo e-mail.
+				</li>
+				<li>
+					Synchronní komunikace: Probíhá přímou interakcí s vaším
+					protějškem. Hovor probíhá přímo, v reálném čase, za použití
+					chatovacích nástrojů, například: Skype, Messenger, atd..
+				</li>
+			</ul>
+
+			<h2>VOIP</h2>
+			<p>
+				Voice over Internet Protocol (zkratkou VoIP) je technologie,
+				umožňující přenos digitalizovaného hlasu v těle paketů rodiny
+				protokolů UDP/TCP/IP prostřednictvím počítačové sítě nebo jiného
+				média, prostupného pro protokol IP.
+			</p>
+			<p>
+				Využívá se pro telefonování prostřednictvím Internetu, intranetu
+				nebo jakéhokoliv jiného datového spojení.
+			</p>
+
+			<h2>Chat</h2>
+			<p>
+				Chat je krátká komunikace nebo rozhovor dvou nebo více lidí
+				prostřednictvím komunikační sítě. Uskutečňuje se vždy v reálném
+				čase. V užším smyslu se při chatu komunikuje formou psaného
+				textu.
+			</p>
+			<p>
+				V technologickém smyslu se původně jednalo o čistě textovou
+				formu komunikace, při které mohly být vyměňovány pouze znaky.
+				Pro chat byl zaveden komunikační protokol IRC. Později se k
+				tomuto způsobu přidala možnost přenášet zvuk, případně i obraz.
+				Mluví se pak o audiochatu, případně videochatu.
+			</p>
+
+			<h2>Sociální sítě</h2>
+			<p>
+				Sociální síť, společenská síť nebo komunitní síť je služba na
+				Internetu, která registrovaným členům umožňuje si vytvářet
+				osobní (či firemní) veřejný či částečně veřejný profil,
+				komunikovat spolu, sdílet informace, fotografie, videa,
+				provozovat chat a další aktivity. Někdy se za sociální síť
+				považují i internetová diskusní fóra, kde si uživatelé vyměňují
+				názory a poznatky na vybraná témata (těhotenství, automobily,
+				finanční poradenství, apod.). Komunikace mezi uživateli
+				sociálních sítí může probíhat buď soukromě mezi dvěma uživateli
+				nebo (nejčastěji) hromadně mezi uživatelem a skupinou s ním
+				propojených dalších uživatelů.
+			</p>
+			<p>
+				V současnosti nejznámější a největší sociální sítí na světě je
+				Facebook s více jak miliardou registrovaných uživatelů.
+			</p>
+
+			<p>Rozdělení : osobní nebo firemní profil</p>
+
+			<h2>Výhody a nevýhody a rizika</h2>
+			<h3>Kyberšikana</h3>
+			<p>
+				kolektivní označení forem šikany prostřednictvím elektronických
+				médií, jako je internet a mobilní telefony, které slouží k
+				agresivnímu a záměrnému poškození uživatele těchto médií. Stejně
+				jako tradiční šikana zahrnuje i kyberšikana opakované chování a
+				nepoměr sil mezi agresorem a obětí. Mezi další kritéria, která
+				identifikují kyberšikanu, patří fakt, že oběť vnímá to, co se
+				děje, jako nepříjemné a ubližující. Kyberšikana však může být
+				způsobena také neúmyslně - nevhodný žert se např. vymkne
+				kontrole a může se rozvinout do podoby intenzivní kyberšikany.
+			</p>
+
+			<p>
+				Druhy: Kyberstalking (pronásledování v kyberprostoru nejčastěji
+				pomocí SMS, chatu, emailu, telefonu, sociálních sítí, Skypu
+				apod.), Sexting, Flaming
+			</p>
+
+			<h3>Autorská práva</h3>
+			<ul>
+				<li>Nemůžete vzít cizí dílo a považovat ho za své.</li>
+				<li>
+					Stahování není trestné do té doby dokud ho dále nešíříte
+					(pouze pro vlastní účely).
+				</li>
+				<li>
+					Licenční smlouvy: Vyjadřuje vůli autora ohledně
+					předpokládaných způsobů použití díla.
+				</li>
+			</ul>
+
+			<h3>Sociální inženýrství</h3>
+			<p>
+				Sociální inženýrství je způsob manipulace lidí za účelem
+				provedení určité akce nebo získání určité informace. Termín je
+				běžně používán ve významu podvodu nebo podvodného jednání za
+				účelem získání utajených informací organizace nebo přístup do
+				informačního systému firmy. Ve většině případů útočník
+				nepřichází do osobního kontaktu s obětí.
+			</p>
+			<p>
+				Druhy technik: phishing, pretexting (vymyšlený scénář - vyhrál
+				jste miliony), baiting (trojský kůň)
+			</p>
+
+			<h2>Nakupování a služby Internetu</h2>
+			<p>
+				Internetový obchod slouží k nabídce a vyhledání zboží (služeb) s
+				možností si je objednat, dále k příjmu takových objednávek od
+				zákazníků, zprostředkování a evidence plateb a poskytování
+				dalších informací o výrobcích či řešení reklamací.
+			</p>
+
+			<p>
+				Internetové obchodování je proces, kterým prochází zákazník
+				nakupující zboží nebo služby na internetu.
+			</p>
+
+			<p>
+				Obchod je v drtivé většině případů realizován jako sada skriptů,
+				který spolupracuje s databází, v níž má detaily o zboží
+				(službách) uloženy – v podstatě se snaží ulehčit co nejvíce
+				práci administrátorovi elektronického obchodu v evidenci
+				nabízeného zboží, úpravě cen a skladových zásob a ostatní
+				agendou s tím spojenou.
+			</p>
+			<p>
+				Uživatelům je umožněno procházet katalog zboží (ve většině
+				případů organizovaný v kategoriích), nebo zboží vyhledávat podle
+				parametrů či jen podle shody v názvu nebo popisu. Jednotlivé
+				produkty mají většinou detailní stránku s podrobnějším popisem a
+				výčtem specifik a variant. Ta obsahuje název produktu, jeho
+				popis a parametry, barevnou a velikostní variantu, cenu,
+				fotografii případně video. Detail produktu dále může obsahovat:
+				datum doručení, počet kusů skladem, délku záruku, název výrobce,
+				hodnocení uživatelů či doporučené podobné zboží nebo
+				příslušenství, případně výši slevy.
+			</p>
+
+			<p>
+				Výhody: ušetří peníze, šetří čas, nekupujete v pohodlí domova,
+				větší nabídka, recenze
+			</p>
+		</main>
+
+		<script src="../smooth-scroll.min.js"></script>
+		<script>
+			var scroll = new SmoothScroll('a[href*="#"]');
+		</script>
+	</body>
+</html>
