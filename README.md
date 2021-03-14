@@ -24,9 +24,9 @@
 
 ## VMA
 * [x] 1 - David
-* [ ] 3 - Kuba
+* [x] 3 - Kuba
 * [x] 4 - David
-* [ ] 5 - Kuba
+* [x] 5 - Kuba
 * [ ] 7 - David
 * [ ] 8 - Kuba
 * [ ] 9 - David
