@@ -140,6 +140,33 @@ main img.half {
 .low {
 	text-transform: lowercase;
 }
+
+
+/* NADPISY */
+p + h2,
+p + h3,
+p + h4,
+p + h5{
+    margin-top: 1.6em;
+}
+ul + h2,
+ul + h3,
+ul + h4,
+ul + h5{
+    margin-top: 1.6em;
+}
+
+/* PARAGRAFY*/
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p{
+    margin-top: 0.2em;
+}
+
+
+
+
 /* LISTY */
 main > ul,
 main > ol {
