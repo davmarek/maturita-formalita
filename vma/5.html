@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>5. Architektura a periferie PC</title>
+
+		<link rel="stylesheet" href="../main.css" />
+		<script src="../main.js" defer></script>
+	</head>
+	<body>
+		<div id="theme-switcher"></div>
+		<a id="scroll-up" href="#" class="hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="feather feather-arrow-up"
+			>
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</a>
+
+		<nav>
+			<a href="../">Rozcestník</a>
+		</nav>
+
+		<main>
+			<h1>5. Architektura a periferie PC</h1>
+
+			<h2>Výroba</h2>
+			<p>
+				Počítač se skládá ze základní desky, procesoru, paměti RAM,
+				pevného disku, zdroje napájení a v dnešní době dedikované
+				grafické karty, pokud není integrovaná v základní desce.
+				Počítače jsou mohou být ve stolní a nebo mobilní notebookové
+				podobě. U notebooků se připlácí za dodatečné zmenšení
+				komponentů, které se vlezou do menšího prostoru skříně
+				notebooků. Charakter počítače se pak odvíjí od toho k čemu je
+				počítač určen. Pro práci bude počítač vybaven standartním
+				hardwarem, který nebude potřebovat tolik energie. U počítačů
+				určených ke speciálním účelům jako hraní počítačových her nebo
+				práci s náročnějším softwarem by v sobě počítač měl mít lepší
+				grafickou kartu a procesor, aby byl schopný bez problému
+				zpracovávat větší množství požadavků nebo vykreslovat grafiku
+				dané hry, renderovat video nebo provádět všechny požadované
+				výpočty v reálném čase a nezasekával se.
+			</p>
+
+			<h2>Procesor</h2>
+			<p>
+				Procesor je hlavní výpočetní jednotka osobních počítačů, ale
+				také například chytrých mobilních telefonů. Často je označovaný
+				také jako CPU. Procesory nejsou vyrobeny za účelem jediné
+				funkcionality, nýbrž pracují tak, jak to aplikace potřebují.
+				Zároveň řídí ostatní části počítače a jejich podíl na společném
+				výpočetním díle celého systému. Hlavními výrobci procesorů do
+				počítačů jsou společnosti Intel a AMD. Princip veškerých
+				dnešních výpočetních systémů, a tedy i procesoru, je založen na
+				zpracování binárních operací. Procesory mohou pracovat na
+				různých frekvencích, mohou mít jiný soket a zapadnout tak do
+				jiné základní desky a frekvence procesorů se dá zvýšit
+				taktováním.
+			</p>
+
+			<h2>Vnitřní paměť</h2>
+			<p>
+				Operační, vnitřní neboli hlavní paměť počítače je paměť
+				umožňující čtení i zápis používaná pro dočasné uložení
+				zpracovávaných dat a spuštěných programů. Paměť RAM se používá
+				hlavně jako operační paměť počítačů, v níž jsou uloženy běžící
+				programy (včetně operačního systému) a jejich data. Obsah v
+				současnosti používaných polovodičových RAM se po odpojení
+				napájení vymaže. Proto data, která mají být zachována, je nutné
+				ukládat na disk.
+			</p>
+
+			<h2>BIOS</h2>
+			<p>
+				BIOS ovládá základní vstupní a výstupní funkce pro počítače a
+				představuje vlastně firmware pro osobní počítače. V současné
+				době se BIOS používá hlavně při startu počítače pro inicializaci
+				a konfiguraci připojených hardwarových zařízení a následnému
+				spuštění operačního systému, kterému je pak předáno další řízení
+				počítače. Programový kód BIOSu je uložen na základní desce v
+				paměti typu ROM, EEPROM nebo modernější flash paměti s možností
+				jednoduché aktualizace.
+			</p>
+
+			<h2>Pevný disk</h2>
+			<p>
+				Pevný disk je zařízení, které se používá v počítačích k
+				dočasnému nebo trvalému uchovávání většího množství dat pomocí
+				magnetické indukce. Mohou se lišit velikostí uložiště, rychlostí
+				čtení a zápisu dat, velikostí samotného disku (pro PC a
+				notebooky), stylem napájení a pak taky na těchto parametrech
+				závislou cenou.
+			</p>
+
+			<h2>Základní deska</h2>
+			<p>
+				Základní deska představuje základní hardware většiny počítačů.
+				Hlavním účelem základní desky je propojit jednotlivé součástky
+				počítače do fungujícího celku a poskytnout jim elektrické
+				napájení. Nejdůležitější integrované obvody jsou zabudovány v
+				čipové sadě. Fyzicky může jít buď jenom o jeden čip, nebo dva (v
+				tom případě se označují jako northbridge a southbridge). Čipová
+				sada rozhoduje, jaký procesor a operační paměť je možné k
+				základní desce připojit.
+			</p>
+			<h3>Northbridge</h3>
+			<p>
+				Northbridge (severní můstek) je také znám jako systémový řadič.
+				Je jedním ze dvou základních čipů na základní desce. Druhý se
+				nazývá jižní můstek a společně je označujeme jako tzv. čipset.
+				Dělení čipsetu na severní most a jižní most je běžné, ačkoli
+				existují i čipy, které obsahují oba najednou za cenu vyšší
+				složitosti při výrobě. Severní můstek se stará o rychlou
+				komunikaci mezi interní pamětí a procesorem a dále posílá rychle
+				zpracované informace do jižního můstku.
+			</p>
+			<h3>Southbridge</h3>
+			<p>
+				Southbridge (jižní můstek) je také znám jako vstupně-výstupní
+				řadič. Čip realizuje pomalejší funkce základní desky v
+				počítačové architektuře se severním a jižním můstkem. Jižní
+				můstek odlišíme od severního snadno tak, že není přímo spojen s
+				procesorem. Severní můstek realizuje spojení jižního můstku a
+				procesoru.
+			</p>
+
+			<h2>Grafická karta</h2>
+			<p>
+				Grafická karta je součást počítače, jejímž úkolem je vytvářet
+				grafický výstup na monitoru. Hlavní součástí grafické karty je
+				grafický procesor (GPU), který slouží pro rychlé a efektivní
+				změny obsahu grafické paměti a tím i změny obrazu viditelného na
+				monitoru. Grafická karta může být integrovaná nebo dedikovaná.
+			</p>
+
+			<h2>Optické a elektrické pamět</h2>
+			<p>
+				Optické paměti využívají k záznamu informace vlastností světla.
+				Na nosičích se vytváří místa, která světlo odráží nebo pohlcují.
+				Tím se realizují dva fyzikální stavy odpovídající
+				dvouhodnotovému záznamu (zápis jedniček a nul). Na rozdíl od
+				HDD, kde jsou plotny součást mechaniky, jsou nosiče optických
+				pamětí přenosné a vkládají se do optických mechanik.
+			</p>
+
+			<h2>Přenosná media</h2>
+			<ul>
+				<li>
+					Disketa
+					<ul>
+						<li>Kapacita maximálně 2,88 MiB</li>
+					</ul>
+				</li>
+				<li>
+					CD
+					<ul>
+						<li>
+							Kapacita 700 MiB (násobí se u více vrstev a stran)
+						</li>
+					</ul>
+				</li>
+				<li>
+					DVD
+					<ul>
+						<li>
+							Kapacita 4,7 GB (násobí se u více vrstev a stran)
+						</li>
+					</ul>
+				</li>
+				<li>
+					Blu Ray
+					<ul>
+						<li>
+							Kapacita 25 GB (násobí se u více vrstev a stran)
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2>Paměťové karty a USB disky</h2>
+			<ul>
+				<li>
+					SD karta
+					<ul>
+						<li>Používá flash paměť</li>
+						<li>Různé velikosti v GB</li>
+						<li>Dají se vložit do telefonu a fotoaparátů</li>
+					</ul>
+				</li>
+				<li>
+					USB
+					<ul>
+						<li>Používá flash paměť</li>
+						<li>Různá velikost v GB</li>
+						<li>
+							Spojení se zařízením probíhá přes USB, jejichž verze
+							se mohou u různých zařízení také lišit
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2>Typy Konektorů v PC</h2>
+			<ul>
+				<li>
+					PS
+					<ul>
+						<li>Klávesnice a myši</li>
+					</ul>
+				</li>
+				<li>
+					RJ-45
+					<ul>
+						<li>Připojení internetu</li>
+					</ul>
+				</li>
+				<li>
+					Jack 3.5mm
+					<ul>
+						<li>Zvuk</li>
+					</ul>
+				</li>
+				<li>
+					VGA, DVI, Displayport
+					<ul>
+						<li>Video</li>
+					</ul>
+				</li>
+				<li>
+					HDMI
+					<ul>
+						<li>Video i zvuk</li>
+					</ul>
+				</li>
+				<li>
+					USB
+					<ul>
+						<li>Přenos dat, zvuk, externí zařízení</li>
+						<li>Mini a micro verze</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2>Monitory</h2>
+			<ul>
+				<li>
+					LCD
+					<ul>
+						<li>
+							Skládá se z molekul tekutých krystalů uložených mezi
+							dvěma průhlednými elektrodami a mezi polarizačními
+							filtry
+						</li>
+						<li>Malá velikost, váha, spotřeba energie</li>
+						<li>Omezené kontrastní úhly, pomalejší odezva</li>
+					</ul>
+				</li>
+				<li>
+					CRT
+					<ul>
+						<li>Obraz se vytváří pomocí proudu elektronů</li>
+						<li>
+							Malá odezva, dobré zobrazení barev, malá deformace
+							barev
+						</li>
+						<li>
+							Velké rozměry a váha, větší spotřeba a citlivost na
+							vlhkost vzduchu
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2>Tiskárny</h2>
+
+			<h3>Jehličková</h3>
+			<p>
+				Znaky textu jsou skládány z bodů tiskové hlavy. Papír v nich
+				prochází pod válcem, před válcem se nachází barvicí páska a před
+				ní je tisková hlava s různým počtem jehliček, které na papír
+				obtiskují písmena. Jehliček je v tiskové hlavě nejčastěji 24,
+				ale existují i tiskárny 9jehličkové nebo 7jehličkové. Větší
+				počet jehliček znamená kvalitnější tisk.
+			</p>
+
+			<h3>Inkoustová</h3>
+			<p>
+				Inkoustová neboli trysková tiskárna je nejrozšířenějším typem
+				tiskárny. Tisk probíhá za pomoci speciální tiskové hlavy, která
+				vystřikuje z mikroskopických trysek inkoust na papír. Inkoustové
+				tiskárny se vyznačují dobrou kvalitou tisku a relativně nízkou
+				cenou. Kvalita tisku je samozřejmě závislá i na použitém papíru.
+				Jsou vhodné pro tisk jak textových, tak grafických dokumentů či
+				fotografií.
+			</p>
+
+			<h3>Laserová</h3>
+			<p>
+				Vodivý selenový válec uvnitř tiskárny reaguje na osvit a mění
+				svůj elektrický odpor. Prostřednictvím laseru je na něj
+				vypalován obraz. V místech zasažení laserovým paprskem ztratí
+				válec náboj a při styku s tonerem dojde k jeho obarvení na
+				místech, která byla laserem zasažena. Tato barva se následně
+				přenese na papír, který ještě projde zažehlovacím válcem, který
+				na něj prášek vypálí.
+			</p>
+		</main>
+
+		<script src="../smooth-scroll.min.js"></script>
+		<script>
+			var scroll = new SmoothScroll('a[href*="#"]');
+		</script>
+	</body>
+</html>
