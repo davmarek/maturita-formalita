@@ -132,6 +132,11 @@ main img.half {
 .n {
 	font-weight: normal;
 }
+
+.c{
+    text-align: center;
+}
+
 .low {
 	text-transform: lowercase;
 }

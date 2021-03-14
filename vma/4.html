@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>4. Historie PC a číselné soustavy</title>
+
+		<link rel="stylesheet" href="../main.css" />
+		<script src="../main.js" defer></script>
+	</head>
+	<body>
+		<div id="theme-switcher"></div>
+		<a id="scroll-up" href="#" class="hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="feather feather-arrow-up"
+			>
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</a>
+
+		<nav>
+			<a href="../">Rozcestník</a>
+		</nav>
+
+		<main>
+			<h1>4. Historie PC a číselné soustavy</h1>
+			<h2>Jednoduchá počítadla</h2>
+			<ul>
+				<li>
+					<b>Abakus​</b> - destička, na které se dají posouvat korálky
+					nebo kamínky
+				</li>
+				<li>
+					<b>Logaritmické tabulky​</b> - 1614 objevil John Napier
+					využití logaritmů
+				</li>
+			</ul>
+
+			<h2>Mechanické kalkulátory</h2>
+			<ul>
+				<li>
+					<b>Mechanismus z Antikythéry​</b> - výpočet kalendáře,
+					polohy slunce a měsíce
+				</li>
+				<li>
+					<b>Thomasův Arithmometr</b> ​- sčítání, odčítání, násobení,
+					dělení, první sériově vyráběný kalkulátor
+				</li>
+			</ul>
+
+			<h2>Děrné štítky</h2>
+			<ul>
+				<li>Využití k řízení chodu tkacího stroje</li>
+				<li>
+					Využití při sčítání lidu v USA v roce 1889 jako nosiče dat
+				</li>
+			</ul>
+
+			<h2>Mechanické počítače (1805-1925)</h2>
+			<ul>
+				<li>
+					<b>Diferenciální stroj</b> - první univerzální Turingovsky
+					úplný počítač (možnost změny účelu počítače pouhou změnou
+					programu bez nutnosti přestavby počítače)
+				</li>
+			</ul>
+
+			<h2>Elektromechanické počítací stroje (1890-1945)</h2>
+			<ul>
+				<li>
+					<b>Z1,Z2,Z3​</b> - pracoval ve dvojkové soustavě, 50
+					atritmetických operací za minutu
+				</li>
+				<li><b>ABC​</b> - řešení lineálních rovnic v oblasti fyziky</li>
+			</ul>
+
+			<h2>Reléové počítače (II. Světová válka)</h2>
+			<ul>
+				<li>
+					<b>Colossus​</b> - lámání německých šifer, vytvářených stoji
+					Enigma
+				</li>
+				<li>
+					<b>Mark I</b> - IBM, Elektromagnetické prvky, děrná páska,
+					Americké námořnictvo ho využívalo k výpočtu balistických
+					tabulek
+				</li>
+				<li>
+					<b>Mark II</b> - releové zařízení, desetinné číslice,
+					operační paměť dokáže pojmout až 100 čísel
+				</li>
+			</ul>
+
+			<h2>Elektronkové počítače (po roce 1946)</h2>
+			<ul>
+				<li>
+					<b>ENIAC</b> - první počítač, který pracoval podobně jako
+					dnešní počítače, umožňoval smyčky i podmíněné skoky, až 5000
+					součtů za sekundu
+				</li>
+				<li>
+					<b>MANIAC​</b> - výpočty v matematice, fyzikální děje,
+					využit k vývoji jaderné bomby
+				</li>
+			</ul>
+
+			<h2>Mikropočítače</h2>
+			<ul class="b">
+				<li>Apple II</li>
+				<li>Commodore 64</li>
+			</ul>
+
+			<h2>Princip činnosti počítače podle von Neumannova schématu</h2>
+			<img
+				src="img/4-von-neumann-schema.jpg"
+				alt="4-von-neumann-schema.jpg"
+				loading="lazy"
+				class="invertable"
+			/>
+			<p>
+				Podle tohoto schématu se skládá počítač z pěti hlavních modulů.
+			</p>
+			<ul>
+				<li>
+					<b>Operační paměť</b>
+					<ul>
+						<li>
+							Slouží k uchovávání zpracovaného programu,
+							zpracovaných dat a výsledků výpočtů
+						</li>
+					</ul>
+				</li>
+				<li>
+					<b>ALU​</b> (Arithmetic Logic Unit)
+					<ul>
+						<li>
+							Jednotka provádějící veškeré aritmetické výpočty a
+							logické operace
+						</li>
+					</ul>
+				</li>
+				<li>
+					<b>Řadič</b>
+					<ul>
+						<li>
+							Řídící jednotka, která řídí činnost všech částí
+							počítače.
+						</li>
+						<li>
+							Řízení prováděno pomocí řídících signálů rozesílané
+							jednotlivým modulům
+						</li>
+						<li>Odpovědi na řídící signály jsou posílány zpět</li>
+					</ul>
+				</li>
+				<li>
+					<b>Vstupní zařízení</b>
+					<ul>
+						<li>Zařízení určená pro vstup programu a dat</li>
+					</ul>
+				</li>
+				<li>
+					<b>Výstupní zařízení</b>
+					<ul>
+						<li>Výstup výsledků, které program zpracoval</li>
+					</ul>
+				</li>
+			</ul>
+
+			<p>Další moduly se dají odvodit spojením základních modulů.</p>
+			<ul>
+				<li>
+					<b>Procesor</b>
+					<ul>
+						<li>Řadič + ALU</li>
+					</ul>
+				</li>
+				<li>
+					<b>CPU​</b> (Central Processor Unit)
+					<ul>
+						<li>Procesor + Operační paměť</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h3>Princip fungování</h3>
+			<ol>
+				<li>
+					Do operační paměti se pomocí vstupních zařízení přes ALU
+					umístí program, který bude provádět výpočet.
+				</li>
+				<li>
+					Stejným způsobem se do operační paměti umístí data, která
+					bude program zpracovávat
+				</li>
+				<li>
+					Proběhne vlastní výpočet, jehož jednotlivé kroky provádí
+					ALU. Tato jednotka je v průběhu výpočtu spolu s ostatními
+					moduly řízena řadičem počítače. Mezivýsledky výpočtu jsou
+					ukládány do operační paměti.
+				</li>
+				<li>
+					Po skončení výpočtu jsou výsledky poslány přes ALU na
+					výstupní zařízení.
+				</li>
+			</ol>
+
+			<h2>BIOS</h2>
+			<ul>
+				<li>Basic input/output system</li>
+				<li>
+					Základní program počítače, který inicializuje a konfiguruje
+					hardware při spouštění počítače a následně spouští operační
+					systém
+				</li>
+				<li>
+					Je uložen na základní desce v ROM, EEPROM nebo Flash paměti
+				</li>
+			</ul>
+
+			<h2>Strojový kód</h2>
+			<ul>
+				<li>
+					Posloupnost strojových instrukcí prováděných procesorem
+					počítače, zapsaných pomocí posloupnosti číselných kódů
+					těchto instrukcí
+				</li>
+				<li>
+					O překládání těchto instrukcí se stará většinou assembler
+				</li>
+				<li>Instrukce jsou v paměti uloženy jako sekvence bitů</li>
+			</ul>
+
+			<h2>Bit</h2>
+			<ul>
+				<li>Binary digit = dvojková číslice</li>
+				<li>Základní a nejmenší jednotkou dat</li>
+				<li>Může obsahovat dvě hodnoty: 1 a 0</li>
+			</ul>
+
+			<h2>Byte</h2>
+			<ul>
+				<li>Skupina 8 bitů</li>
+			</ul>
+
+			<h2>
+				Počítání a převádění mezi nejpouživanějšími číselnými soustavami
+			</h2>
+
+			<h3>Na desítkovou</h3>
+			<ul>
+				<li>
+					Cifry čísla od zadu násobíme číslem dané soustavy na ntou (n
+					= pozice čísla, první pozice = 0)
+				</li>
+				<li>
+					Součet násobení jednotlivých cifer dá číslo v desítkové
+					soustavě
+				</li>
+			</ul>
+			<p class="c">
+				(10010)<sub>2</sub> = 0 &times; 2<sup>0</sup> + 1 &times; 2
+				<sup>1</sup> + 0 &times; 2<sup>2</sup> + 0 &times; 2
+				<sup>3</sup> + 1 &times; 2<sup>4</sup> = 0 + 2 + 0 + 0 + 16 = 18
+			</p>
+			<p class="c">
+				(132)<sub>16</sub> = 2 &times; 16<sup>0</sup> + 3 &times; 16
+				<sup>1</sup> + 1 &times; 16<sup>2</sup> = 2 + 48 + 256 = 306
+			</p>
+
+			<h3>Z desítkové</h3>
+			<ul>
+				<li>
+					Číslo dělíme číslem soustavy, do které chceme číslo převést
+				</li>
+				<li>
+					Zbytky dělení si zapisujeme a dělení opakujeme dokud
+					výsledek nevýjde 0 nebo 0 se zbytkem
+				</li>
+				<li>
+					Zbytky poté od posledního výpočtu směrem nahoru dají číslo
+					ve výsledné soustavě
+				</li>
+			</ul>
+			<p class="c">
+				158 &divide; 2 = 79 zb. 0<br />
+				79 &divide; 2 = 39 zb. 1<br />
+				39 &divide; 2 = 13 zb. 1<br />
+				13 &divide; 2 = 9 zb. 1<br />
+				9 &divide; 2 = 4 zb. 1<br />
+				4 &divide; 2 = 2 zb. 0<br />
+				2 &divide; 2 = 1 zb. 0<br />
+				1 &divide; 2 = 0 zb. 1<br />
+				158 je v binární soustavě 10011110
+			</p>
+		</main>
+
+		<script src="../smooth-scroll.min.js"></script>
+		<script>
+			var scroll = new SmoothScroll('a[href*="#"]');
+		</script>
+	</body>
+</html>
