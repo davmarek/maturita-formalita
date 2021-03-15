@@ -29,7 +29,7 @@
 * [x] 5 - Kuba
 * [x] 7 - David
 * [ ] 8 - Kuba a David
-* [ ] 9 - David
+* [x] 9 - David
 * [ ] 10 - Kuba
 * [ ] 12 - David
 * [ ] 13 - Kuba
