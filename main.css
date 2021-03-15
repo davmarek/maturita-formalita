@@ -41,6 +41,11 @@ body {
 
     font-weight: var(--normal-font-weight);
 }
+
+
+
+
+/* NADPISY */
 h1,
 h2,
 h3,
@@ -56,9 +61,52 @@ h2, h3, h4, h5 {
 	line-height: 1.35;
 }
 
+p + h2,
+p + h3,
+p + h4,
+p + h5{
+    margin-top: 1.6em;
+}
+ul + h2,
+ul + h3,
+ul + h4,
+ul + h5{
+    margin-top: 1.6em;
+}
+
+/* PARAGRAFY*/
 p {
 	line-height: 2;
 }
+
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p{
+    margin-top: 0.2em;
+}
+
+/* TEXTOVÉ CLASSKY */
+.b {
+	font-weight: var(--bold-font-weight);
+}
+.i {
+	font-style: italic;
+}
+.n {
+	font-weight: var(--normal-font-weight);
+}
+
+.c{
+    text-align: center;
+}
+
+.low {
+	text-transform: lowercase;
+}
+
+
+
 
 /* NAVIGACE nad zápisem */
 body > nav {
@@ -127,47 +175,7 @@ main img.half {
 	filter: invert(1);
 }
 
-/* TEXTOVÉ CLASSKY */
-.b {
-	font-weight: var(--bold-font-weight);
-}
-.i {
-	font-style: italic;
-}
-.n {
-	font-weight: normal;
-}
 
-.c{
-    text-align: center;
-}
-
-.low {
-	text-transform: lowercase;
-}
-
-
-/* NADPISY */
-p + h2,
-p + h3,
-p + h4,
-p + h5{
-    margin-top: 1.6em;
-}
-ul + h2,
-ul + h3,
-ul + h4,
-ul + h5{
-    margin-top: 1.6em;
-}
-
-/* PARAGRAFY*/
-h2 + p,
-h3 + p,
-h4 + p,
-h5 + p{
-    margin-top: 0.2em;
-}
 
 
 
