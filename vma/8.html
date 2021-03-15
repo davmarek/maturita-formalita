@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>8. HTML a CSS</title>
+
+		<link rel="stylesheet" href="../main.css" />
+		<script src="../main.js" defer></script>
+	</head>
+	<body>
+		<div id="theme-switcher"></div>
+		<a id="scroll-up" href="#" class="hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="feather feather-arrow-up"
+			>
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</a>
+
+		<nav>
+			<a href="../">Rozcestník</a>
+		</nav>
+
+		<main>
+			<h1>8. HTML a CSS</h1>
+
+			<h2>HTML</h2>
+			<p>
+				<b>H</b>yper <b>T</b>ext <b>M</b>arkup <b>L</b>anguage (jazyk
+				pro popis webových stránek) HTML je značkovací jazyk – je
+				charakterizován množinou <b>tagů</b> a jejich
+				<b>atributů</b> obsahuje HTML <b>značky</b> a
+				<b>obyčejný text</b> Mezi značky se <b>uzavírají</b> části
+				dokumentu, a tím se určuje význam obsaženého textu popisuje
+				grafickou podobu stránky v prohlížeči má přesnou syntaxi
+			</p>
+
+			<h2>CSS</h2>
+			<p>
+				Kaskádové styly (<b>C</b>ascading <b>S</b>tyle <b>S</b>heets)
+				jazyk pro popis stylu stránek v jazyce HTML Definuje vzhled
+				stránky (barvy, fonty, ...)
+			</p>
+
+			<h2>Vznik a vývoj HTML</h2>
+			<p>
+				<b>Tim Berners-Lee</b> v roce 1991 v CERNu původně projekt na
+				propojení a sdílení dokumentů rychlý rozvoj webu, takže bylo
+				nutné pro HTML <b>definovat standardy verze HTML</b>:
+			</p>
+			<ul>
+				<li>
+					<b>Verze 0.9–1.2 (1991 - 1993):</b> Nepodporují grafické
+					rozhraní
+				</li>
+				<li>
+					<b>Verze 2.0 (1995):</b> podporuje grafické rozhraní a
+					formuláře
+				</li>
+				<li>
+					<b>Verze 3.2 (1997):</b> tabulky, zarovnávání textu, stylové
+					prvky, verze 3.0 byla příliš složitá a firmy nebyly schopny
+					naprogramovat její podporu
+				</li>
+				<li>
+					<b>Verze 4.01 (1999):</b> nové prvky existujících tagů
+					(prvky klasického dokumentu), vzhled pomocí stylů, opravuje
+					některé chyby verze předchozí
+				</li>
+				<li>
+					<b>XHTML (2000):</b> původně následníkem HTML (nezamlouval
+					se), využívá univerzální jazyk XML
+				</li>
+				<li>
+					<b>Verze 5.0 (2014):</b> po 15 letech, opravuje chyby,
+					ukončuje závislost HTML na SGML, vyřazuje zastaralé značky
+				</li>
+				<li><b>Verze 5.1, 5.2, 5.3</b></li>
+			</ul>
+			<h2>Vznik a vývoj CSS</h2>
+			<p>
+				vznikly v roce 1996 snaha oddělit obsah od formátovacích pokynů
+				3 verze (CSS1, CSS2, CSS3)
+			</p>
+
+			<h2>Základní struktura stránky</h2>
+			<h3><code>&lt;html&gt;</code></h3>
+			<p>
+				Začíná a končí celý dokument nepovinná, prohlížeče si domýšlí
+				nemá žádné atributy další obsah musí být uvnitř
+			</p>
+			<h3><code>&lt;head&gt;</code></h3>
+			<p>
+				hlavička dokumentu nezobrazuje se obsahuje nepovinně další tagy
+				(title, meta, link, style, script aj.)
+			</p>
+			<h3><code>&lt;body&gt;</code></h3>
+			<p>
+				tělo dokumentu obsahuje veškerý zobrazovaný obsah stránky můžeme
+				nastavit různé atributy
+			</p>
+			<h3><code>&lt;!-- poznámka --&gt;</code></h3>
+			<p>
+				vše, co je obaleno v <code>&lt;!— —&gt;</code> se nezobrazuje také se říká
+				komentáře
+			</p>
+			<h3><code>&lt;!doctype&gt;</code></h3>
+			<p>
+				na začátku souboru před <code>&lt;html&gt;</code> obsahuje specifikaci DTD
+				(Document Type Definition) - návod pro prohlížeč, jak zpracovat
+				dokument obsahuje HTML verzi můžeme přepínat zobrazovací módy
+				CSS
+			</p>
+
+			<h2>Obsah hlavičky</h2>
+			<p>
+				Hlavička je první částí HTML dokumentu a obsahuje informace
+				hlavně pro prohlížeč.
+			</p>
+			<h3><code>&lt;title&gt;</code></h3>
+			<p>
+				titulek stránky, text bude chápán jako titulek stránky párový
+				tag zobrazuje se v záhlaví okna, ve vyhledávačích, používá se
+				pro indexování vyhledávacími roboty nebo jako nativní odkaz pro
+				různý software
+			</p>
+			<h3><code>&lt;link&gt;</code></h3>
+			<p>
+				Spojitost s jiným souborem, neviditelný vztah pro propojení s
+				CSS souborem, ikony stránky, skriptu, odkaz na jinou jazykovou
+				verzi… nepárový tag
+			</p>
+			<br />
+			<u>Atributy:</u>
+			<ul>
+				<li>
+					rel: vztah k linkovanému souboru (stylesheet, shortcut icon)
+				</li>
+				<li>href: cesta k linkovanému souboru</li>
+				<li>type: MIME typ souboru (nepovinné)</li>
+				<li>media: omezení na typ výstupu (all, screen, print…)</li>
+				<li>disabled: zrušení platnosti (kvůli skriptům)</li>
+			</ul>
+			<p>
+				např.: <code>
+                    &lt;link rel=&quot;stylesheet&quot;
+                    type=&quot;text/css&quot; href=„soubor.css&quot;&gt;
+                </code>
+			</p>
+			<h3><code>&lt;meta&gt;</code></h3>
+			<p>
+				nepárový tag obsahuje informace o dokumentu v praxi je využívá
+				pouze vyhledávací roboti nebo software
+			</p>
+			<br />
+			<u>Atributy:</u>
+			<ul>
+				<li>
+					name: druh uživatelské informace (ta se píše do content)
+				</li>
+				<li>
+					viewport: zakáže mobilům předstírat větší šířku
+					<code>(width=device-width,initial-scale=1)</code>
+				</li>
+				<li>
+					keywords: v minulosti klíčová slova pro vyhledávací stroje,
+					dnes bezcené
+				</li>
+				<li>
+					description: popis stránky, většinou pro vyhledávací stroje
+				</li>
+				<li>
+					referrer: udává, jestli a případně jak se má při prokliku ze
+					stránky použít referrer
+				</li>
+				<li>
+					robots: zakázání robotů indexovat nebo sledovat odkazy a
+					další
+				</li>
+				<li>
+					http-equiv: ekvivalent http hlavičky (content-type,
+					refresh…)
+				</li>
+				<li>content: obsah, vlastní informace (podle typu)</li>
+				<li>
+					charset: kódování souboru (utf-8 | windows-1250 |
+					iso-8859-2)
+				</li>
+				<li>property: podobný jako name</li>
+			</ul>
+			<p>
+				např.: <code>
+                    &lt;meta name=&quot;description&quot;
+                    content=&quot;popisek pro vyhledávače“&gt;
+                </code>
+			</p>
+
+			<h2>Tagy a jejich zápis</h2>
+			<p>
+				HTML značky (tagy) jsou uzavřeny ve špičatých závorkách <code>
+                    &lt;
+                    &gt;
+                </code> tag má přesnou syntaxi chybně napsaný tag prohlížeč
+				ignoruje Párové tagy určují začátek a konec počáteční tag je
+				uzavřen ve <code>&lt; &gt;</code> a konečný ve <code>&lt;/ &gt;</code> nesmí se křížit
+				mohou se vnořovat např.: odstaven <code>&lt;p&gt;&lt;/p&gt;</code>, nadpis
+				<code>&lt;h1&gt;&lt;/h1&gt;</code> Nepárové tagy nemají ukončovací značku
+				neuzavírají žádný text např,: obrázek <code>&lt;img&gt;</code>, zalomení
+				textu <code>&lt;br&gt;</code> pokud to tag umožňuje používat atributy, píšou
+				se za název tagu např.: <code>&lt;img src=„obrazek.jpg“&gt;</code>
+			</p>
+
+			<h2>Tagy pro text</h2>
+			<p>
+				Všechny tagy na úpravu textu jsou párové a řádkové (nezalomí
+				řádek)
+			</p>
+			<h3><code>&lt;b&gt;</code></h3>
+			<p>
+				tučné písmeno, bold používá se často ke zvýraznění tagem
+				<code>&lt;b&gt;</code> říkám, že je něco tučným písmem
+			</p>
+			<h3><code>&lt;i&gt;</code></h3>
+			<p>kurzíva, italic</p>
+			<h3><code>&lt;u&gt;</code></h3>
+			<p>podtržení, underline</p>
+			<h3><code>&lt;sub&gt;</code></h3>
+			<p>
+				dolní index, subscript pro další zmenšování je možno použít
+				vícekrát za sebou
+			</p>
+			<h3><code>&lt;sup&gt;</code></h3>
+			<p>horní index, supscript</p>
+			<h3><code>&lt;small&gt;</code></h3>
+			<p>
+				zmenšení písma o jeden stupeň možno použít vícekrát za sebou je
+				zastaralý, ale stále funguje
+			</p>
+			<h3><code>&lt;big&gt;</code></h3>
+			<p>zvětší písma o jeden stupeň zastaralý</p>
+			<h3><code>&lt;s&gt; &lt;strike&gt; &lt;del&gt;</code></h3>
+			<p>přeškrtnuté písmo, striked</p>
+			<h3><code>&lt;font&gt;</code></h3>
+			<p>
+				nastavení barvy, velikosti a fontu písma zastaralý, doporučuje
+				se nepoužívat např.: 
+                    <code>
+                        &lt;font color=&quot;red&quot;
+                        face=&quot;Arial, Helvetica&quot;&gt;
+                    </code>červené písmo
+                    Arialem<code>&lt;/font&gt; dá se nahradit &lt;span&gt;</code>
+                
+			</p>
+			<h3><code>&lt;span&gt;</code></h3>
+			<p>
+				Logické vymezení části textu, která bude jinak formátována nebo
+				na ni bude vázán skript příbuzný <code>&lt;div&gt</code>;, ale je in-line
+				obecné atributy (font, barva, pozadí, velikost, tloušťka…)
+			</p>
+			<h3><code>&lt;strong&gt;</code></h3>
+			<p>
+				silné zvýraznění prohlížeče pro něj používají tučné písmo tagem
+				<code>&lt;strong&gt;</code> říkám, že je něco důležité, zvýrazněné
+			</p>
+			<h3><code>&lt;em&gt;</code></h3>
+			<p>zvýraznění, emphasis prohlížeče vykreslují kurzívou</p>
+			<h3><code>&lt;cite&gt;</code></h3>
+			<p>
+				citace na rozdíl od blokové citace <code>&lt;blockquote&gt;</code> nezalamuje
+				řádek (je in-line) nepoužívá se
+			</p>
+			<h3><code>&lt;q&gt;</code></h3>
+			<p>
+				citace narozdíl od <code>&lt;cite&gt;</code> prohlížeče dělají uvozovky
+				(kromě Internet Explorer)
+			</p>
+			<h3><code>&lt;code&gt;</code></h3>
+			<p>
+				Výpis kódu, například programu Prohlížeče používají
+				neproporcionální písmo (strojopis) používá se velmi zřídka
+			<code></p></code>
+		</main>
+
+		<script src="../smooth-scroll.min.js"></script>
+		<script>
+			var scroll = new SmoothScroll('a[href*="#"]');
+		</script>
+	</body>
+</html>
