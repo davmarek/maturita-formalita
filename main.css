@@ -43,8 +43,6 @@ body {
 }
 
 
-
-
 /* NADPISY */
 h1,
 h2,
@@ -86,6 +84,8 @@ h5 + p{
     margin-top: 0.2em;
 }
 
+
+
 /* TEXTOVÉ CLASSKY */
 .b {
 	font-weight: var(--bold-font-weight);
@@ -105,7 +105,10 @@ h5 + p{
 	text-transform: lowercase;
 }
 
-
+code{
+    font-family: 'Courier New', Courier, monospace;
+    font-variant-ligatures: none;
+}
 
 
 /* NAVIGACE nad zápisem */
