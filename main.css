@@ -1,10 +1,10 @@
 /*@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap");*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 :root {
 	--main-font-family: "Inter", sans-serif;
-    --normal-font-weight: 400;
-    --bold-font-weight: 600;
+    
+    --bold-font-weight: 700;
 
 	--green-light: #30ad66;
 	--green-dark: #0a7739;
@@ -19,11 +19,13 @@
 .light {
 	--bg: #fdfdfd;
 	--text: #1a1a1a;
+    --normal-font-weight: 500;
 }
 
 .dark {
 	--bg: #141414;
 	--text: #dddddd;
+    --normal-font-weight: 400;
 }
 * {
 	box-sizing: border-box;
@@ -106,7 +108,7 @@ h5 + p{
 }
 
 code{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Consolas','Courier New', Courier, monospace;
     font-variant-ligatures: none;
 }
 
