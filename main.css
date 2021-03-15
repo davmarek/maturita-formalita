@@ -1,7 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap");
+/*@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap");*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap');
 
 :root {
-	--main-font: "Rubik", sans-serif;
+	--main-font-family: "Inter", sans-serif;
+    --normal-font-weight: 400;
+    --bold-font-weight: 600;
 
 	--green-light: #30ad66;
 	--green-dark: #0a7739;
@@ -24,7 +27,7 @@
 }
 * {
 	box-sizing: border-box;
-	font-family: var(--main-font);
+	font-family: var(--main-font-family);
 	margin: 0;
 }
 main * + * {
@@ -35,19 +38,21 @@ body {
 	margin: 0;
 	background: var(--bg);
 	color: var(--text);
+
+    font-weight: var(--normal-font-weight);
 }
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
 	text-transform: uppercase;
+    font-weight: var(--bold-font-weight);
 }
 h1 {
 	line-height: 1.2;
 }
-h2,
-h3,
-h4 {
+h2, h3, h4, h5 {
 	line-height: 1.35;
 }
 
@@ -71,7 +76,7 @@ nav a {
 	color: white;
 	background: var(--btn-background);
 	text-decoration: none;
-	font-weight: 700;
+	font-weight: var(--bold-font-weight);
 
 	padding: 0.6em 0.8em;
 
@@ -124,7 +129,7 @@ main img.half {
 
 /* TEXTOVÉ CLASSKY */
 .b {
-	font-weight: 700;
+	font-weight: var(--bold-font-weight);
 }
 .i {
 	font-style: italic;
