@@ -19,12 +19,14 @@
 .light {
 	--bg: #fdfdfd;
 	--text: #1a1a1a;
+    --text-light: #838383;
     --normal-font-weight: 500;
 }
 
 .dark {
 	--bg: #141414;
 	--text: #dddddd;
+    --text-light: #646464;
     --normal-font-weight: 400;
 }
 * {
@@ -99,17 +101,25 @@ h5 + p{
 	font-weight: var(--normal-font-weight);
 }
 
-.c{
+
+.center{
     text-align: center;
+}
+.left{
+    text-align: left;
+}
+.right{
+    text-align: right;
 }
 
 .low {
 	text-transform: lowercase;
 }
 
-code{
+code, .code{
     font-family: 'Consolas','Courier New', Courier, monospace;
     font-variant-ligatures: none;
+    font-size: 1.1em;
 }
 
 
@@ -182,9 +192,6 @@ main img.half {
 
 
 
-
-
-
 /* LISTY */
 main > ul,
 main > ol {
@@ -208,6 +215,17 @@ body > div:last-child {
 ul.hide-style,
 ol.hide-style {
 	list-style: none;
+}
+
+
+/* TABLE */
+table{
+    border-collapse: collapse;
+}
+
+th, td{
+    padding:  0.8em;
+    border: 1px solid var(--text-light);
 }
 
 /* THEME SWITCHER (přepínař dark modu) */

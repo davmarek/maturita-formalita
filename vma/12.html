@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>12. JAVA – Proměnné a řídicí příkazy</title>
+
+		<link rel="stylesheet" href="../main.css" />
+		<script src="../main.js" defer></script>
+	</head>
+	<body>
+		<div id="theme-switcher"></div>
+		<a id="scroll-up" href="#" class="hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="feather feather-arrow-up"
+			>
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</a>
+
+		<nav>
+			<a href="../">Rozcestník</a>
+		</nav>
+
+		<main>
+			<h1>12. JAVA – Proměnné a řídicí příkazy</h1>
+
+			<h2>Proměnné</h2>
+			<p>
+				Proměnné se deklarují pomocí příkazu ve tvaru
+				<code class="b">typ název_proměnné;</code>
+			</p>
+			<p>
+				Proměnnou se inicializují pomocí příkazu ve tvaru
+				<code class="b">typ prom = hodnota;</code>
+			</p>
+
+			<h2>Primitivní datové typy</h2>
+			<p>
+				Primitivní datové typy nejsou objekty ve smyslu objektového
+				programování, ale spíše normální binární hodnoty.
+			</p>
+
+			<ul>
+				<li>Boolean - Reprezentuje hodnoty true/false</li>
+				<li>Char - Znak</li>
+				<li>Byte - 8bitové celé číslo</li>
+				<li>Short - Krátké celé číslo</li>
+				<li>Int - Celé číslo</li>
+				<li>Long - Dlouhé celé číslo</li>
+				<li>
+					Float - Číslo s plovoucí desetinou čárkou s jednoduchou
+					přesností
+				</li>
+				<li>
+					Double - Číslo s plovoucí desetinou čárkou s dvojitou
+					přesností
+				</li>
+			</ul>
+
+			<table>
+				<tr>
+					<th>Typ</th>
+					<th>Velikost v bitech</th>
+					<th class="left">Rozsah</th>
+				</tr>
+				<tr>
+					<td class="center">Byte</td>
+					<td class="center">8</td>
+					<td>-128 až 127</td>
+				</tr>
+				<tr>
+					<td class="center">Short</td>
+					<td class="center">16</td>
+					<td>-32 768 až 32 767</td>
+				</tr>
+				<tr>
+					<td class="center">Int</td>
+					<td class="center">32</td>
+					<td>-2 147 483 648 až 2 147 483 647</td>
+				</tr>
+				<tr>
+					<td class="center">Long</td>
+					<td class="center">64</td>
+					<td>
+						-9 223 372 036 854 775 808 až 9 223 372 036 854 775 807
+					</td>
+				</tr>
+			</table>
+
+			<h2>Referenční datové typy</h2>
+			<p>
+				Referenční datové typy jsou objekty a pole. Hodnota referenční
+				proměnné je odkaz (reference) do paměti na místo, kde je objekt
+				(nebo pole) uložen. V jiných programovacích jazycích se používá
+				pro tento účel pointerů (ukazatelů do paměti), v Javě se přímo s
+				pamětí nepracuje, místo pointerů se používají referenční
+				proměnné.
+			</p>
+			<p>
+				Jelikož referenční proměnná obsahuje pouze odkaz na objekt,
+				nikoli objekt samotný, přiřazením její hodnoty jiné proměnné se
+				přiřadí opět pouze reference na původní objekt, nikoli jeho
+				samotná data tak, jak to bylo u primitivních datových typů.
+				Porovnejte přiřazení v následujícím příkladu (pokud nerozumíte
+				syntaxi v druhé polovině příkladu, nelekejte se, k objektům se
+				dostaneme v dalších dílech).
+			</p>
+
+			<h2>Možnost přetypování</h2>
+			<p>
+				U přetypování musím převádět na odpovídající typy, nebo může
+				dojít ke ztrátě informací. Například pokud použiju přetypování z
+				double nebo long na int.
+			</p>
+			<p>
+				<code class="b">double x, y;</code>
+				<br />
+				<code class="b">(int) (x / y);</code>
+			</p>
+
+			<h2>Aritmetické operátory</h2>
+			<table>
+				<tr>
+					<td class="center code">+</td>
+					<td>Sčítání</td>
+				</tr>
+				<tr>
+					<td class="center code">-</td>
+					<td>Odečítání</td>
+				</tr>
+				<tr>
+					<td class="center code">*</td>
+					<td>Násobení</td>
+				</tr>
+				<tr>
+					<td class="center code">/</td>
+					<td>Dělení</td>
+				</tr>
+				<tr>
+					<td class="center code">%</td>
+					<td>Modulo (zbytek po dělení)</td>
+				</tr>
+				<tr>
+					<td class="center code">++</td>
+					<td>Inkrementace (zvýší o 1)</td>
+				</tr>
+				<tr>
+					<td class="center code">--</td>
+					<td>Dekrementace (sníží o 1)</td>
+				</tr>
+			</table>
+
+			<h2>Relační operátory</h2>
+			<table>
+				<tr>
+					<td class="center code">==</td>
+					<td>Rovná se</td>
+				</tr>
+				<tr>
+					<td class="center code">!=</td>
+					<td>Nerovná se</td>
+				</tr>
+				<tr>
+					<td class="center code">></td>
+					<td>Větší než</td>
+				</tr>
+				<tr>
+					<td class="center code"><</td>
+					<td>Menší než</td>
+				</tr>
+				<tr>
+					<td class="center code">>=</td>
+					<td>Větší nebo rovno</td>
+				</tr>
+				<tr>
+					<td class="center code"><=</td>
+					<td>Menší nebo rovno</td>
+				</tr>
+			</table>
+
+			<h2>Logické operátory</h2>
+			<table>
+				<tr>
+					<td class="center code">&</td>
+					<td>AND</td>
+				</tr>
+				<tr>
+					<td class="center code">|</td>
+					<td>OR</td>
+				</tr>
+				<tr>
+					<td class="center code">^</td>
+					<td>XOR (výhradní OR)</td>
+				</tr>
+				<tr>
+					<td class="center code">||</td>
+					<td>Zkratové OR</td>
+				</tr>
+				<tr>
+					<td class="center code">&&</td>
+					<td>Zkratové AND</td>
+				</tr>
+				<tr>
+					<td class="center code">!</td>
+					<td>NOT</td>
+				</tr>
+			</table>
+
+			<p>
+				Logické operátory lze použít například následovně:
+				<br />
+				<b><code>if (b1 | b2) Příkaz...</code></b> (Pokud je b1 true
+				nebo b2, tak se podmínka splní)
+			</p>
+
+			<p>
+				Zkratové operátory se používají například následovně:
+				<br />
+				<b><code>if (a = 1 && b = 2 || b>3) Příkaz...</code></b>
+			</p>
+
+			<h2>Přiřazení</h2>
+			<p>
+				Operátor přiřazení se zapisuje pomocí =
+				<br />
+				<b>Proměnná = výraz;</b>
+				<br />
+				Typ proměně musí být kompatibilní s typem, který nabývá výraz.
+				Nemůžu tak dát například text do intu.
+				<br />
+				Zároveň operátor umožňuje řetězit:
+				<b>Prom1 = Prom2 = Prom3 = 7;</b>
+			</p>
+
+			<h2>Zkrácené přiřazení</h2>
+			<p>
+				Jazyk Java umožňuje používat operátory zkráceného přiřazení,
+				které zjednoduší psaní kódu.
+				<br />
+				<u>Přiřazení:</u> <b><code>x = x + 10;</code></b>
+				<br />
+				<u>Zkrácené přiřazení:</u> <b><code>x += 10;</code></b>
+			</p>
+			<p>Všechny operátory zkráceného přiřazení:</p>
+			<table class="code">
+				<tr>
+					<td>+=</td>
+					<td>-=</td>
+					<td>*=</td>
+					<td>/=</td>
+				</tr>
+				<tr>
+					<td>%=</td>
+					<td>&=</td>
+					<td>|=</td>
+					<td>^=</td>
+				</tr>
+			</table>
+
+			<h2>Příkazy if</h2>
+			<p>
+				<b>if(podmínka){</b><br />
+				&#160;&#160;<b>Příkaz...</b> (pokud je podmínka pravdivá provede
+				se cíl příkazu) <br />
+				<b>}else{</b> (else není povinný) <br />
+				&#160;&#160; <b>Příkaz...</b> (pokud podmínka není pravdivá
+				provede se příkaz, je li else uveden) <br />
+				}
+			</p>
+
+			<h2>Vnořený if</h2>
+			<p>
+				Vnořený if je příkaz if, který je obsažen v jiném příkazu if. V
+				programování jsou vnořené if velmi časté a je nutné pamatovat,
+				že else odkazuje vždy na nejbližší příkaz if.
+			</p>
+
+			<h2>Else</h2>
+			<p>
+				Else funguje jak je již zmíněno nahoře. Dává se za if a provede
+				se ve chvíli, kdy není podmínka splněna. Další možností je
+				<b>else if</b>, který funguje jako else, ale má v sobě další
+				parametry jako má if.
+			</p>
+
+			<h2>Switch</h2>
+			<p>
+				Příkaz switch poskytuje vícenásobné větvení. To znmená, že
+				umožňuje programu volit si mezi různými možnostmi. Lze sestavit
+				i z příkaz if, ale použití switch je efektivnější.
+			</p>
+			<p>
+				Funguje tak, že switch dostane určitou hodnotu a hledá shodu.
+				Jakmile je shoda nalezena, provede příkaz uvnitř.
+			</p>
+			<p>
+				Switch lze udělat také vnořený (case bude obsahovat další
+				switch).
+			</p>
+			<p>
+				<b>
+					switch(výraz) { <br />
+					&#160; &#160; case moznost1: <br />
+					&#160; &#160; &#160; &#160; Příkaz...
+				</b>
+				(Většinou se dává na konec break, aby ukončil cyklus) <br />
+				<b>
+					&#160; &#160; case moznost2: <br />
+					&#160; &#160; &#160; &#160;Příkaz... <br />
+				</b>
+
+				&#160; &#160; <b>default:</b> (Default je základní hodnota,
+				provede se tak, pokud se žádná možnost neshoduje s hodnotou)
+				<br />
+				&#160; &#160; &#160; &#160; <b>Příkaz...</b><br />
+				}
+			</p>
+
+			<h2>Cykly for</h2>
+			<p>
+				Obsahuje řídící proměnnou, která se při běhu mění. Cyklus má
+				pevný počet opakování (počítá se díky již zmíněné řídící
+				proměnné). Pro příklad se přičítá (i++) a dokud nedosáhne určité
+				hodnoty, se kterou již nesplní podmínku (i < 5) tak se cyklus
+				opakuje.
+			</p>
+
+			<p class="b">
+				<code>
+					for(inicializace; podmínka; interakce){ <br />
+					&#160; &#160; Příkaz... <br />
+					}
+				</code>
+			</p>
+
+			<h2>For-each</h2>
+			<p>
+				Cyklus for-each slouží k tomu, když je potřeba prozkoumat každý
+				prvek pole od začátku do konce.
+			</p>
+			<p>
+				<u>Příklad:</u> <br />
+				<code>
+					int cisla[] = { 1, 2, 3, 4, 5 }; <br />
+					int soucet = 0; <br />
+					for(int i: cisla) soucet += i;
+				</code>
+			</p>
+
+			<h2>While</h2>
+			<p>Příkaz while se opakuje do doby, dokud není splněna podmínka</p>
+			<p>
+				<code>
+					while(podmínka){ <br />
+					&#160; &#160; Příkaz... (V příkazu upravuje podmínku) <br />
+					}
+				</code>
+			</p>
+
+			<h2>Do-while</h2>
+			<p>
+				Oproti cyklům for a while, kde se testuje podmínka na začátku
+				cyklu, tak ji cyklus do while kontroluje až na konci. Příkaz je
+				tak tedy spuštěn minimálně jednou.
+			</p>
+			<p>
+				<code>
+					do { <br />
+					&#160; &#160; Příkaz... <br />
+					} while(podmínka);
+				</code>
+			</p>
+
+			<h2>Vnořené cykly</h2>
+			<p>
+				Vnořený cyklus je cyklus, který je obsažen v jiném cyklu.
+				Vnořené cykly umožňují řešit nejrůznější programátorské problémy
+				(například neexistující přítelkyně) a jsou klíčovou součástí
+				programování.
+			</p>
+
+			<h2>Break</h2>
+			<p>
+				Příkazem break lze vynutit okamžité ukončení cyklu. Program
+				přitom přeskočí veškerý zbývající kód v těle cyklu a pokračuje
+				dalším příkazem, který následuje za cyklem.
+			</p>
+
+			<h2>Continue</h2>
+			<p>
+				Příkaz continue je v zásadě doplňkem příkazu break. Příkaz
+				continue vynutí, aby proběhla další integrace v cyklu. Při tom
+				přeskočí následující kód a pokračuje až u podmínky cyklu
+				(například u for přeskočí kód a pokračuje až v dalším cyklu).
+			</p>
+		</main>
+
+		<script src="../smooth-scroll.min.js"></script>
+		<script>
+			var scroll = new SmoothScroll('a[href*="#"]');
+		</script>
+	</body>
+</html>
