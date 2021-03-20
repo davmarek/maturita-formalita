@@ -280,7 +280,7 @@ td {
 }
 
 /* Odkazy */
-main a {
+main :not(nav) a {
 	color: var(--green-light);
 }
 
