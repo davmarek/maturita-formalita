@@ -1,10 +1,10 @@
 /*@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap");*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
 
 :root {
 	--main-font-family: "Inter", sans-serif;
-    
-    --bold-font-weight: 700;
+
+	--bold-font-weight: 700;
 
 	--green-light: #30ad66;
 	--green-dark: #0a7739;
@@ -14,24 +14,40 @@
 
 	--box-shadow-img: 0 0 24px rgba(0, 0, 0, 0.1);
 	--box-shadow-btn: 0 0 24px -8px var(--green-dark);
+
+	--border-radius: 8px;
 }
 
 .light {
 	--bg: #fdfdfd;
 	--text: #1a1a1a;
-    --text-light: #838383;
-    --normal-font-weight: 500;
+	--text-light: #838383;
+	--normal-font-weight: 500;
+
+	--code-bg: #f6f8fa;
+	--code-blue: #4a86e8;
+	--code-red: #cc0000;
+	--code-purple: #9900ff;
+	--code-yellow: #c79a66;
+	--code-comment: grey;
 }
 
 .dark {
 	--bg: #141414;
 	--text: #dddddd;
-    --text-light: #646464;
-    --normal-font-weight: 400;
+	--text-light: #646464;
+	--normal-font-weight: 400;
+
+	--code-bg: #282c34;
+	--code-blue: #59afef;
+	--code-red: #e06c75;
+	--code-purple: #bd78dd;
+	--code-yellow: #c79a66;
+	--code-comment: grey;
 }
 * {
 	box-sizing: border-box;
-	font-family: var(--main-font-family);
+
 	margin: 0;
 }
 main * + * {
@@ -43,9 +59,9 @@ body {
 	background: var(--bg);
 	color: var(--text);
 
-    font-weight: var(--normal-font-weight);
+	font-family: var(--main-font-family);
+	font-weight: var(--normal-font-weight);
 }
-
 
 /* NADPISY */
 h1,
@@ -54,26 +70,29 @@ h3,
 h4,
 h5 {
 	text-transform: uppercase;
-    font-weight: var(--bold-font-weight);
+	font-weight: var(--bold-font-weight);
 }
 h1 {
 	line-height: 1.2;
 }
-h2, h3, h4, h5 {
+h2,
+h3,
+h4,
+h5 {
 	line-height: 1.35;
 }
 
 p + h2,
 p + h3,
 p + h4,
-p + h5{
-    margin-top: 1.6em;
+p + h5 {
+	margin-top: 1.6em;
 }
 ul + h2,
 ul + h3,
 ul + h4,
-ul + h5{
-    margin-top: 1.6em;
+ul + h5 {
+	margin-top: 1.6em;
 }
 
 /* PARAGRAFY*/
@@ -84,11 +103,9 @@ p {
 h2 + p,
 h3 + p,
 h4 + p,
-h5 + p{
-    margin-top: 0.2em;
+h5 + p {
+	margin-top: 0.2em;
 }
-
-
 
 /* TEXTOVÉ CLASSKY */
 .b {
@@ -101,27 +118,62 @@ h5 + p{
 	font-weight: var(--normal-font-weight);
 }
 
-
-.center{
-    text-align: center;
+.center {
+	text-align: center;
 }
-.left{
-    text-align: left;
+.left {
+	text-align: left;
 }
-.right{
-    text-align: right;
+.right {
+	text-align: right;
 }
 
 .low {
 	text-transform: lowercase;
 }
 
-code, .code{
-    font-family: 'Consolas','Courier New', Courier, monospace;
-    font-variant-ligatures: none;
-    font-size: 1.1em;
+code,
+.code {
+	font-family: "Consolas", "Courier New", Courier, monospace;
+	font-variant-ligatures: none;
+	font-size: 1.1em;
+	line-height: 1.4;
+
+	transition: color 500ms, background-color 500ms;
 }
 
+code {
+	display: block;
+	padding: 1.2em;
+	background-color: var(--code-bg);
+	border-radius: var(--border-radius);
+}
+
+code .b,
+.code .b {
+	color: var(--code-blue);
+	font-weight: var(--normal-font-weight);
+}
+
+code .r,
+.code .r {
+	color: var(--code-red);
+}
+
+code .p,
+.code .p {
+	color: var(--code-purple);
+}
+
+code .y,
+.code .y {
+	color: var(--code-yellow);
+}
+
+code .comment,
+.code .comment {
+	color: var(--code-comment);
+}
 
 /* NAVIGACE nad zápisem */
 body > nav {
@@ -146,7 +198,7 @@ nav a {
 	margin: 8px 0;
 	margin-right: 8px;
 
-	border-radius: 8px;
+	border-radius: var(--border-radius);
 
 	box-shadow: var(--box-shadow-btn);
 }
@@ -177,7 +229,7 @@ main img {
 	display: block;
 	margin: 1em auto 2em;
 
-	border-radius: 8px;
+	border-radius: var(--border-radius);
 	box-shadow: var(--box-shadow-img);
 }
 
@@ -189,8 +241,6 @@ main img.half {
 .dark img.invertable {
 	filter: invert(1);
 }
-
-
 
 /* LISTY */
 main > ul,
@@ -217,15 +267,21 @@ ol.hide-style {
 	list-style: none;
 }
 
-
 /* TABLE */
-table{
-    border-collapse: collapse;
+table {
+	border-collapse: collapse;
 }
 
-th, td{
-    padding:  0.8em;
-    border: 1px solid var(--text-light);
+th,
+td {
+	padding: 0.8em;
+	border: 1px solid var(--text-light);
+	border-radius: 0 !important;
+}
+
+/* Odkazy */
+main a {
+	color: var(--green-light);
 }
 
 /* THEME SWITCHER (přepínař dark modu) */

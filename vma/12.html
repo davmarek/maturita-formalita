@@ -39,11 +39,17 @@
 			<h2>Proměnné</h2>
 			<p>
 				Proměnné se deklarují pomocí příkazu ve tvaru
-				<code class="b">typ název_proměnné;</code>
+				<code
+					><span class="p">typ</span>
+					<span class="r">název_proměnné</span>;</code
+				>
 			</p>
 			<p>
 				Proměnnou se inicializují pomocí příkazu ve tvaru
-				<code class="b">typ prom = hodnota;</code>
+				<code>
+					<span class="p">typ</span> <span class="r">prom</span> =
+					<span class="y">hodnota</span>;
+				</code>
 			</p>
 
 			<h2>Primitivní datové typy</h2>
@@ -125,9 +131,13 @@
 				double nebo long na int.
 			</p>
 			<p>
-				<code class="b">double x, y;</code>
-				<br />
-				<code class="b">(int) (x / y);</code>
+				<code>
+					<span class="p">double</span> <span class="r">x</span>,
+					<span class="r">y</span>;
+					<br />
+					(<span class="p">int</span>) (<span class="r">x</span> /
+					<span class="r">y</span>);
+				</code>
 			</p>
 
 			<h2>Aritmetické operátory</h2>
@@ -220,20 +230,31 @@
 
 			<p>
 				Logické operátory lze použít například následovně:
-				<br />
-				<b><code>if (b1 | b2) Příkaz...</code></b> (Pokud je b1 true
-				nebo b2, tak se podmínka splní)
+
+				<code>
+					<span class="p">if</span> (<span class="r">b1</span> |
+					<span class="r">b2</span>)
+					<span class="comment">Příkaz...</span>
+				</code>
+				(Pokud je b1 true nebo b2, tak se podmínka splní)
 			</p>
 
 			<p>
 				Zkratové operátory se používají například následovně:
-				<br />
-				<b><code>if (a = 1 && b = 2 || b>3) Příkaz...</code></b>
+
+				<code>
+					<span class="p">if</span> (<span class="r">a</span> ==
+					<span class="y">1</span> <span class="b">&&</span>
+					<span class="r">b</span> == <span class="y">2</span>
+					<span class="b">||</span> <span class="r">b</span> >
+					<span class="y">3</span>)
+					<span class="comment">Příkaz...</span>
+				</code>
 			</p>
 
 			<h2>Přiřazení</h2>
 			<p>
-				Operátor přiřazení se zapisuje pomocí =
+				Operátor přiřazení se zapisuje pomocí:
 				<br />
 				<b>Proměnná = výraz;</b>
 				<br />
@@ -249,9 +270,16 @@
 				Jazyk Java umožňuje používat operátory zkráceného přiřazení,
 				které zjednoduší psaní kódu.
 				<br />
-				<u>Přiřazení:</u> <b><code>x = x + 10;</code></b>
+				<b>Přiřazení:</b>
+				<code>
+					<span class="r">x</span> = <span class="r">x</span> +
+					<span class="y">10</span>;
+				</code>
 				<br />
-				<u>Zkrácené přiřazení:</u> <b><code>x += 10;</code></b>
+				<b>Zkrácené přiřazení:</b>
+				<code>
+					<span class="r">x</span> += <span class="y">10</span>;
+				</code>
 			</p>
 			<p>Všechny operátory zkráceného přiřazení:</p>
 			<table class="code">
@@ -271,13 +299,24 @@
 
 			<h2>Příkazy if</h2>
 			<p>
-				<b>if(podmínka){</b><br />
-				&#160;&#160;<b>Příkaz...</b> (pokud je podmínka pravdivá provede
-				se cíl příkazu) <br />
-				<b>}else{</b> (else není povinný) <br />
-				&#160;&#160; <b>Příkaz...</b> (pokud podmínka není pravdivá
-				provede se příkaz, je li else uveden) <br />
-				}
+				<code>
+					<span class="p">if</span> (<span class="r">podmínka</span>)
+					{<br />
+					&#160;&#160; Příkaz...
+					<span class="comment">
+						(pokud je podmínka pravdivá provede se cíl příkazu)
+					</span>
+					<br />
+					} <span class="p">else</span> {
+					<span class="comment">(else není povinný)</span> <br />
+					&#160;&#160; Příkaz...
+					<span class="comment">
+						(pokud podmínka není pravdivá provede se příkaz, je li
+						else uveden)
+					</span>
+					<br />
+					}
+				</code>
 			</p>
 
 			<h2>Vnořený if</h2>
@@ -310,22 +349,29 @@
 				switch).
 			</p>
 			<p>
-				<b>
-					switch(výraz) { <br />
-					&#160; &#160; case moznost1: <br />
+				<code>
+					<span class="p">switch</span> (<span class="r">výraz</span>)
+					{ <br />
+					&#160; &#160; <span class="p">case</span>
+					<span class="r">moznost1</span>: <br />
 					&#160; &#160; &#160; &#160; Příkaz...
-				</b>
-				(Většinou se dává na konec break, aby ukončil cyklus) <br />
-				<b>
-					&#160; &#160; case moznost2: <br />
-					&#160; &#160; &#160; &#160;Příkaz... <br />
-				</b>
+					<span class="comment">
+						(Většinou se dává na konec break, aby ukončil cyklus)
+					</span>
+					<br />
 
-				&#160; &#160; <b>default:</b> (Default je základní hodnota,
-				provede se tak, pokud se žádná možnost neshoduje s hodnotou)
-				<br />
-				&#160; &#160; &#160; &#160; <b>Příkaz...</b><br />
-				}
+					&#160; &#160; <span class="p">case</span>
+					<span class="r">moznost2</span>: <br />
+					&#160; &#160; &#160; &#160; Příkaz... <br />
+					&#160; &#160; <span class="p">default</span>:
+					<span class="comment"
+						>(Default je základní hodnota, provede se tak, pokud se
+						žádná možnost neshoduje s hodnotou)
+					</span>
+					<br />
+					&#160; &#160; &#160; &#160; Příkaz... <br />
+					}
+				</code>
 			</p>
 
 			<h2>Cykly for</h2>
@@ -337,9 +383,13 @@
 				opakuje.
 			</p>
 
-			<p class="b">
+			<p>
 				<code>
-					for(inicializace; podmínka; interakce){ <br />
+					<span class="p">for</span> (
+					<span class="r">inicializace</span>;
+					<span class="r"> podmínka</span>;
+					<span class="r"> interakce</span>) {
+					<br />
 					&#160; &#160; Příkaz... <br />
 					}
 				</code>
@@ -351,11 +401,15 @@
 				prvek pole od začátku do konce.
 			</p>
 			<p>
-				<u>Příklad:</u> <br />
+				<b>Příklad:</b>
 				<code>
-					int cisla[] = { 1, 2, 3, 4, 5 }; <br />
-					int soucet = 0; <br />
-					for(int i: cisla) soucet += i;
+					<span class="p">int</span> <span class="r">cisla</span>[] =
+					{ <span class="y">1, 2, 3, 4, 5</span> }; <br />
+					<span class="p">int</span> <span class="r">soucet</span> =
+					<span class="y">0</span>; <br />
+					<span class="p">for</span>(<span class="p">int</span>
+					<span class="r">i</span>: <span class="r">cisla</span>)
+					<span class="r">soucet</span> += <span class="r">i</span>;
 				</code>
 			</p>
 
@@ -363,8 +417,12 @@
 			<p>Příkaz while se opakuje do doby, dokud není splněna podmínka</p>
 			<p>
 				<code>
-					while(podmínka){ <br />
-					&#160; &#160; Příkaz... (V příkazu upravuje podmínku) <br />
+					<span class="p">while</span> (
+					<span class="r">podmínka</span>
+					) { <br />
+					&#160; &#160; Příkaz...
+					<span class="comment">(V příkazu upravuje podmínku)</span>
+					<br />
 					}
 				</code>
 			</p>
@@ -377,9 +435,11 @@
 			</p>
 			<p>
 				<code>
-					do { <br />
+					<span class="p">do</span> { <br />
 					&#160; &#160; Příkaz... <br />
-					} while(podmínka);
+					} <span class="p">while</span> (<span class="r"
+						>podmínka</span
+					>);
 				</code>
 			</p>
 

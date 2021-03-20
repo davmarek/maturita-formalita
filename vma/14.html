@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>14. JAVA - Dědičnost, balíčky a rozhraní</title>
+
+		<link rel="stylesheet" href="../main.css" />
+		<script src="../main.js" defer></script>
+	</head>
+	<body>
+		<div id="theme-switcher"></div>
+		<a id="scroll-up" href="#" class="hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="feather feather-arrow-up"
+			>
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</a>
+
+		<nav>
+			<a href="../">Rozcestník</a>
+		</nav>
+
+		<main>
+			<h1>14. JAVA - Dědičnost, balíčky a rozhraní</h1>
+
+			<p>
+				Základy dědičnosti, konstruktory v dědičnosti, přepisování metod
+				(polymorfizmus), abstraktní metody, klíčové slova public,
+				private, protected a final, balíčky, rozhraní a jejich
+				implementace.
+			</p>
+
+			<h2>Základy dědičnosti</h2>
+			<p>
+				Jeden z hlavních principů OOP. Jeho základní myšlenka spočívá v
+				následujícím principu:
+				<b>
+					každá třída má svého předchůdce, po kterém dědí veškeré
+					proměnné a metody
+				</b>
+			</p>
+
+			<p>
+				Chceme-li dědit z nějaké třídy, použijeme slovo
+				<b>extends</b> mezi jménem třídy a jménem třídy, ze které
+				dědíme.
+			</p>
+
+			<p>
+				Nejvyšší třídou je třída <b>Object</b>. Ta je základem všech
+				tříd (i těch, které nedědí z ničeho)
+			</p>
+			<p>
+				<b>Příklad:</b> <br />
+				<code>
+					<span class="comment">
+						// třída Osoba dědí od třídy Object
+					</span>
+					<br />
+					<span class="p">public class</span>
+					<span class="y">Osoba</span> { <br />
+
+					&#160; &#160; <span class="p">public String</span>
+					<span class="r">jmeno</span>; <br />
+
+					&#160; &#160; <span class="p">public</span>
+					<span class="b">Osoba</span>(<span class="p">String</span>
+					<span class="r">jmeno</span>) {<br />
+
+					&#160; &#160; &#160; &#160;
+					<span class="y">this</span>.<span class="r">jmeno</span> =
+					<span class="r">jmeno</span>;<br />
+					&#160; &#160; } <br />
+					}
+
+					<br />
+					<br />
+
+					<span class="comment">
+						// třída Zamestnanec dědí od třídy Osoba
+					</span>
+					<br />
+					<span class="p">public class</span>
+					<span class="y">Zamestnanec </span>
+					<span class="r">extends</span>
+					<span class="y">Osoba</span> { <br />
+
+					&#160; &#160; <span class="p">public int</span>
+					<span class="r">plat</span>; <br />
+
+					&#160; &#160; <span class="p">public</span>
+					<span class="b">Zamestnanec</span>(<span class="p"
+						>String</span
+					>
+					<span class="r">jmeno</span>,
+					<span class="p">int</span>
+					<span class="r">plat</span>) {<br />
+
+					&#160; &#160; &#160; &#160;
+					<span class="b">super</span>(<span class="r">jmeno</span
+					>);<br />
+
+					&#160; &#160; &#160; &#160;
+					<span class="y">this</span>.<span class="r">plat</span> =
+					<span class="r">plat</span>;<br />
+					&#160; &#160; } <br />
+					}
+				</code>
+			</p>
+
+			<h2>Konstruktory v dědičnosti</h2>
+			<p>
+				V konstruktoru Zaměstnance používáme metodu <b>super()</b>. Do
+				té vložíme data, potřebné v kontruktoru nadřazené třídy; Osoba
+				potřebuje v kontruktoru jméno -> do argumentů super() dáme
+				jméno.
+			</p>
+
+			<h2>Přepisování metod (<span class="low">polymorfizmus</span>)</h2>
+			<p>
+				Polymorfizmus zde funguje stejně jako v rámci jedné třídy. Pokud
+				funkcionalitu metody nezměníme, bude fungovat jako v nadřazené
+				třídě. Přepíšeme-li ji, bude mít funkci novou.
+			</p>
+			<p>
+				Po přepsání určité metody je možné zavolat původní metodu pomocí
+				klíčového slova <b>super</b>.
+
+				<code>
+					<span class="y">super</span>.<span class="b"
+						>nazevMetody</span
+					>();
+				</code>
+			</p>
+
+			<h2>Abstraktní metody</h2>
+			<p>
+				Java umožňuje vytvořit něco jako “šablonovou třídu”, ze které
+				budeme dědit.
+			</p>
+			<p>
+				V takové - abstraktní - třídě jsou zapsané abstraktní metody,
+				jejich parametry a návratové typy. Tyto metody musíme po dědění
+				v jiné třídě implementovat; dát jim funkcionalitu.
+
+				<code>
+					<span class="p">abstract class</span>
+					<span class="y">AbstraktniTrida</span> { <br />
+
+					&#160; &#160; <span class="p">public abstract int</span>
+					<span class="r">metoda</span>(<span class="p">int</span>
+					<span class="r">cislo1</span>, <span class="p">int</span>
+					<span class="r">cislo2</span>);<br />}
+
+					<br />
+					<br />
+
+					<span class="p">class</span>
+					<span class="y">JinaTrida </span>
+					<span class="r">extends</span>
+					<span class="y">AbstraktniTrida</span> { <br />
+
+					&#160; &#160; <span class="p">public int</span>
+					<span class="r">metoda</span>(<span class="p">int</span>
+					<span class="r">cislo1</span>, <span class="p">int</span>
+					<span class="r">cislo2</span>){ <br />
+					&#160; &#160; &#160; &#160;
+					<span class="comment">// tělo metody</span> <br />
+					&#160; &#160; }<br />}
+				</code>
+			</p>
+
+			<h2>Klíčové slova public, private, protected a final</h2>
+			<p>Těmito klíčovýmy slovy mohou být označeny proměnné a metody.</p>
+			<p>
+				Modifikátory přístupu (public, protected, private) určují
+				viditelnost proměnných a metod ve vztahu k ostatním třídám.
+			</p>
+
+			<h3 class="low">public</h3>
+			<p>
+				Proměnná nebo metoda je <b>viditelná v celém projektu</b>. Jze
+				ji zavolat nebo k ní přistoupit <b>kdekoliv</b>.
+			</p>
+
+			<h3 class="low">protected</h3>
+			<p>
+				Přoměnná nebo metoda je <b>viditelná</b> v celém
+				package(balíčku), kde je definována. Navíc z ní
+				<b>lze dědit</b> i v jiných balíčcích.
+			</p>
+			<h3 class="low">bez modifikátoru</h3>
+			<p>
+				Proměnná nebo metoda je viditelná v celém package(balíčku), kde
+				je definována. V jiných balíčcích je ale <b>nepřístupná</b>.
+			</p>
+			<h3 class="low">private</h3>
+			<p>
+				Proměnná nebo metoda je viditelná <b>pouze ve třídě</b>, kde je
+				definována.
+			</p>
+			<h3 class="low">final</h3>
+			<p>
+				Používá se pro <b>znemožnění</b> proměnné nebo metodě
+				<b>být přepsána</b>. Hodnota takové proměnné je <b>neměnná</b>.
+				Tělo takové funkce také <b>nejde změnit/přepsat</b>; je finální.
+			</p>
+
+			<h2>Balíčky</h2>
+			<p>
+				Každý .java soubor musí patřit do nějakého balíčku. Deklaraci o
+				jaký balíček se jedná může mít soubor jen jednu, a to na
+				začátku.
+
+				<code> <span class="r">package</span> nazev_balicku; </code>
+			</p>
+
+			<p>
+				Balíčky pak můžeme přidávat/importovat:
+
+				<code> <span class="r">import </span> java.util.Scanner; </code>
+			</p>
+
+			<p>
+				Buď uvedeme přímo třídu kterou chceme importovat, nebo pomocí
+				symbolu hvězdičky vybereme všechny.
+
+				<code> <span class="r">import </span> java.util.*; </code>
+			</p>
+
+			<h2>Rozhraní a jejich implementace</h2>
+			<p>
+				Rozhraní je alternativa k abstraktní třídě. Výhoda je, že jedna
+				třída může implementovat více rozhraní (interface).
+			</p>
+
+			<p>
+				<code>
+					<span class="p">public interface</span>
+					<span class="y">IPtak</span> { <br />
+					&#160; &#160; <span class="p">void</span>
+					<span class="r">pipni</span>(); <br />
+					&#160; &#160; <span class="p">void</span>
+					<span class="r">dychej</span>(); <br />
+					}
+					<br />
+					<br />
+
+					<span class="p">public interface</span>
+					<span class="y">IJester</span> { <br />
+					&#160; &#160; <span class="p">void</span>
+					<span class="r">kousni</span>(); <br />
+					}
+					<br />
+					<br />
+
+					<span class="p">public class</span>
+					<span class="y">PtakoJester</span>
+					<span class="r">implements</span>
+					<span class="y">IPtak</span>,
+					<span class="y">IJester </span> { <br />
+					&#160; &#160;
+					<span class="comment">implementování metod</span> <br />
+
+					}
+				</code>
+			</p>
+
+			<h2>Zdroje</h2>
+			<p>
+				<a
+					href="https://www.interval.cz/clanky/naucte-se-javu-tridy-a-objekty-2/"
+				>
+					https://www.interval.cz/clanky/naucte-se-javu-tridy-a-objekty-2/
+				</a>
+				<a href="https://www.algoritmy.net/article/23665/Dedicnost-12">
+					https://www.algoritmy.net/article/23665/Dedicnost-12
+				</a>
+
+				<a
+					href="https://beginnersbook.com/2013/05/java-access-modifiers/"
+				>
+					https://beginnersbook.com/2013/05/java-access-modifiers/
+				</a>
+			</p>
+		</main>
+
+		<script src="../smooth-scroll.min.js"></script>
+		<script>
+			var scroll = new SmoothScroll('a[href*="#"]');
+		</script>
+	</body>
+</html>
