@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>13. JAVA - Objektové programování</title>
+
+		<link rel="stylesheet" href="../main.css" />
+		<script src="../main.js" defer></script>
+	</head>
+	<body>
+		<div id="theme-switcher"></div>
+		<a id="scroll-up" href="#" class="hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="feather feather-arrow-up"
+			>
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</a>
+
+		<nav>
+			<a href="../">Rozcestník</a>
+			<a href="#konstruktory">Konstruktory</a>
+			<a href="#static">Static & this</a>
+			<a href="#variabilni">Variabilní počet argumentů</a>
+		</nav>
+
+		<main>
+			<h1>13. JAVA - Objektové programování</h1>
+
+			<p>
+				Třídy, metody (návratové datové typy, argumenty, parametry),
+				konstruktory, přetěžování metod a konstruktorů, klíčové slovo
+				static a this, variabilní počet argumentů.
+			</p>
+
+			<h2>Třída</h2>
+
+			<ul>
+				<li>definuje data a metody</li>
+				<li>slouží jako šablona pro vytváření instancí</li>
+				<li>
+					data mohou být buď:
+					<ul>
+						<li>proměnné primitivního datového typu nebo</li>
+						<li>odkazy na další objekty</li>
+					</ul>
+				</li>
+				<li>instancemi tříd jsou objekty</li>
+			</ul>
+
+			<p>
+				Samotná třída tedy nepředstavuje vlastní informace, jedná se
+				pouze o <b>předlohu, data obsahují až objekty</b>. Objektů jedné
+				třídy přitom může existovat
+				<b>libovolné množství</b> (samozřejmě také žádný).
+			</p>
+
+			<h2>Metody</h2>
+			<p>
+				Návratový typ metody může být
+				<span class="b i">primitivní datový typ</span> (int, bool,
+				float,...), <span class="b i">reference</span> (na objekt) nebo
+				<span class="b i">void</span> (žádná hodnota není vrácena).
+			</p>
+
+			<p>
+				Za návratovým typem a názvem metody je v kulatých závorkách
+				napsán seznam parametrů (a jejich typů) oddělených čárkami.
+			</p>
+
+			<p>
+				<code>
+					<span class="p">void</span>
+					<span class="b">nazevMetody</span>(<span class="p"
+						>int
+					</span>
+					<span class="r">prvniParametr</span>,
+					<span class="p">bool</span>
+					<span class="r">druhyParametr</span>){...};
+				</code>
+			</p>
+
+			<p>Argument je už samotná instance, dosazená do parametru.</p>
+			<p>
+				Výsledek metody (návratová hodnota) je uveden klíčovým slovem
+				<b>return</b>.
+			</p>
+
+			<h2 id="konstruktory">Konstruktory</h2>
+			<p>
+				Speciálním typem metody je tzv. <b>konstruktor</b>. Tato metoda
+				nemá jméno (jmenuje se stejně jako třída) a obsahuje
+				<b>inicializaci</b> objektu.
+			</p>
+			<p>
+				Konstruktor je volán <b>automaticky</b> při vytváření objektu.
+				Pokud při deklaraci konstruktor nepopíšete, konstruktor je
+				automaticky <b>prázdný</b>.
+			</p>
+
+			<h2>Přetěžování metod a konstruktorů</h2>
+			<p>
+				<b>Konstruktorů</b> jednoho objektu, nebo
+				<b>metod se stejným jménem</b> v jednom objektu
+				<b>může být i více</b>, musí se však <b>lišit v parametrech</b>,
+				aby Java poznala, <b>který konstruktor nebo metodu</b> chcete
+				<b>zavolat</b>.
+			</p>
+			<p>Této vlastnosti se říká <b>polymorfismus</b>.</p>
+
+			<h2 id="static">
+				Klíčové slovo <span class="i low">static</span> &
+				<span class="i low">this</span>
+			</h2>
+
+			<p>
+				Klíčové slovo <span class="b i">static</span> můžeme přidat před
+				datový typ proměnné nebo metody.
+			</p>
+			<p>
+				<code>
+					<span class="p">static int</span>
+					<span class="r">statickaPromenna</span> =
+					<span class="y">6</span>;
+				</code>
+			</p>
+
+			<p>
+				Takto označené proměnné a metody jsou
+				<b> přistoupitelné i bez vytvoření instance </b>; za pomocí
+				názvu třídy.
+			</p>
+			<p>
+				<code>
+					<span class="r">NazevTridy</span>.<span class="r"
+						>statickaPromenna</span
+					>
+					= <span class="y">12</span>;
+				</code>
+			</p>
+
+			<p>
+				Statická proměnná má <b>“stálou” hodnotu</b>, ve všech
+				instancích. Pokud ji někde změníme, změní se ve všech ostatních
+				instancích.
+			</p>
+
+			<p>
+				Statická metoda
+				<b>nedokáže pracovat s ne-statickými</b> proměnnými. Může
+				přistoupit ke <b>statickým proměnným</b> třídy, nebo použít
+				<b>parametry</b> pro získání jiných hodnot.
+			</p>
+
+			<p>
+				Kličové slovo <span class="b i">this</span> může být použito k
+				přístupu k proměnným a metodám třídy. Například v konstruktoru,
+				když se názvy parametrů shodují s názvy proměnných ve třídě.
+			</p>
+
+			<p>
+				<code>
+					<span class="p">public class</span>
+					<span class="y">Trida</span> { <br />
+
+					&#160; &#160; <span class="p">int</span>
+					<span class="r">x</span> = <span class="y">10</span>; <br />
+
+					&#160; &#160; <span class="b">Trida</span>(<span class="p"
+						>int</span
+					>
+					<span class="r">x</span>) {<br />
+
+					&#160; &#160; &#160; &#160;
+					<span class="y">this</span>.<span class="r">x</span> =
+					<span class="r">x</span>;<br />
+					&#160; &#160; } <br />
+					}
+				</code>
+			</p>
+
+			<h2 id="variabilni">Variabilní počet argumentů</h2>
+			<p>
+				Variabilního počtu argumentů (0 nebo více) lze dosáhnout
+				napsáním
+				<b>třech teček</b> (&nbsp;.&nbsp;.&nbsp;.&nbsp;) za datový typ
+				parametru.
+			</p>
+
+			<p>
+				<code>
+					<span class="p">void</span>
+					<span class="b">nazevMetody</span>(<span class="p"
+						>int
+					</span>
+					... <span class="r">variabilni</span>)
+				</code>
+			</p>
+
+			<p>
+				Taková proměnná může být napsána jako poslední. <br />
+				Takhle <b>NE</b>: <br />
+				<code>
+					<span class="p">void</span>
+					<span class="b">nazevMetody</span>(<span class="p"
+						>int
+					</span>
+					... <span class="r">variabilni</span>,
+					<span class="p">int </span
+					><span class="r">dalsiPromenna</span>)
+				</code>
+			</p>
+
+			<h2>Zdroje</h2>
+			<p>
+				<a
+					href="https://www.interval.cz/clanky/naucte-se-javu-tridy-a-objekty-1/"
+					target="_blank"
+				>
+					https://www.interval.cz/clanky/naucte-se-javu-tridy-a-objekty-1/
+				</a>
+			</p>
+		</main>
+
+		<script src="../smooth-scroll.min.js"></script>
+		<script>
+			var scroll = new SmoothScroll('a[href*="#"]');
+		</script>
+	</body>
+</html>
