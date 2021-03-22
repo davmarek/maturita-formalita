@@ -114,6 +114,9 @@ h5 + p {
 .i {
 	font-style: italic;
 }
+.u {
+	text-decoration: underline;
+}
 .n {
 	font-weight: var(--normal-font-weight);
 }
