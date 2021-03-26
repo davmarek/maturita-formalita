@@ -107,6 +107,15 @@ h5 + p {
 	margin-top: 0.2em;
 }
 
+/* Odkazy */
+:not(nav) a {
+	color: var(--green-light);
+}
+
+:not(nav) a:visited {
+	color: var(--green-light);
+}
+
 /* TEXTOVÉ CLASSKY */
 .b {
 	font-weight: var(--bold-font-weight);
@@ -206,6 +215,10 @@ nav a {
 	box-shadow: var(--box-shadow-btn);
 }
 
+nav a:visited {
+	color: white;
+}
+
 nav a.disabled {
 	background: linear-gradient(to bottom right, #cccccc, #afafaf);
 	opacity: 0.3;
@@ -280,11 +293,6 @@ td {
 	padding: 0.8em;
 	border: 1px solid var(--text-light);
 	border-radius: 0 !important;
-}
-
-/* Odkazy */
-main :not(nav) a {
-	color: var(--green-light);
 }
 
 /* THEME SWITCHER (přepínař dark modu) */
