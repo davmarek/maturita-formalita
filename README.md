@@ -14,11 +14,11 @@
 * [x] 11
 * [x] 12
 * [x] 13
-* [ ] 14 (Nekompletní)
-* [ ] 15 (Nekompletní)
-* [ ] 16 (Nekompletní)
+* [x] 14
+* [x] 15
+* [x] 16
 * [ ] 17 (Nekompletní)
-* [ ] 18 (Nekompletní)
+* [x] 18
 * [x] 19
 * [x] 20
 
