@@ -60,7 +60,7 @@ body {
 	color: var(--text);
 
 	font-family: var(--main-font-family);
-	font-weight: var(--normal-font-weight);
+	font-weight: 400;
 }
 
 /* NADPISY */
@@ -217,7 +217,6 @@ nav a {
 	border-radius: 16px;
 
 	box-shadow: var(--box-shadow-btn);
-	transition: 250ms ease-in-out;
 }
 
 nav a:visited {
