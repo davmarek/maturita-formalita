@@ -20,72 +20,165 @@
 			h2 {
 				margin-top: 2em;
 			}
+
+			.heading-flex {
+				margin-top: 2em;
+				display: inline-flex;
+				align-items: center;
+			}
+			.heading-label {
+				margin: 0;
+				margin-left: 8px;
+				background-color: rgba(255, 255, 255, 0.1);
+				font-size: 14px;
+				line-height: 1.2;
+				padding: 6px 16px;
+
+				border-radius: 50vh;
+			}
 		</style>
 		<script src="main.js" defer></script>
 	</head>
 	<body>
 		<div id="theme-switcher"></div>
 		<main>
-			<h1>DVK <small class="n">by Dominik Machalík</small></h1>
+			<div class="heading-flex">
+				<h1>DVK</h1>
+				<span class="heading-label">by Dominik Machalík</span>
+			</div>
 
 			<nav>
-				<a href="dvk/1.html">1. Pravěk</a>
-				<a href="dvk/2.html">2. Egypt</a>
-				<a href="dvk/3.html">3. Mezopotámie a egejské oblasti</a>
-				<a href="dvk/4.html">4. Řecké antické umění</a>
-				<a href="dvk/5.html">5. Římské antické umění</a>
-				<a href="dvk/6.html">6. Raně křesťanské a byzantské umění</a>
-				<a href="dvk/7.html">7. Předrománské umění</a>
-				<a href="dvk/8.html">8. Románské umění</a>
-				<a href="dvk/9.html">9. Gotika</a>
+				<a href="dvk/1.html">
+					<div class="num">1</div>
+					Pravěk
+				</a>
+				<a href="dvk/2.html"
+					><div class="num">2</div>
+					Egypt</a
+				>
+				<a href="dvk/3.html"
+					><div class="num">3</div>
+					Mezopotámie a egejské oblasti</a
+				>
+				<a href="dvk/4.html"
+					><div class="num">4</div>
+					Řecké antické umění</a
+				>
+				<a href="dvk/5.html"
+					><div class="num">5</div>
+					Římské antické umění</a
+				>
+				<a href="dvk/6.html"
+					><div class="num">6</div>
+					Raně křesťanské a byzantské umění</a
+				>
+				<a href="dvk/7.html"
+					><div class="num">7</div>
+					Předrománské umění</a
+				>
+				<a href="dvk/8.html"
+					><div class="num">8</div>
+					Románské umění</a
+				>
+				<a href="dvk/9.html"
+					><div class="num">9</div>
+					Gotika</a
+				>
 				<a href="dvk/10.html">
-					10. Renesance <small>(Evropa)</small>
+					<div class="num">10</div>
+					Renesance <small>(Evropa)</small>
 				</a>
 				<a href="dvk/11.html">
-					11. Renesance <small>(České země)</small>
+					<div class="num">11</div>
+					Renesance <small>(České země)</small>
 				</a>
 				<a href="dvk/12.html">
-					12. Baroko a rokoko <small>(Evropa)</small>
+					<div class="num">12</div>
+					Baroko a rokoko <small>(Evropa)</small>
 				</a>
 				<a href="dvk/13.html">
-					13. Baroko a rokoko
+					<div class="num">13</div>
+					Baroko a rokoko
 					<small>(České země)</small>
 				</a>
-				<a href="dvk/14.html">14. Klasicismus</a>
-				<a href="dvk/15.html">15. Historismus a secese</a>
-				<a href="dvk/16.html"> 16. Romantismus a realismus </a>
+				<a href="dvk/14.html"
+					><div class="num">14</div>
+					Klasicismus</a
+				>
+				<a href="dvk/15.html"
+					><div class="num">15</div>
+					Historismus a secese</a
+				>
+				<a href="dvk/16.html">
+					<div class="num">16</div>
+					Romantismus a realismus
+				</a>
 				<a href="dvk/17.html" class="wip" title="Nedokončené">
-					17. Impresionismus a postimpresionismus
+					<div class="num">17</div>
+					Impresionismus a postimpresionismus
 				</a>
 				<a href="dvk/18.html">
-					18. Architektura a design 20. století
+					<div class="num">18</div>
+					Architektura a design 20. století
 				</a>
 				<a href="dvk/19.html">
-					19. Malířství a sochařství 1. pol. 20. století
+					<div class="num">19</div>
+					Malířství a sochařství 1. pol. 20. století
 				</a>
 				<a href="dvk/20.html">
-					20. Malířství a sochařství 2. pol. 20. a 21. století
+					<div class="num">20</div>
+					Malířství a sochařství 2. pol. 20. a 21. století
 				</a>
 				<a href="dvk/DVK Obrazové přílohy.pdf" download>
 					Obrazové přílohy
 				</a>
 			</nav>
 
-			<h1>VMA <small class="n">(WorkInProgress)</small></h1>
+			<div class="heading-flex">
+				<h1>VMA</h1>
+				<span class="heading-label">Work In Progress</span>
+			</div>
+
 			<nav>
-				<a href="vma/1.html">1. Elektronická komunikace</a>
-				<a href="vma/3.html">3. Operační systémy</a>
-				<a href="vma/4.html">4. Historie PC a číselné soustavy</a>
-				<a href="vma/5.html">5. Architektura a periferie PC</a>
-				<a href="vma/7.html">7. Hry</a>
-				<a href="vma/8.html" class="wip" title="Nedokončené"
-					>8. HTML a CSS</a
-				>
-				<a href="vma/9.html">9. Redakční systémy</a>
-				<a href="vma/12.html">12. JAVA – Proměnné a řídicí příkazy</a>
-				<a href="vma/13.html"> 13. JAVA - Objektové programování </a>
+				<a href="vma/1.html">
+					<div class="num">1</div>
+					Elektronická komunikace
+				</a>
+				<a href="vma/3.html">
+					<div class="num">3</div>
+					Operační systémy
+				</a>
+				<a href="vma/4.html">
+					<div class="num">4</div>
+					Historie PC a číselné soustavy
+				</a>
+				<a href="vma/5.html">
+					<div class="num">5</div>
+					Architektura a periferie PC
+				</a>
+				<a href="vma/7.html">
+					<div class="num">7</div>
+					Hry
+				</a>
+				<a href="vma/8.html" class="wip" title="Nedokončené">
+					<div class="num">8</div>
+					HTML a CSS
+				</a>
+				<a href="vma/9.html">
+					<div class="num">9</div>
+					Redakční systémy
+				</a>
+				<a href="vma/12.html">
+					<div class="num">12</div>
+					JAVA – Proměnné a řídicí příkazy
+				</a>
+				<a href="vma/13.html">
+					<div class="num">13</div>
+					JAVA - Objektové programování
+				</a>
 				<a href="vma/14.html">
-					14. JAVA - Dědičnost, balíčky a rozhraní
+					<div class="num">14</div>
+					JAVA - Dědičnost, balíčky a rozhraní
 				</a>
 			</nav>
 
