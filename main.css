@@ -69,6 +69,7 @@ h2,
 h3,
 h4,
 h5 {
+	margin-top: 0.2em;
 	text-transform: uppercase;
 	font-weight: var(--bold-font-weight);
 }
@@ -92,6 +93,13 @@ ul + h2,
 ul + h3,
 ul + h4,
 ul + h5 {
+	margin-top: 1.6em;
+}
+
+a + h2,
+a + h3,
+a + h4,
+a + h5 {
 	margin-top: 1.6em;
 }
 
