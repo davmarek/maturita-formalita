@@ -90,21 +90,18 @@
 				<li><b>Verze 5.1, 5.2, 5.3</b></li>
 			</ul>
 
-            
 			<h2>Vznik a vývoj CSS</h2>
 			<p>
 				vznikly v roce 1996 snaha oddělit obsah od formátovacích pokynů
 				3 verze (CSS1, CSS2, CSS3)
 			</p>
 
-
 			<h2>Základní struktura stránky</h2>
-			<h3><code>&lt;html&gt;</code></h3>
+			<h3>&lt;html&gt;</h3>
 			<p>
 				Začíná a končí celý dokument nepovinná, prohlížeče si domýšlí
 				nemá žádné atributy další obsah musí být uvnitř
 			</p>
-
 
 			<h3><code>&lt;head&gt;</code></h3>
 			<p>
@@ -112,28 +109,24 @@
 				(title, meta, link, style, script aj.)
 			</p>
 
-
-			<h3><code>&lt;body&gt;</code></h3>
+			<h3>&lt;body&gt;</h3>
 			<p>
 				tělo dokumentu obsahuje veškerý zobrazovaný obsah stránky můžeme
 				nastavit různé atributy
 			</p>
 
-
-			<h3><code>&lt;!-- poznámka --&gt;</code></h3>
+			<h3>&lt;!-- poznámka --&gt;</h3>
 			<p>
-				vše, co je obaleno v <code>&lt;!—- -—&gt;</code> se nezobrazuje také se říká
-				komentáře
+				vše, co je obaleno v <code>&lt;!—- -—&gt;</code> se nezobrazuje
+				také se říká komentáře
 			</p>
 
-
-
-			<h3><code>&lt;!doctype&gt;</code></h3>
+			<h3>&lt;!doctype&gt;</h3>
 			<p>
-				na začátku souboru před <code>&lt;html&gt;</code> obsahuje specifikaci DTD
-				(Document Type Definition) - návod pro prohlížeč, jak zpracovat
-				dokument obsahuje HTML verzi můžeme přepínat zobrazovací módy
-				CSS
+				na začátku souboru před <code>&lt;html&gt;</code> obsahuje
+				specifikaci DTD (Document Type Definition) - návod pro
+				prohlížeč, jak zpracovat dokument obsahuje HTML verzi můžeme
+				přepínat zobrazovací módy CSS
 			</p>
 
 			<h2>Obsah hlavičky</h2>
@@ -142,9 +135,7 @@
 				hlavně pro prohlížeč.
 			</p>
 
-
-
-			<h3><code>&lt;title&gt;</code></h3>
+			<h3>&lt;title&gt;</h3>
 			<p>
 				titulek stránky, text bude chápán jako titulek stránky párový
 				tag zobrazuje se v záhlaví okna, ve vyhledávačích, používá se
@@ -152,8 +143,7 @@
 				různý software
 			</p>
 
-
-			<h3><code>&lt;link&gt;</code></h3>
+			<h3>&lt;link&gt;</h3>
 			<p>
 				Spojitost s jiným souborem, neviditelný vztah pro propojení s
 				CSS souborem, ikony stránky, skriptu, odkaz na jinou jazykovou
@@ -171,15 +161,14 @@
 				<li>disabled: zrušení platnosti (kvůli skriptům)</li>
 			</ul>
 			<p>
-				např.: <code>
-                    &lt;link rel=&quot;stylesheet&quot;
-                    type=&quot;text/css&quot; href=„soubor.css&quot;&gt;
-                </code>
+				např.:
+				<code>
+					&lt;link rel=&quot;stylesheet&quot;
+					type=&quot;text/css&quot; href=„soubor.css&quot;&gt;
+				</code>
 			</p>
 
-
-
-			<h3><code>&lt;meta&gt;</code></h3>
+			<h3>&lt;meta&gt;</h3>
 			<p>
 				nepárový tag obsahuje informace o dokumentu v praxi je využívá
 				pouze vyhledávací roboti nebo software
@@ -221,25 +210,27 @@
 				<li>property: podobný jako name</li>
 			</ul>
 			<p>
-				např.: <code>
-                    &lt;meta name=&quot;description&quot;
-                    content=&quot;popisek pro vyhledávače“&gt;
-                </code>
+				např.:
+				<code>
+					&lt;meta name=&quot;description&quot; content=&quot;popisek
+					pro vyhledávače“&gt;
+				</code>
 			</p>
 
 			<h2>Tagy a jejich zápis</h2>
 			<p>
-				HTML značky (tagy) jsou uzavřeny ve špičatých závorkách <code>
-                    &lt;
-                    &gt;
-                </code> tag má přesnou syntaxi chybně napsaný tag prohlížeč
-				ignoruje Párové tagy určují začátek a konec počáteční tag je
-				uzavřen ve <code>&lt; &gt;</code> a konečný ve <code>&lt;/ &gt;</code> nesmí se křížit
-				mohou se vnořovat např.: odstaven <code>&lt;p&gt;&lt;/p&gt;</code>, nadpis
-				<code>&lt;h1&gt;&lt;/h1&gt;</code> Nepárové tagy nemají ukončovací značku
-				neuzavírají žádný text např,: obrázek <code>&lt;img&gt;</code>, zalomení
-				textu <code>&lt;br&gt;</code> pokud to tag umožňuje používat atributy, píšou
-				se za název tagu např.: <code>&lt;img src=„obrazek.jpg“&gt;</code>
+				HTML značky (tagy) jsou uzavřeny ve špičatých závorkách
+				<code> &lt; &gt; </code> tag má přesnou syntaxi chybně napsaný
+				tag prohlížeč ignoruje Párové tagy určují začátek a konec
+				počáteční tag je uzavřen ve <code>&lt; &gt;</code> a konečný ve
+				<code>&lt;/ &gt;</code> nesmí se křížit mohou se vnořovat např.:
+				odstaven <code>&lt;p&gt;&lt;/p&gt;</code>, nadpis
+				<code>&lt;h1&gt;&lt;/h1&gt;</code> Nepárové tagy nemají
+				ukončovací značku neuzavírají žádný text např,: obrázek
+				<code>&lt;img&gt;</code>, zalomení textu
+				<code>&lt;br&gt;</code> pokud to tag umožňuje používat atributy,
+				píšou se za název tagu např.:
+				<code>&lt;img src=„obrazek.jpg“&gt;</code>
 			</p>
 
 			<h2>Tagy pro text</h2>
@@ -247,70 +238,73 @@
 				Všechny tagy na úpravu textu jsou párové a řádkové (nezalomí
 				řádek)
 			</p>
-			<h3><code>&lt;b&gt;</code></h3>
+			<h3>&lt;b&gt;</h3>
 			<p>
 				tučné písmeno, bold používá se často ke zvýraznění tagem
 				<code>&lt;b&gt;</code> říkám, že je něco tučným písmem
 			</p>
-			<h3><code>&lt;i&gt;</code></h3>
+			<h3>&lt;i&gt;</h3>
 			<p>kurzíva, italic</p>
-			<h3><code>&lt;u&gt;</code></h3>
+			<h3>&lt;u&gt;</h3>
 			<p>podtržení, underline</p>
-			<h3><code>&lt;sub&gt;</code></h3>
+			<h3>&lt;sub&gt;</h3>
 			<p>
 				dolní index, subscript pro další zmenšování je možno použít
 				vícekrát za sebou
 			</p>
-			<h3><code>&lt;sup&gt;</code></h3>
+			<h3>&lt;sup&gt;</h3>
 			<p>horní index, supscript</p>
-			<h3><code>&lt;small&gt;</code></h3>
+			<h3>&lt;small&gt;</h3>
 			<p>
 				zmenšení písma o jeden stupeň možno použít vícekrát za sebou je
 				zastaralý, ale stále funguje
 			</p>
-			<h3><code>&lt;big&gt;</code></h3>
+			<h3>&lt;big&gt;</h3>
 			<p>zvětší písma o jeden stupeň zastaralý</p>
-			<h3><code>&lt;s&gt; &lt;strike&gt; &lt;del&gt;</code></h3>
+			<h3>&lt;s&gt; &lt;strike&gt; &lt;del&gt;</h3>
 			<p>přeškrtnuté písmo, striked</p>
-			<h3><code>&lt;font&gt;</code></h3>
+			<h3>&lt;font&gt;</h3>
 			<p>
 				nastavení barvy, velikosti a fontu písma zastaralý, doporučuje
-				se nepoužívat např.: 
-                    <code>
-                        &lt;font color=&quot;red&quot;
-                        face=&quot;Arial, Helvetica&quot;&gt;
-                    </code>červené písmo
-                    Arialem<code>&lt;/font&gt; dá se nahradit &lt;span&gt;</code>
-                
+				se nepoužívat např.:
+				<code>
+					&lt;font color=&quot;red&quot; face=&quot;Arial,
+					Helvetica&quot;&gt; </code
+				>červené písmo Arialem<code
+					>&lt;/font&gt; dá se nahradit &lt;span&gt;</code
+				>
 			</p>
-			<h3><code>&lt;span&gt;</code></h3>
+			<h3>&lt;span&gt;</h3>
 			<p>
 				Logické vymezení části textu, která bude jinak formátována nebo
-				na ni bude vázán skript příbuzný <code>&lt;div&gt</code>;, ale je in-line
-				obecné atributy (font, barva, pozadí, velikost, tloušťka…)
+				na ni bude vázán skript příbuzný <code>&lt;div&gt</code>;, ale
+				je in-line obecné atributy (font, barva, pozadí, velikost,
+				tloušťka…)
 			</p>
-			<h3><code>&lt;strong&gt;</code></h3>
+			<h3>&lt;strong&gt;</h3>
 			<p>
 				silné zvýraznění prohlížeče pro něj používají tučné písmo tagem
-				<code>&lt;strong&gt;</code> říkám, že je něco důležité, zvýrazněné
+				<code>&lt;strong&gt;</code> říkám, že je něco důležité,
+				zvýrazněné
 			</p>
-			<h3><code>&lt;em&gt;</code></h3>
+			<h3>&lt;em&gt;></h3>
 			<p>zvýraznění, emphasis prohlížeče vykreslují kurzívou</p>
-			<h3><code>&lt;cite&gt;</code></h3>
+			<h3>&lt;cite&gt;</h3>
 			<p>
-				citace na rozdíl od blokové citace <code>&lt;blockquote&gt;</code> nezalamuje
-				řádek (je in-line) nepoužívá se
+				citace na rozdíl od blokové citace
+				<code>&lt;blockquote&gt;</code> nezalamuje řádek (je in-line)
+				nepoužívá se
 			</p>
-			<h3><code>&lt;q&gt;</code></h3>
+			<h3>&lt;q&gt;</h3>
 			<p>
-				citace narozdíl od <code>&lt;cite&gt;</code> prohlížeče dělají uvozovky
-				(kromě Internet Explorer)
+				citace narozdíl od <code>&lt;cite&gt;</code> prohlížeče dělají
+				uvozovky (kromě Internet Explorer)
 			</p>
-			<h3><code>&lt;code&gt;</code></h3>
+			<h3>&lt;code&gt;</h3>
 			<p>
 				Výpis kódu, například programu Prohlížeče používají
 				neproporcionální písmo (strojopis) používá se velmi zřídka
-			<code></p></code>
+			</p>
 		</main>
 
 		<script src="../smooth-scroll.min.js"></script>
