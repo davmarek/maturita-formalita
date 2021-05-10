@@ -31,7 +31,7 @@
 * [x] 4 - David
 * [x] 5 - Kuba
 * [x] 7 - David
-* [ ] 8 - Kuba a David (Hry)
+* [x] 8 - Kuba
 * [x] 9 - David
 * [ ] 10 - Kuba (PHP)
 * [x] 12 - David
