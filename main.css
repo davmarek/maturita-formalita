@@ -410,11 +410,12 @@ td {
 .img-card .img-card-text .header {
 	font-size: 1.4em;
 	font-weight: var(--bold-font-weight);
+	line-height: 1.2;
 }
 
 .img-card .img-card-text ul {
 	padding-left: 1em;
-	margin-top: 0;
+	margin-top: 0.4em;
 }
 .img-card .img-card-text li {
 	margin-top: 0;
