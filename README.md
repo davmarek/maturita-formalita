@@ -11,7 +11,6 @@
 -   [x] 7
 -   [x] 8
 -   [x] 9
-    -   [ ] dodělat obrázkové karty
 -   [x] 10
     -   [ ] dodělat obrázkové karty
 -   [x] 11
