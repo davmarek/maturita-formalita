@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>10. Základní a objektová konstrukce PHP</title>
+
+		<link rel="stylesheet" href="../main.css" />
+		<script src="../main.js" defer></script>
+	</head>
+	<body>
+		<div id="theme-switcher"></div>
+		<a id="scroll-up" href="#" class="hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="feather feather-arrow-up"
+			>
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</a>
+
+		<nav>
+			<a href="../">Rozcestník</a>
+		</nav>
+
+		<main>
+			<h1>10. Základní a objektová konstrukce PHP</h1>
+
+			<h2>Co je to PHP?</h2>
+			<p>
+				Hypertext Preprocessor je skriptovací (programovací jazyk
+				navržený především k automatizaci úloh, k manipulaci s
+				prostředky stávajícího systému, případně k jejich uzpůsobování
+				potřebám zákazníka nebo uživatele) programovací jazyk. Je určený
+				především pro programování dynamických internetových stránek a
+				webových aplikací.
+			</p>
+
+			<h2>Princip fungování PHP</h2>
+			<p>
+				Při použití PHP pro dynamické stránky jsou skripty prováděny na
+				straně serveru – k uživateli je přenášen až výsledek jejich
+				činnosti. Interpret PHP skriptu je možné volat pomocí
+				příkazového řádku, dotazovacích metod HTTP nebo pomocí webových
+				služeb.
+			</p>
+
+			<h2>Výhody webových aplikací</h2>
+			<ul>
+				<li>
+					<b>Snadná správa</b> - Novou verzi aplikace nahrajeme a v
+					tom okamžiku ji používají úplně všichni.
+				</li>
+				<li>
+					<b>Vysoká bezpečnost</b> - Web i databáze jsou na serveru a
+					pokud neobsahuje nějaké bezpečnostní chyby, je velmi
+					nesnadné aplikaci ukradnout.
+				</li>
+				<li>
+					<b>Vysoká uživatelská základna</b> - Lidé jsou líní stahovat
+					a instalovat. U webové aplikace jen kliknou na odkaz a již s
+					ní pracují. Uživatelů, kteří by používali tu samou aplikaci,
+					kdyby byla na desktopu místo na webu, by bylo podstatně
+					méně. A právě kvůli uživatelům aplikace přeci píšeme. Ať
+					jsou zadarmo nebo jsou placené, vždy chceme, aby je
+					používalo co nejvíce lidí. Toto je hlavní důvod, proč se v
+					poslední době dělá v podstatě veškerý software webový.
+				</li>
+				<li>
+					<b>Vysoká kompatibilita</b> - Jelikož na web přistupujeme
+					přes webový prohlížeč, vůbec nás nezajímá operační systém
+					klienta, naše aplikace funguje prakticky všude, dokonce i na
+					mobilu.
+				</li>
+				<li>
+					Přetrvávají také výhody klientského počítače, tedy že server
+					není zatěžován např. vlastním zobrazováním stránek, to dělá
+					webový prohlížeč.
+				</li>
+			</ul>
+			<h2>Základní syntaxe a řídicí prvky jazyka PHP</h2>
+			<p>
+				Syntaxe jazyka je inspirována několika programovacími jazyky
+				(Perl, C, Pascal a Java). Abychom mohli v PHP programovat,
+				potřebujeme právě webový server, PHP a databázi. Tyto
+				technologie zajišťuje webhosting, na který později svůj hotový
+				web nahrajeme. Abychom nemuseli své stránky ladit na
+				webhostingu, nainstalujeme si služby i na svůj počítač, kde
+				budeme web programovat. Až jako hotový a ozkoušený ho nahrajeme
+				na webhosting. Služby lze nainstalovat jednoduše jako jeden
+				balíček. Webové aplikace často používají linuxový operační
+				systém, webserver Apache, databázi MySQL (nebo její otevřený
+				klon MariaDB) a programovací jazyk PHP. Tato čtveřice je často
+				označována zkratkou LAMP. Všechny zmíněné technologie jsou
+				zadarmo. Pokud následující technologie provozujeme pod Windows,
+				používá se někdy zkratka WAMP.Asi nejpoužívanější instalační
+				balíček, který obsahuje Apache, PHP a MySQL, se nazývá XAMPP.
+				Instalace je velmi jednoduchá.
+			</p>
+			<ul>
+				<li>
+					<b>Apache</b> - Webserver, který zajišťuje komunikaci s
+					klientem. Jedná se o povinnou součást.
+				</li>
+				<li>
+					<b>MySQL</b> - Hojně používaná databáze. Je s ní propojený
+					uživatelsky přívětivý php
+				</li>
+				<li>
+					<b>phpMyAdmin</b> - Uživatelsky přívětivá správa MySQL
+					databáze.
+				</li>
+			</ul>
+			<p>
+				PHP script začíná
+				<?php a končí ?>. PHP soubor má koncovku .php. PHP není key
+				sensitive ale názvy proměnných jsou. Kometáře v PHP se značí buď
+				// anebo #, tyto dvě značky jsou řádkové komentáře. Více řádkový
+				komentář začíná /* a končí */
+			</p>
+			<p>
+				Proměnné v php se můžou deklarovat kdekoliv ve scriptu a dělí se
+				na locální, globální a statické proměnné. Proměnné deklarované
+				mimo funkce můžou být použity pouze mimo funkce, aby se
+				zpřístupnili i ve funkcích musí mít vlastnost global a ta je
+				napsaná až ve funkci, například máme proměnnou $A a ta má
+				hodnotu 1, abychom s ní mohli pracovat ve funkci musí být na
+				prvním řádku funkce napsané global $A.
+			</p>
+			<p>
+				Příkaz echo() do stránky vypíše zadaný text. echo() je funkce a
+				za název každé funkce píšeme závorky, do kterých vložíme její
+				vstupní parametry. Pro echo() je parametrem text, který se má
+				vypsat. Echo se dá také jako jediná fce napsat bez závorek a
+				bude fungovat stejně, pro navázání parametrů proměnných a textu
+				se ukončí uvozovky a mezi další část textu se napíše tečka. I
+				kdyby funkce nepotřebovala ke své úloze žádný parametr, musíme
+				tam napsat závorky, v tom případě prázdné.
+			</p>
+			<p>
+				Proměnné pojmenováváme libovolným názvem bez mezer a diakritiky.
+				Před jejich název píšeme vždy dolar a za inicializaci středník.
+				PHP je tzv. dynamicky typovaný jazyk. To znamená, že datové typy
+				nemusíme u proměnných zadávat (jako třeba v jazyce C), ale PHP
+				si typ podle obsahu proměnné nastaví samo. Mezi typy také PHP
+				samo převádí. Teoreticky nemusíme ani vědět o tom, že proměnná
+				nějaký datový typ má, prakticky bychom se však někdy mohli
+				docela divit, když by PHP samo převedlo něco tak, jak jsme to
+				nečekali.
+			</p>
+			<h2>Formuláře a databáze</h2>
+			<p>
+				S databází ovladač mysql komunikoval pomocí funkce
+				mysql_query(). Jelikož tento ovladač používal staré přístupy,
+				které jsou poměrně nebezpečné (např. bylo nutné ručně ošetřovat
+				parametry dotazů), byl od PHP 5.5 označen jako zastaralý a jeho
+				použití vyvolá chybovou hlášku. Další verze PHP ho již nebudou
+				obsahovat.
+			</p>
+			<p>
+				Pro práci s Db používáme wrapper PDO. PDO je zkratka PHP
+				Database Objects. Jedná se o nejnovější a velmi kvalitní
+				objektový ovladač, který se jednoduše používá a podporuje kromě
+				MySQL ještě několik databází. Funkcím, které začínají mysql, je
+				již v PHP lepší se úplně vyhnout. Na Wraper se v PHP napojuje
+				pomocí příkazu require_once() a jako parametr se pošle cesta k
+				souboru. Dále se dá použít jen require() se stejným parametrem.
+				Rozdíl mezi těmito dvěma příkazy je takový, že require_once()
+				načte soubor na který se odkazuje jednou a už si ho
+				zapamatuje(nechá otevřený) takže z něj můžu volat funkce
+				kdykoliv a kdybych ten samý soubor chtěl někde v kodu načíst
+				znovu, tak to tu část kodu přeskočí, pokud má kod nějaký error
+				tak se zobrazí fatal error a web nejede. Zatím co require()
+				nikdy nezruší web i kdyby tam byly chyby.
+			</p>
+			<h3>
+				PDO obsahuje základní funkce pro práci s databázemi. Mezi hlavní
+				funkce patří:
+			</h3>
+			<ul>
+				<li>connect() – Připojí se k databázi pomocí daných údajů</li>
+				<li>
+					querySingle() - Spustí dotaz a vrátí z něj první sloupec
+					prvního řádku.
+				</li>
+				<li>queryOne() - Spustí dotaz a vrátí z něj první řádek.</li>
+				<li>
+					queryAll() - Spustí dotaz a vrátí všechny jeho řádky jako
+					pole asociativních polí. Z tohoto pole dostanu jednotlivé
+					řádky pomocí foreach( názevPoleSVýsledky as
+					názevJednohoŘádku) a v každém cyklu můžu napsat
+					názevJednohoŘádku[názevSloupceVDB] a získám hodnotu sloupce
+					na řádku cyklu.
+				</li>
+				<li>
+					query() - Spustí dotaz a vrátí počet ovlivněných řádků.
+					Tento příkaz využívám například na ruční přidávání,
+					aktualizování a mazání řádků v DB.
+				</li>
+				<li>
+					insert() - umožňuje snadné vložení záznamu do databáze
+					pomocí asociativního pole.
+				</li>
+				<li>
+					update() - umožňuje snadnou modifikaci záznamu v databázi
+					pomocí asociativního pole.
+				</li>
+			</ul>
+			<p>
+				Query se dá ochránit tím, že místo věcí, co by se měli zapsat do
+				DB dáme “?“ a jak dopíšeme sql příkaz, tak dáme čárku a zde
+				vložíme hodnotu co zadal uživatel.
+			</p>
+
+			<h2>Cookies a Session</h2>
+			<p>
+				Cookies jsou malé textové informace, uložené v prohlížeči
+				návštěvníka webu. Přenáší se vždy s každou další načtenou
+				stránkou, uživatel je může kdykoli odstranit, změnit a přečíst,
+				proto se příliš nehodí k odkládání osobních údajů. Všechny
+				cookies jsou uloženy v superglobální proměnné $_COOKIE, která
+				jednotlivé klíče ukládá jako pole. Pro uložení dat do cookies se
+				používá funkce setcookie(). Prvním parametrem nastavíme klíč
+				cookie, podle kterého ji přečteme z pole $_COOKIE a jako druhý
+				parametr samotná data jako string.Třetím parametrem můžeme
+				(nepovinně) nastavit platnost, po které bude cookie dostupná.
+				Čas dostupnosti se uvádí jako timestamp, pokud chceme tedy
+				nastavit cookie s platností 1 hodina od tohoto okamžiku, tak
+				stačí zapsat jen time() + 3600.
+			</p>
+			<p>
+				Často potřebujeme do cookies uložit větší objem informací,
+				nicméně maximální limit pro cookies je 4 kB, což není moc.
+				Sessions tento problém řeší ukládáním dat na webový server a do
+				prohlížeče klienta uloží jen krátký identifikátor, podle kterého
+				pozná, jaká data patří jakému klientovi. Před jakoukoli práci se
+				sessions, je musíme nejprve nastartovat. To se dělá zavoláním
+				funkce session_start() hned na začátku scriptu. Obsah sessions
+				je uložen na serveru a do prohlížeče klienta se odesílá jen
+				identifikátor, proto uživatel nemůže žádným způsobem zjistit, co
+				je v sessions uloženo. Všechny session jsou uloženy v
+				superglobální proměnné $_SESSION a lze je procházet jako pole.
+				sKaždá uložená session má omezenou platnost, po jakou dobu bude
+				uložena na serveru. PHP přímo v sobě obsahuje cron script, který
+				staré sessions periodicky promazává. Výchozí hodnota je obvykle
+				1440 sekund, což je 24 minut
+			</p>
+		</main>
+
+		<script src="../smooth-scroll.min.js"></script>
+		<script>
+			var scroll = new SmoothScroll('a[href*="#"]');
+		</script>
+	</body>
+</html>
