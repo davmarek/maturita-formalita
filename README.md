@@ -15,7 +15,7 @@
   * [ ] dodělat obrázkové karty
 * [x] 11
   * [ ] dodělat obrázkové karty
-* [ ] 12
+* [x] 12
 * [ ] 13
 * [ ] 14
 * [ ] 15
