@@ -17,7 +17,7 @@
   * [ ] dodělat obrázkové karty
 * [x] 12
 * [x] 13
-* [ ] 14
+* [x] 14
 * [ ] 15
 * [ ] 16
 * [ ] 17 (Nekompletní)
