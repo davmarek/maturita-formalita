@@ -4,6 +4,7 @@
 :root {
 	--main-font-family: "Inter", sans-serif;
 
+	--normal-font-weight: 400;
 	--bold-font-weight: 700;
 
 	--green-light: #30ad66;
@@ -16,13 +17,14 @@
 	--box-shadow-btn: 0 0 24px -8px var(--green-dark);
 
 	--border-radius: 16px;
+
+	--bg-accent: rgba(110, 110, 110, 0.2);
 }
 
 .light {
 	--bg: #fdfdfd;
 	--text: #1a1a1a;
 	--text-light: #838383;
-	--normal-font-weight: 500;
 
 	--code-bg: #f6f8fa;
 	--code-blue: #4a86e8;
@@ -36,7 +38,6 @@
 	--bg: #141414;
 	--text: #dddddd;
 	--text-light: #646464;
-	--normal-font-weight: 400;
 
 	--code-bg: #282c34;
 	--code-blue: #59afef;
@@ -371,4 +372,61 @@ td {
 
 #scroll-up.hidden {
 	opacity: 0;
+}
+
+.cards-flex {
+	display: flex;
+	gap: 16px;
+	align-items: flex-start;
+}
+
+.img-card {
+	flex-basis: 100%;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr auto;
+
+	margin-top: 2em;
+
+	border-radius: var(--border-radius);
+	overflow: hidden;
+	box-shadow: var(--box-shadow-img);
+}
+
+.img-card img {
+	width: 100%;
+	object-fit: cover;
+}
+
+.img-card .img-card-text {
+	background-color: var(--bg-accent);
+	margin: 0;
+	padding: 24px;
+	padding-left: 40px;
+
+	font-size: 14px;
+}
+
+.img-card .img-card-text .header {
+	font-size: 1.4em;
+	font-weight: var(--bold-font-weight);
+}
+
+.img-card .img-card-text ul {
+	padding-left: 1em;
+	margin-top: 8px;
+}
+.img-card .img-card-text li {
+	margin-top: 0;
+}
+
+@media screen and (max-width: 750px) {
+	.cards-flex {
+		flex-direction: column;
+	}
+	.img-card .img-card-text {
+		padding: 16px 24px 24px;
+		padding-left: 32px;
+	}
 }
