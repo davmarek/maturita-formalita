@@ -12,7 +12,9 @@
 * [x] 9
   * [ ] dodělat obrázkové karty
 * [x] 10
-* [ ] 11
+  * [ ] dodělat obrázkové karty
+* [x] 11
+  * [ ] dodělat obrázkové karty
 * [ ] 12
 * [ ] 13
 * [ ] 14
