@@ -51,3 +51,31 @@
 -   [ ] 23 - Kuba
 -   [ ] 24 - David
 -   [ ] 25 - Kuba
+
+
+
+# Jaxe to dělá
+- První si zkopíruj už udělanou stránku
+- Editni title a nadpis (měli by být stejné)
+- Článek/zápisy se píší do tagu ***<main\>***
+
+## Pravidla
+- ***<h1\>*** nadpis je jen JEDEN
+  - podnadpisy jsou h2, h3 (výjimečně h4)
+- odrážkové zápisy používají ***<ul\>*** a v nich jen ***<li\>***
+- článkové zápisy používají jen ***<p\>***
+- ukázka kódu ***<code\>*** je ve vlastním ***<p\>***
+
+## CSS text classky
+Tyto classky jdou použít na vše. Především se používá na ***<ul\>*** nebo pro odnačení části textu tagem ***<span\>***.
+- ***.b*** = bold
+- ***.n*** = normal (tloušťka)
+- ***.u*** = underline
+- ***.i*** = italic
+
+Pokud je většina seznamu tučná, označíme celý list jako ***.b*** , jednotlivé odrážky pak můžeme označit jako ***.n***.
+
+## Navigace a rozcestníky
+Rozcestník ***<nav\>*** je hned nad ***<main\>*** (neznamená, že je rodič). V ***<nav\>*** jsou odkazy ***<a\>*** bez jakýchkoliv classek. Pokud je v *index.html* odkaz na nějaký nedodělaný článek, přídáme mu classku ***.wip***.
+
+Obecně ale doporučuju se řídit podle už udělaných rozcestníků.
