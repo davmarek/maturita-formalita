@@ -31,6 +31,7 @@
 	--code-red: #cc0000;
 	--code-purple: #9900ff;
 	--code-yellow: #c79a66;
+	--code-green: #91bc74;
 	--code-comment: grey;
 }
 
@@ -44,6 +45,7 @@
 	--code-red: #e06c75;
 	--code-purple: #bd78dd;
 	--code-yellow: #c79a66;
+	--code-green: #91bc74;
 	--code-comment: grey;
 }
 * {
@@ -163,6 +165,11 @@ code,
 	transition: color 500ms, background-color 500ms;
 }
 
+.light code,
+.light .code {
+	font-weight: 600;
+}
+
 code {
 	display: block;
 	padding: 1.2em;
@@ -189,6 +196,11 @@ code .p,
 code .y,
 .code .y {
 	color: var(--code-yellow);
+}
+
+code .g,
+.code .g {
+	color: var(--code-green);
 }
 
 code .comment,

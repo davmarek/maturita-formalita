@@ -31,307 +31,268 @@
 
 		<nav>
 			<a href="../">Rozcestník</a>
-			<a href="#abstract">Abstract</a>
-			<a href="#public">Public, Private, Protected</a>
-			<a href="#balicky">Balíčky</a>
-			<a href="#interface">Interface</a>
+			<a href="#try-catch">Try, catch, finally</a>
+			<a href="#vicevlaknove">Vícevláknové</a>
 		</nav>
 
 		<main>
 			<h1>15. JAVA - ZPRACOVÁNÍ VÝJIMEK A VÍCEVLÁKNOVÉ PROGRAMOVÁNÍ</h1>
-			<h2>Úvod</h2>
+
+			<h2>Výjimky</h2>
 			<p>
-				Výjimka je chyba, k níž dojde za běhu programu. Pomocí
-				subsystému Javy pro zpracování výjimek můžeme strukturovaným a
-				řízeným způsobem ošetřovat chyby vzniklé za běhu programu.
-				Výhoda zpracování výjimek spočívá v tom, že automatizuje většinu
-				kódu pro ošetření chyb, který bylo dříve nutné zadávat do
-				jakéhokoliv programu ručně (ruční kontrola je pracná a náchylná
-				k chybám). Zpracování výjimek zjednodušuje ošetřování chyb tím,
-				že umožňuje vašemu programu definovat blok kódu, který se
-				automaticky provede při výskytu chyby. Není tedy nutné ručně
-				kontrolovat úspěch či neúspěch každé jednotlivé operace či
-				volání metody. Jednou z hlavních výhod zpracování výjimek je to,
-				že umožňují Dalším důvodem, proč je zpracování výjimek důležité,
-				je to, že Java definuje standardní výjimky pro běžné chyby
-				programu (dělení nulou, nenalezení souboru...).
+				Výjimky samotné jsou objekty, které dědí ze speciální
+				hierarchie, jejímž kořenem je třída Throwable. Throwable dále
+				rozšiřují třídy Error a Exception.
 			</p>
 
-			<h2>Hierarchie vyjímek</h2>
+			<h3>Error</h3>
 			<p>
-				V Javě jsou všechny výjimky reprezentované jako třídy. Všechny
-				třídy výjimek jsou odvozené od třídy s názvem.
+				Výjimky typu Error bychom neměli v žádném případě ošetřovat –
+				značí totiž kritickou chybu (nedostatech zdrojů pro práci
+				virtuálního stroje, přetečení zásobníku, nenalezení potřebné
+				třídy při classloadingu atp.) – a většině případů je ani ošetřit
+				nemůžeme.
 			</p>
 
+			<h3>Runtime exception</h3>
 			<p>
-				V Javě jsou všechny výjimky reprezentované jako třídy. Všechny
-				třídy výjimek jsou odvozené od třídy s názvem <b>Throwable</b>.
-				Když tedy v programu dojde k nějaké výjimce, vygeneruje se
-				objekt některého z typů tříd výjimek. Třída <b>Throwable</b> má
-				dvě přímé podtřídy: <b>Exception</b> a <b>Error</b>. Výjimky
-				typu <b>Error</b> souvisejí s chybami, k nimž dochází v samotném
-				virtuálním stroji Javy, a ne ve vašem programu. Tyto typy
-				výjimek jsou mimo vaši kontrolu a váš program se jimi obvykle
-				nebude zabývat.
+				Mezi výjimky dědící z Exception patří také podtřída
+				RuntimeException. Runtime exception jsou výjimky, které sice
+				nejsou kritické z hlediska samotné možnosti pokračování aplikace
+				(na rozdíl od Error), ale přesto se velmi často neošetřují.
+				Značí totiž obvykle chyby, které způsobil sám programátor
+				(neplatný index pole, volání nad nullovým ukazatelem...).
 			</p>
 
 			<p>
-				Chyby, které jsou výsledkem činnosti programu, jsou
-				reprezentované jako podtřídy třídy <b>Exception</b> Do této
-				kategorie spadá například:
-			</p>
-			<ul>
-				<li>dělení nulou</li>
-				<li>překročení hranice pole</li>
-				<li>chyby při práci se soubory</li>
-			</ul>
-
-			<p>
-				Obecně platí, že váš program by měl zpracovávat výjimky těchto
-				typů. Důležitou podtřídou třídy <b>Exception</b> je třída
-				<b>RuntimeException</b>,která se používá pro reprezentaci
-				nejrůznějších běžných typů chyb vzniklých za běhu programu.
+				Zvláštní vlastností těchto výjimek je, že nemusíme deklarovat v
+				hlavičce metody možnost jejich vyvolání (klíčové slovo throws).
+				Tím je usnadněno vybublání chyby skrz program a jeho případné
+				ukončení.
 			</p>
 
-			<h2>Základy zpracování výjimek</h2>
-			<ul>
-				<li>
-					Řídí se pomocí pěti klíčových slov:
-					<b>try, catch, throw, throws a finally</b>.
-				</li>
-				<li>
-					Tyto slova tvoří vzájemně související subsystém, v němž
-					použití jednoho zahrnuje použití druhého.
-				</li>
-				<li>
-					Příkazy programu, u nichž chceme sledovat výskyt výjimek, se
-					nachází v bloku <b>try</b>. Dojde-li v bloku <b>try</b> k
-					výjimce, pak se vyvolá.
-				</li>
-				<li>
-					Váš kód může tuto výjimku pomocí bloku <b>catch</b> zachytit
-					a nějakým způsobem ji zpracovat.
-				</li>
-				<li>
-					Pro ruční vyvolání výjimky se používá klíčové slovo
-					<b>throw</b>. V některých případech je nutné uvést pomocí
-					podmínky <b>throws</b> výjimku, která se vyvolává z metody.
-				</li>
-				<li>
-					Klíčové slovo <b>throw</b> se používá v těle metody k
-					vyvolání výjimky a klauzule throws se používá v deklaraci
-					metody (podpis)
-				</li>
-				<li>
-					Jakýkoliv kód, který se musí vždy spustit po opuštění bloku
-					<b>try</b>, je umístěný v bloku <b>finally</b>.
-				</li>
-			</ul>
-
-			<h2>Důsledky nezachycené výjimky</h2>
+			<h3>Exception</h3>
 			<p>
-				Zachycení jedné ze standardních výjimek Javy je zamezení
-				<b>abnormálnímu ukončení programu</b>. Když se volá výjimka,
-				musí ji někde nějaký kousek kódu zachytit. Obecně platí, že
-				pokud váš program výjimku nezachytí, zachytí ji virtuální stroj
-				Javy. Problém je v tom, že výchozí obsluha výjimek virtuální
-				stroje Javy ukončí provádění a zobrazí výpis zásobníku a
-				chybovou zprávu.
+				Zbylé výjimky dědící přímo z Exception značí ty situace, které
+				by se sice neměly stávat, ale na které jsme schopni adekvátně
+				zareagovat. Kód se nejdříve vyzkouší v bloku try a pokud se
+				vyskytnou výjimky tak jsou podle zadaných výjimek v blocích
+				catch následně zpracovány.
+			</p>
+
+			<h2>Důsledek nezachycené výjimky</h2>
+			<p>
+				Pokud výjimku nezachytíme, dojde k vypsání tzv “stack trace“.
+				Jedná se o výpis volání metod na systémovém zásobníku v
+				okamžiku, kdy došlo k výjimce. Tento výstup nám bude významně
+				pomáhat při odstraňování chyb v aplikaci.
+			</p>
+			<p>
+				Ve vývojových prostředích můžeme obvykle na jednotlivé záznamy
+				kliknout a dostat se tak přímo na jednotlivé řádky kódu, které
+				byly volány v okamžiku vzniku výjimky.
 			</p>
 
 			<p>
 				<code>
-					//Necháme virtuální stroj Javy zpracovat výjimku. class
-					Nezachycena{ public static void main(String args[]){ int
-					cisla[] = new int[4] System.out.println(“Před vygenerováním
-					výjimek”); //vygeneruje výjimku index mimo hranice cisla[7]
-					= 10; } }
+					Exception in thread "main" java.lang.ArithmeticException: /
+					by zero <br />
+					&#160; &#160;at HelloWorld.main(HelloWorld.java:10)
 				</code>
 			</p>
 
+			<h2 id="try-catch">Try, catch, finally</h2>
+			<h3>Try</h3>
 			<p>
-				Když dojde k chybě indexu pole, provádění se zastaví a zobrazí
-				se následující chybová zpráva.
+				Je blok, kam uvádíme kód, ve kterém dojde nebo může dojít k
+				výjimce. Pokud kód v tomto bloku proběhne bez výjimek program
+				pokračuje dál, pokud ne program přejde do bloků catch, kde by
+				měli být všechny výjimky řádně ošetřeny.
+			</p>
+			<p>
+				<b>(try with resources)</b> = ulehčení při práci se soubory,
+				stará se samo o vytvoření bloku finally a uzavření souboru.
+			</p>
+
+			<h3>Catch</h3>
+			<p>
+				Jsou bloky kódu, které by měly ošetřovat výjimky, které mohou
+				nastat v kódu bloku try. Tyto bloky by výjimky měly ošetřovat
+				výjimky od té nejspecifičtější po tu nejméně specifickou tedy
+				obecnou Exception, která se postará o zachycení nečekané výjimky
+				nebo výjimky, kterou nejsme schopni ošetřit.
+			</p>
+
+			<h3>Finally</h3>
+			<p>
+				Tento blok se nachází až na konci, po všech blocích catch. Jedná
+				se o blok, který se provede bez ohledu na to, jestli program
+				zachytí výjimku nebo proces proběhne bez výjimek. Finally blok
+				proběhne vždy po tom co proběhne blok try a catch.
+			</p>
+
+			<h3>Throws</h3>
+			<p>
+				Klauzule, sloužící k označení metod, které mohou vyhazovat
+				výjimky. Slouží k uspořádání kódu, protože při větším objemu
+				metod bychom museli ošetřovat každou výjimku zvlášť. Kód
+				uspořádáme poté při volání samotných metod v průběhu programu,
+				třeba i ve větším množství a ušetříme si tak práci.
+			</p>
+
+			<h2 id="vicevlaknove">
+				Vícevláknové programování (skládá se ze 2 a více vláken)
+			</h2>
+
+			<p>
+				Vícevláknové programování umožňuje provádět několik činností v
+				programu paralelně, pokud k tomu program bude mít dostatek
+				prostředků. Průběh programu se tak může výrazně urychlit,
+				protože program může při nenáročných činnostech dělat více
+				činností, třeba ukládat data do databáze nebo provádět výpočty
+				potřebné pro další chod programu.
+			</p>
+
+			<p>
+				Vlákno v Javě můžeme vytvořit dvěma způsoby. Děděním třídy
+				Thread a nebo Implementací rozhraní Runnable. Tyto dva přístupy
+				jsou si rovnocenné a záleží na každém programátorovi, který z
+				nich si vybere. Kód poté běží v metodě run(), kterou naše třída
+				s vytvořeným vláknem přepisuje.(polymorfismus)
+			</p>
+
+			<h3>Daemon</h3>
+			<p>
+				Je vlákno, které je schopno vykonávat potřebné procesy na pozadí
+				a to i když program neběží. Konec programu tedy není závislý na
+				ukončení procesu tohoto vlákna. Příkladem může být garbage
+				collection(proces, který se stará o odstraňování objektů, které
+				v programu již nejsou potřebné). Vlákno můžeme nastavit jako
+				daemon pomocí Thread.setDaemon(boolean) a můžeme ho tak nastavit
+				pouze před jeho spuštěním. Pokud toto provedeme po spuštění, je
+				vyvolána výjimka IllegalThreadStateException.
+			</p>
+
+			<h2>Komunikace mezi vlákny</h2>
+			<p>
+				Vlánka mezi sebou můžou komunikovat pomocí různých metod
+				například pro zjištění stavu vlánka(běží, neběží) atd.
+			</p>
+
+			<h3>IsAlive()</h3>
+			<p>
+				Metoda, která vrací boolean(true/false), odkazující na chod
+				vlákna. Pokud vlákno běží vratí true, pokud ne vrátí false.
+			</p>
+			<p>
 				<code>
-					Před vygenerováním výjimky. Expection in thread “main”
-					java.lang.ArrayIndexOutOfBoundsException: 7 at
-					Nezachycena.main(Nezachycena.java:9)
-				</code>
-				Proto je důležité, aby váš program zpracovával výjimky sám a
-				nespoléhal se na virtuální stroj Javy.
-			</p>
+					<span class="p">public static void</span>
+					<span class="b">main </span>
+					(<span class="y">String</span>[]
+					<span class="r">args</span>)
+					<span class="p">throws</span>
+					<span class="y">InterruptedException</span> { <br />
 
-			<h2>Klíčová slova try a catch</h2>
-			<p>
-				V srdci zpracování výjimek jsou klíčová slova <b>try</b> a
-				<b>catch</b>. Tato klíčová slova pracují společně: nemůžete mít
-				<b>catch</b> bez <b>try</b>. Zde je obecný tvar bloků
-				<b>try/catch</b> pro zpracování výjimek.
-			</p>
+					&#160; &#160; <span class="y">System</span>.<span class="r"
+						>out</span
+					>.<span class="b">printl</span>(<span class="g"
+						>"Hlavní vlánko spuštěno"</span
+					>);
+					<br />
 
-			<p>
-				<code
-					>try{ //kód kódu, u něhož se mají monitorovat chyby } catch
-					(TypVyjimky1 objVyjimky){ //obsluha pro výjimku typu
-					TypVyjimky1 } catch (TypVyjimky2 objVyjimky){ //obsluha pro
-					výjimkz typu TypVyjimky2 } . . .</code
-				>
-			</p>
-			<p>
-				Jak je z obecného tvaru patrné, s příkazem může být spojený více
-				než jeden příkaz <b>catch</b>. Typ výjimky určuje, který příkaz
-				<b>catch</b> se provede. To znamená, že pokud typ výjimky
-				uvedený v příkazu <b>catch</b> odpovídá typy vyvolané výjimky,
-				provede se tento příkaz catch (a všechny ostatní přeskočí).
-			</p>
+					&#160; &#160; <span class="y">Vlakno</span>
+					<span class="r">mojeVlakno</span> =
+					<span class="p">new</span>
+					<span class="b">Vlakno</span>(<span class="g">"Druhé"</span
+					>);
+					<br />
 
-			<p>
-				Pokud nedojde k vyvolání výjimky, pak blok <b>try</b> skončí
-				normálním způsobem a všechny jeho příkazy <b>catch</b> se
-				přeskočí. Provádění pokračuje prvním příkazem za posledním
-				příkazem <b>catch</b>. Příkazy <b>catch</b> se tedy provádějí
-				pouze tehdy, dojde-li k vyvolání výjimky.
-			</p>
+					&#160; &#160; <span class="r">mojeVlakno</span>.<span
+						class="b"
+						>start</span
+					>();
+					<br />
 
-			<p>
-				Jeden blok <b>try</b> může být vnořený do druhého. Výjimka
-				vygenerovaná uvnitř vnitřního bloku <b>try</b>, kterou nezachytí
-				blok <b>catch</b> spojený s tímto blokem <b>try</b>, se šíří do
-				vnějšího bloku <b>try</b>.
-			</p>
+					&#160; &#160; <span class="p">while</span>(<span class="r"
+						>mojeVlakno</span
+					>.<span class="b">isAlive</span>()){<br />
 
-			<h2>Klauzule (podmínka) throws</h2>
-			<p>
-				V některých případech musí metoda, jež generuje výjimku, kterou
-				nezpracuje, deklarovat tuto výjimku v klauzuli <b>throws</b>.
-				Zde je obecný tvar metody, která obsahuje klauzuli
-				<b>throws</b>:
-			</p>
+					&#160; &#160; &#160; &#160;
+					<span class="y">Thread</span>.<span class="b">sleep</span
+					>(<span class="y">1</span>);<br />
 
-			<p>
-				<code>
-					návratový-typ název-metody(seznam-parametrů) throws
-					seznam-výjimek { // tělo }
-				</code>
-				Výraz seznam-výjimek zde představuje seznam výjimek oddělených
-				čárkami, které daná metoda může vyvolat.
-			</p>
+					&#160; &#160; } <br />
 
-			<h2>Blok finally</h2>
-			<p>
-				Pro specifikování bloku kódu, který se má provést při opuštění
-				bloku try/catch, přidejte na konec posloupnosti try/catch blok
-				finnally. Obecný tvar bloku try/catch, který obsahuje blok
-				finally, vypadá takto:
-			</p>
+					&#160; &#160; <span class="y">System</span>.<span class="r"
+						>out</span
+					>.<span class="b">printl</span>(<span class="g"
+						>"Hlavní vlánko ukončeno"</span
+					>);
 
-			<p>
-				<code>
-					try { // blok kódu s monitorováním chyb } catch (TypVyjimkyl
-					objVyjimky) { // obsluha pro TypVyjimky1 } catch
-					(TypVyjimky2 objVyjimky) { // obsluha pro TypVyjimky2 }
-					//... finally { // finální kód }
-				</code>
-			</p>
-
-			<p>
-				Blok <b>finally</b> se provede vždy, když provádění opustí blok
-				<b>try/catch</b>, bez ohledu na to, jaké podmínky to způsobily.
-				Blok <b>finally</b> se také provede, jakmile se jakýkoliv kód
-				uvnitř bloku <b>try</b> nebo jakékoli příkazy <b>catch</b> vrátí
-				z metody.
-			</p>
-
-			<h2>Vlákno a více vláknové programování</h2>
-			<ul>
-				<li>
-					Vlákno je pozice zpracované instrukce v kódu a předané
-					parametry jednotlivých metod.
-				</li>
-				<li>
-					Každý program má minimálně jedno vlákno, který začíná v javě
-					v metodě main.
-				</li>
-				<li>
-					Vlákna můžeme taky ale vytvářet sami a určovat jim ke
-					zpracování různé části kódu.
-				</li>
-				<li>
-					Vytváření vláken je méně náročnější a efektivnější než
-					vytváření procesů, díky jejich sdílené paměti.
-				</li>
-			</ul>
-
-			<h2>Vlákno v javě</h2>
-			<ul>
-				<li>
-					Vlákno reprezentuje instance třídy java.lang.Thraed. Pro
-					práci s vlákny je možné použít přímo tento objekt.
-				</li>
-				<li>Vytvoření a spuštění vlákna se dá udělat 2 způsoby:</li>
-			</ul>
-			<p>
-				1. implementací rozhraní java.lang.Runnable, který je poté
-				předám konstruktoru Thread a je to nejdoporučovanější způsob
-				vytvoření vlákna, jelikož se dají objekt použít i jinde než v
-				objektu Thread
-				<code>
-					public class RunnableTest implements Runnable { public void
-					run() { System.out.println("Zdravím z vlákna!"); } public
-					static void main(String args[]) { new Thread(new
-					RunnableTest()).start(); } }
-				</code>
-			</p>
-
-			<p>
-				2. Vytvoření potomka třídy java.lang.Thread a přetížení metody
-				run:
-				<code>
-					public class RunnableTest extends Thread { public void run()
-					{ System.out.println("Zdravím z vlákna!"); } public static
-					void main(String args[]) { (new RunnableTest ()).start(); }
+					<br />
 					}
 				</code>
 			</p>
-			<ul>
-				<li>
-					Vlákno se dá pozastavit a zastavit. K pozastavení vlákna
-					slouží metoda Thread.Sleep(ms), do které se udává po jakou
-					dobu má vlákno pozastavit svoji činnost. Vlákno se nedá
-					přerušit násilně zvenčí, dá se to udělat methodou
-					Thread.interrupted() a nebo výjimkou
-					java.lnag.InterruptedException.
-				</li>
-				<li>
-					Za zmínku stojí i metoda join, která dá jedno vlákno čekat,
-					než dokončí činnost druhé vlákno.
-				</li>
-			</ul>
 
-			<h2>Synchronizace</h2>
-			<ul>
-				<li>
-					V Javě si mohou dvě vlákna sdílet data díky společnému
-					přístupu k atributům objektu a tříd, bohužel ale sdílený
-					přístup umožňuje vznik chyb, kupříkladu při inkrementaci té
-					samé proměnné. Proto je zapotřebí vlákna synchronizovat.
-				</li>
-				<li>
-					Nejjednodušším způsobem jsem synchronizované metody. Provádí
-					se to přidáním klíčového slova synchronized v deklaraci
-					metody. Tyto metody jsou současně prováděny jedním vláknem a
-					ostatní vlákna čekají, dokud aktuální vlákno neopustí
-					synchronizovanou metodu. public
-					<b>synchronized void nazev()....</b>
-				</li>
-				<li>
-					Druhým způsobem jsou synchronizované bloky, které provádí
-					synchronizaci pomocí „monitorů“. Do těchto bloků smí vejít
-					pouze jedno vlákno. Druhý způsob se provádí, když
-					potřebujeme zvýšit efektivnost aplikace.
-					<b>synchronized(this)</b>
-				</li>
-			</ul>
+			<h3>Join()</h3>
+			<p>
+				Jedná se o metodu, která zajišťuje to, že vlákno, ve kterém je
+				zavolána, počká, než doběhne vlákno, na které je metoda zavolána
+				a až poté se ukončí.
+			</p>
+
+			<p>
+				<code>
+					<span class="y">System</span>.<span class="r">out</span
+					>.<span class="b">printl</span>(<span class="g"
+						>"Hlavní vlánko spuštěno"</span
+					>);
+					<br />
+
+					<span class="y">Vlakno</span>
+					<span class="r">mojeVlakno</span> =
+					<span class="p">new</span>
+					<span class="b">Vlakno</span>(<span class="g">"Druhé"</span
+					>);
+					<br />
+
+					<span class="r">mojeVlakno</span>.<span class="b"
+						>start</span
+					>();
+					<br />
+
+					<span class="r">mojeVlakno</span>.<span class="b">join</span
+					>();
+					<br />
+
+					<span class="y">System</span>.<span class="r">out</span
+					>.<span class="b">printl</span>(<span class="g"
+						>"Hlavní vlánko ukončeno"</span
+					>);
+				</code>
+			</p>
+
+			<h3>Wait()</h3>
+			<p>
+				Metoda, která slouží k pozastavení vlákna. Činnost vlákna není
+				zrušena, ale vlákno pouze čeká než je upozorněno na to, že má
+				pokračovat v činnosti.
+			</p>
+
+			<h3>Notify()</h3>
+			<p>
+				Metoda, která zajišťuje upozornění vlákna. Pokud vlákno čeká na
+				tento příkaz jeho činnost se obnoví.
+			</p>
+
+			<h3>Synchronizace</h3>
+			<p>
+				Deklaruje se pomocí klíčového slova synchronized. Slouží k
+				omezení přístupu k metodě nebo bloku kódu pouze pro vlákno,
+				které se k bloku kódu dostane jako první. Pokud tento blok kódu
+				používá jedno vlákno, ostatní k němu nemůžou přistoupit dokud
+				první vlákno svou práci nedokončí.
+			</p>
 		</main>
 
 		<script src="../smooth-scroll.min.js"></script>
