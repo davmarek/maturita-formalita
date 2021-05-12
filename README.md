@@ -37,5 +37,4 @@
 -   [x] 12 - David
 -   [x] 13 - David
 -   [x] 14 - David
--   [x] 15 - Kuba (Java výjimky a vícevláknové)
-    -   [] dodělat barvy v code - David
+-   [x] 15 - Kuba
