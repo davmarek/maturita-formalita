@@ -52,7 +52,7 @@
 -   [ ] 24 - David
 -   [ ] 25 - Kuba
 
-
+---
 
 # Jaxe to dělá
 - První si zkopíruj už udělanou stránku
@@ -68,10 +68,12 @@
 
 ## CSS text classky
 Tyto classky jdou použít na vše. Především se používá na ***<ul\>*** nebo pro odnačení části textu tagem ***<span\>***.
-- ***.b*** = bold
+- ***.b*** = **bold**
 - ***.n*** = normal (tloušťka)
 - ***.u*** = underline
-- ***.i*** = italic
+- ***.i*** = *italic*
+- ***.low*** = malá písmena
+- ***.upper*** = VELKÁ PÍSMENA
 
 Pokud je většina seznamu tučná, označíme celý list jako ***.b*** , jednotlivé odrážky pak můžeme označit jako ***.n***.
 

@@ -151,6 +151,9 @@ h5 + p {
 	text-align: right;
 }
 
+.upper {
+	text-transform: uppercase;
+}
 .low {
 	text-transform: lowercase;
 }
