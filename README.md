@@ -41,7 +41,12 @@
 -   [x] 14 - David
 -   [x] 15 - Kuba
 -   [ ] 16 - David
--   [ ] 17 - Kuba
+-   [x] 17 - Kuba
+    -   [ ] -   David - upravit
+        -   [ ] -   Přidat kotvy
+        -   [ ] -   Upravit velikost obrázků ať odpovídá tomu v .pdf
+        -   [ ] -   Upravit barvy v **_<code>_**
+        -   [ ] -   Možná změnit margin v h1, h2, h3 (viz. komentář v kódu)
 -   [ ] 18 - David
 -   [ ] 19 - Kuba
 -   [ ] 20 - David
@@ -55,29 +60,34 @@
 ---
 
 # Jaxe to dělá
-- První si zkopíruj už udělanou stránku
-- Editni title a nadpis (měli by být stejné)
-- Článek/zápisy se píší do tagu ***<main\>***
+
+-   První si zkopíruj už udělanou stránku
+-   Editni title a nadpis (měli by být stejné)
+-   Článek/zápisy se píší do tagu **_<main\>_**
 
 ## Pravidla
-- ***<h1\>*** nadpis je jen JEDEN
-  - podnadpisy jsou h2, h3 (výjimečně h4)
-- odrážkové zápisy používají ***<ul\>*** a v nich jen ***<li\>***
-- článkové zápisy používají jen ***<p\>***
-- ukázka kódu ***<code\>*** je ve vlastním ***<p\>***
+
+-   **_<h1\>_** nadpis je jen JEDEN
+    -   podnadpisy jsou h2, h3 (výjimečně h4)
+-   odrážkové zápisy používají **_<ul\>_** a v nich jen **_<li\>_**
+-   článkové zápisy používají jen **_<p\>_**
+-   ukázka kódu **_<code\>_** je ve vlastním **_<p\>_**
 
 ## CSS text classky
-Tyto classky jdou použít na vše. Především se používá na ***<ul\>*** nebo pro odnačení části textu tagem ***<span\>***.
-- ***.b*** = **bold**
-- ***.n*** = normal (tloušťka)
-- ***.u*** = underline
-- ***.i*** = *italic*
-- ***.low*** = malá písmena
-- ***.upper*** = VELKÁ PÍSMENA
 
-Pokud je většina seznamu tučná, označíme celý list jako ***.b*** , jednotlivé odrážky pak můžeme označit jako ***.n***.
+Tyto classky jdou použít na vše. Především se používá na **_<ul\>_** nebo pro odnačení části textu tagem **_<span\>_**.
+
+-   **_.b_** = **bold**
+-   **_.n_** = normal (tloušťka)
+-   **_.u_** = underline
+-   **_.i_** = _italic_
+-   **_.low_** = malá písmena
+-   **_.upper_** = VELKÁ PÍSMENA
+
+Pokud je většina seznamu tučná, označíme celý list jako **_.b_** , jednotlivé odrážky pak můžeme označit jako **_.n_**.
 
 ## Navigace a rozcestníky
-Rozcestník ***<nav\>*** je hned nad ***<main\>*** (neznamená, že je rodič). V ***<nav\>*** jsou odkazy ***<a\>*** bez jakýchkoliv classek. Pokud je v *index.html* odkaz na nějaký nedodělaný článek, přídáme mu classku ***.wip***.
+
+Rozcestník **_<nav\>_** je hned nad **_<main\>_** (neznamená, že je rodič). V **_<nav\>_** jsou odkazy **_<a\>_** bez jakýchkoliv classek. Pokud je v _index.html_ odkaz na nějaký nedodělaný článek, přídáme mu classku **_.wip_**.
 
 Obecně ale doporučuju se řídit podle už udělaných rozcestníků.

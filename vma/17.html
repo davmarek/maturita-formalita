@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>17. ODVOZENÉ DATOVÉ TYPY V C++</title>
+
+		<link rel="stylesheet" href="../main.css" />
+		<script src="../main.js" defer></script>
+	</head>
+	<body>
+		<div id="theme-switcher"></div>
+		<a id="scroll-up" href="#" class="hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="feather feather-arrow-up"
+			>
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</a>
+
+		<nav>
+			<a href="../">Rozcestník</a>
+		</nav>
+
+		<main>
+			<h1>17. ODVOZENÉ DATOVÉ TYPY V C++</h1>
+
+			<h2>Textové řetězce</h2>
+			<!-- Upravit margin u h2 a h3 -->
+			<h3>Char</h3>
+			<p>
+				Char je primitivní datový typ, který uchovává 1 bytový integer,
+				který však není interpretovaný jako celé číslo, ale jako ASCII
+				znak. Char tedy může být inicializován znakem v jednoduchých
+				uvozovkách a nebo integerem, který bude odpovídat příslušnému
+				znaku v ASCII tabulce.
+			</p>
+
+			<h3>Char sekvence</h3>
+			<p>
+				Ve zkratce pole charakterů, které v sobě uchovává více
+				charakterů a dohromady skládají string. Pole charakterů je možné
+				inicializovat jako jednotlivé položky pole nebo jako string,
+				tedy pomocí dvojitých uvozovek. Pokud inicializujeme jako
+				jednotlivé položky, posledním znakem pole by měl být
+				<b>nulový znak</b>​ ('\0'), který označuje konec textového
+				řetězce (pokud inicializujeme pomocí dovojitých uvozovek, tento
+				znak se přidává automaticky).
+			</p>
+
+			<p>
+				<code>
+					<span class="p"
+						>char text[] = {'k', 'a', 'r', 'e', 'l', '\0'};</span
+					><br />
+					<span class="p">char text[] = "karel";</span>
+				</code>
+			</p>
+
+			<h3>String</h3>
+			<p>
+				V C++ je string objekt, který reprezentuje sekvenci charakterů.
+				Pokud tedy chceme použít string musíme importovat knihovnu
+				<b>&lt;string&gt;</b>​. Proměnnou poté můžeme definovat pomocí
+				klíčového slova <b>string</b>​ a inicializujeme ji pomocí
+				textového řetězce ve dvojitých uvozovkách.
+			</p>
+
+			<p>
+				<code>
+					<span class="p">string text = "karel";</span>
+				</code>
+			</p>
+
+			<h2>Operace s textovými řetězci</h2>
+			<p>
+				Pro práci s textovými řetězci slouží knihovna
+				<b>&lt;cstring&gt;</b>​, ve které se nachází spoustu užitečných
+				funkcí.
+			</p>
+
+			<h3>Načítání z klávesnice</h3>
+			<p>
+				První způsob jak načíst řetězec z klávesnice je pomocí objektu
+				cin​ a směrovacích šipek (>>), které slouží jako základní třída
+				pro získávání dat od uživatele.
+			</p>
+
+			<p>
+				Druhým způsobem je metoda <b>cin.get()</b>​, které bez zadaných
+				argumentů vezme od uživatele pouze jeden znak. Je možno do
+				argumentů zadat počet znaků, které má metoda od uživatele
+				zjistit.
+			</p>
+
+			<p>
+				Třetím způsobem je metoda <b>cin.getline()​</b>, která vezme od
+				uživatele celý řádek nebo dokud nenarazí na znak nového řádku
+				('\n'). Tato metoda za uložený textový řetězec sama přidá nulový
+				znak, který slouží jako ukončení textového řetězce
+			</p>
+
+			<h3>Výpis</h3>
+			<ul>
+				<li>Výpis probíhá pomocí objektu <b>cout</b>​.</li>
+				<li class="b">Dékla řetězce, velikost proměnné, kopírování</li>
+				<li>
+					Na zjištění délky textového řetězce v c++ slouží funkce
+					proměnná.<b>length()</b>​ nebo proměnná.<b>size()</b>​.
+				</li>
+				<li>
+					Velikost jakékoliv proměnné se zjistí pomocí funkce
+					<b>sizeof(</b>​proměnná<b>)</b>
+				</li>
+				<li>
+					String lze kopírovat pomocí metody <b>strcpy(</b>​kam,​co<b
+						>)</b
+					>
+				</li>
+			</ul>
+
+			<h2>Pole</h2>
+			<p>
+				Pole je datová struktura, která dokáže uchovávat více prvků
+				stejného datového typu na jednom místě. Každý prvek má přidělený
+				svůj vlastní prostor označený číslem(<b>indexem​</b>). Pole
+				inicializujeme tak jako kdybychom chtěli vytvořit jednoduchou
+				proměnnou, jen za její název přidáme hranaté závorky a do nich
+				napíšeme velikost pole, tedy kolik prvků chceme, aby v sobě pole
+				mohlo uchovat. Hodnoty do pole můžeme dosazovat při inicializaci
+				pomocí složených závorek, do kterých vpisujeme hodnoty za sebou,
+				nebo můžeme po inicializaci pole přistoupit na určitý index pole
+				a dosadit do něj specifickou hodnotu.
+			</p>
+
+			<img src="img/17-pole.jpg" alt="Pole" class="invertable" />
+
+			<h3>Délka pole</h3>
+			<p>
+				Délku pole můžeme zjistit pomocí funkce pole.<b>size()</b>​ z
+				knihovny array nebo pomocí formule
+				<b>sizeof(pole)/sizeof(*pole)</b>​. Formule nejdříve zjistí
+				<b>velikost všech prvků</b>​ v poli a poté ji vydělí velikostí
+				<b>jednoho prvku​</b> z pole (*pole do funkce sizeof() dosadí
+				<b> ukazatel na pole​ </b>, ukazatel na pole ukazuje pouze na
+				<b>první prvek​</b> v poli, takže
+				<b> ukazatel na pole = jeden prvek pole </b>​) a tak zjistíme
+				kolik prvků se v poli vlastně nachází.
+			</p>
+
+			<h2>Struktura</h2>
+			<p>
+				Struktura je datová struktura, která dokáže uchovávat více
+				proměnných nebo metod pod jedním jménem. Je velmi podobná třídě
+				avšak se liší tím, že zde není přítomná dědičnost nebo
+				konstruktory či destruktory. Struktura v sobě může uchovávat jak
+				proměnné tak i metody. K těmto proměnným či metodám se
+				přistupuje stejně jako u tříd pomocí názvu struktury, tečky a
+				následně jménem proměnné nebo metody.
+			</p>
+
+			<img
+				src="img/17-struktura.jpg"
+				alt="Struktura"
+				class="invertable"
+			/>
+
+			<h2>Enum <span class="n low">(česky: výčtový typ)</span></h2>
+			<p>
+				Enum umožňuje vytvoření vlastního datového typu. Můžeme
+				definovat co se v námi vytvořeném datovém typu může nacházet.
+				Můžeme ho na příklad použít pro vytvoření datového typu na
+				uchovávání přistupových pravomocí, směrů nebo třeba barev.
+			</p>
+
+			<img src="img/17-enum.jpg" alt="Enum" class="invertable" />
+
+			<h2>Union</h2>
+			<p>
+				Vzhledově se podobá struktuře. Jedná se ovšem o datovou
+				strukturu, ve které všechny prvky obsazují stejný fyzický
+				prostor v paměti a proto union může uchovávat pouze jeden prvek
+				v jeden čas. Velikost unionu se rovná velikosti největšího
+				prvku, který se v něm nachází.
+			</p>
+			<img src="img/17-union.jpg" alt="Union" class="invertable" />
+		</main>
+
+		<script src="../smooth-scroll.min.js"></script>
+		<script>
+			var scroll = new SmoothScroll('a[href*="#"]');
+		</script>
+	</body>
+</html>
