@@ -31,6 +31,10 @@
 
 		<nav>
 			<a href="../">Rozcestník</a>
+			<a href="#deklarace">Deklarace</a>
+			<a href="#definice-metod">Definice metod</a>
+			<a href="#const">Const</a>
+			<a href="#this">This</a>
 		</nav>
 
 		<main>
@@ -66,7 +70,28 @@
 				programem.
 			</p>
 
-			<img src="img/19-point.jpg" alt="Point" class="invertable" />
+			<table>
+				<tr>
+					<th class="center">Point</th>
+				</tr>
+				<tr>
+					<td class="code">
+						-x:int = 0 <br />
+						-y:int = 0
+					</td>
+				</tr>
+				<tr>
+					<td class="code">
+						+Point(x:int, y:int) <br />
+						+getX():int <br />
+						+setX(x:int):void <br />
+						+getY():int <br />
+						+setY(y:int):void <br />
+						+setXY(x:int, y:int):void <br />
+						+print():void <br />
+					</td>
+				</tr>
+			</table>
 
 			<p>
 				V tomto přístupu k programování se programátor snaží popsat svět
@@ -82,7 +107,12 @@
 				(vlastnostmi objektu) a Metodami(schopnostmi objektu).
 			</p>
 
-			<img src="img/19-objekt.jpg" alt="Objekt" class="invertable" />
+			<img
+				src="img/19-objekt.jpg"
+				alt="Objekt"
+				loading="lazy"
+				class="invertable"
+			/>
 
 			<p>
 				Z těchto objektů programátor postupně vytváří hierarchii
@@ -93,7 +123,7 @@
 
 			<h3>1. Zapouzdření</h3>
 			<p>
-				- Jedná se o uschování atributů nebo metod objektu od okolních
+				Jedná se o uschování atributů nebo metod objektu od okolních
 				objektů pomocí přístupových modifikátorů, může sloužit pro účel
 				nadřazenosti v hierarchii, ale je také důležité při zabezpečení
 				programu a kontrolujeme tak, k čemu má program vlastně sám bez
@@ -149,7 +179,7 @@
 
 			<h3>2. Dědičnost</h3>
 			<p>
-				- Tvoří vlastně celou hierarchii objektů a stará se tak o celou
+				Tvoří vlastně celou hierarchii objektů a stará se tak o celou
 				vrstvu abstrakce nad programem. Jedná se o dědění atributů a
 				metod z rodičovské třídy a třída, která dědí se tak stává dědící
 				třídou. Využívá se u objektů, které sdílí více stejných atributů
@@ -158,7 +188,7 @@
 
 			<h3>3. Polymorfismus</h3>
 			<p>
-				- Nám umožňuje používat stejné atributy a metody pro různé druhy
+				Nám umožňuje používat stejné atributy a metody pro různé druhy
 				objektů. Například u geometrických tvarů si můžeme vytvořit
 				rodičovskou třídu geometrickyObjekt a dvě dědící třídy čtverec a
 				obdélník, pokud bychom chtěli vypočítat obsah obou dědících tříd
@@ -180,7 +210,7 @@
 				liší se svými daty, jako například jménem.
 			</p>
 
-			<h2>Deklarace třídy</h2>
+			<h2 id="deklarace">Deklarace třídy</h2>
 			<p>
 				Jak je zmíněno výš, třída je vlastně jen vzor, podle kterého se
 				poté vytvářejí samotné objekty. Samotná třída v sobě tedy
@@ -193,11 +223,28 @@
 				deklarace třídy musí být ukončena středníkem, nebo seznamem
 				objektů, které ze třídy chceme vytvořit.
 			</p>
-			<img
-				src="img/19-deklarace-tridy.jpg"
-				alt="Deklarace třídy"
-				class="invertable"
-			/>
+
+			<p>
+				<code>
+					<span class="p">class</span> <span class="y">Box</span> {
+					<br />
+
+					&#160; &#160; <span class="p">public:</span> <br />
+					&#160; &#160; &#160; &#160;
+					<span class="p">double</span> length;
+					<span class="comment">// délka boxu</span> <br />
+
+					&#160; &#160; &#160; &#160;
+					<span class="p">double</span> breadth;
+					<span class="comment">// šířka boxu</span> <br />
+
+					&#160; &#160; &#160; &#160;
+					<span class="p">double</span> height;
+					<span class="comment">// výška boxu</span> <br />
+
+					};
+				</code>
+			</p>
 
 			<h2>Definice objektu</h2>
 			<p>
@@ -206,12 +253,12 @@
 				třídy, podle které se náš objekt vytvoří a jménem námi
 				vytvořeného objektu.
 			</p>
-
-			<img
-				src="img/19-definice-objektu.jpg"
-				alt="Definice objektu"
-				class="invertable"
-			/>
+			<p>
+				<code>
+					<span class="p">Box</span> box1; <br />
+					<span class="p">Box</span> box2; <br />
+				</code>
+			</p>
 
 			<h2>Přístup ke členům objektu</h2>
 			<p>
@@ -227,33 +274,80 @@
 				<b>Getry</b> na získání hodnoty proměnné a <b>Setry</b>​ na
 				nastavení hodnoty proměnné
 			</p>
-			<img
-				src="img/19-pristup-ke-clenum-objektu.jpg"
-				alt="Přístup ke členům objektu"
-				class="invertable"
-			/>
 
-			<h2>Definice metod</h2>
+			<p>
+				<code>
+					<span class="p">Box</span> box1; <br />
+					<span class="p">Box</span> box2; <br />
+					<span class="p">double</span> volume =
+					<span class="y">0.0</span>;
+					<span class="comment">// proměnná objem</span> <br />
+					<br />
+
+					<span class="comment">// vlastnosti boxu 1</span> <br />
+					<span class="p">box1</span>.height =
+					<span class="y">5.0</span>;<br />
+
+					<span class="p">box1</span>.height =
+					<span class="y">6.0</span>;<br />
+
+					<span class="p">box1</span>.height =
+					<span class="y">7.0</span>;<br />
+
+					<br />
+
+					<span class="comment">// vlastnosti boxu 2</span> <br />
+					<span class="p">box2</span>.height =
+					<span class="y">10.0</span>;<br />
+
+					<span class="p">box2</span>.height =
+					<span class="y">12.0</span>;<br />
+
+					<span class="p">box2</span>.height =
+					<span class="y">13.0</span>;<br />
+				</code>
+			</p>
+
+			<h2 id="definice-metod">Definice metod</h2>
 			<p>
 				Metoda třídy je definována v jejím těle pomocí jejího
 				návratového typu, jejího jména, parametrů,které metoda přijímá v
 				kulatých závorkách a jejím tělem, uzavřeným ve složených
 				závorkách.
 			</p>
-			<img src="img/19-metoda.jpg" alt="Metoda" class="invertable" />
+
+			<p>
+				<code>
+					<span class="p">double</span>
+					<span class="b">getVolume</span>(<span class="p">void</span
+					>) { <br />
+
+					&#160; &#160; <span class="p">return</span> length * breadth
+					* height; <br />
+
+					}
+				</code>
+			</p>
 
 			<p>
 				Metodu můžeme definovat v těle třídy a nebo mimo tělo třídy
 				pomocí operátoru (::) (<b>scope resolution operator</b>​) .
-				Pokud však nedefinujeme metodu v těle třídy, musíme v ní udělat
+				Pokud však nedefinujeme metodu v těle třídy, musíme v něm udělat
 				předlohu metody.
 			</p>
 
-			<img
-				src="img/19-predloha-metody.jpg"
-				alt="Předloha metody"
-				class="invertable"
-			/>
+			<p>
+				<code>
+					<span class="p">double</span>
+					<span class="y">Box</span>::<span class="b">getVolume</span
+					>(<span class="p">void</span>) { <br />
+
+					&#160; &#160; <span class="p">return</span> length * breadth
+					* height; <br />
+
+					}
+				</code>
+			</p>
 
 			<p>
 				Metody v objektu mají přístup ke všem proměnným a to i k
@@ -262,7 +356,7 @@
 				<b>protected</b> proměnnýma.
 			</p>
 
-			<h2>Const metoda</h2>
+			<h2 id="const">Const metoda</h2>
 
 			<p>
 				Metoda označená klíčovým slovem <b>const</b> může pouze číst
@@ -272,13 +366,17 @@
 
 			<p>
 				<code>
-					<!-- Upravit -->
-					//Sample 04: Const Member Function int GetArea() const{
-					return m_len * m_width; }
+					<span class="p">int</span> <span class="b">getArea</span>()
+					<span class="p">const</span> {
+					<br />
+					&#160; &#160; <span class="p">return</span> m_len * m_width;
+					<br />
+
+					}
 				</code>
 			</p>
 
-			<h2>Ukazatel this</h2>
+			<h2 id="this">Ukazatel this</h2>
 			<p>
 				Každý objekt má v c++ k dispozici přístup ke své adrese pomocí
 				ukazatele <b>this​</b>. Ukazatel this je bezpodmínečně přístupný
@@ -286,11 +384,18 @@
 				objekt, který danou metodu volá.
 			</p>
 
-			<img
-				src="img/19-ukazatel-this.jpg"
-				alt="Ukazatel this"
-				class="invertable"
-			/>
+			<p>
+				<code>
+					<span class="p">int</span>
+					<span class="b">compare</span>(<span class="y">Box</span>
+					<span class="r">box</span>) { <br />
+					&#160; &#160; <span class="p">return</span>
+					<span class="y">this</span>-><span class="b">Volume</span>()
+					> <span class="y">box</span>.<span class="b">Volume</span
+					>(); <br />
+					}
+				</code>
+			</p>
 
 			<h2>Konstruktor</h2>
 			<p>
@@ -309,11 +414,37 @@
 				ničení objektu, tedy stavu, kdy na objekt nic neukazuje a
 				garbage collector ho smaže nebo při manuálním smazání.
 			</p>
-			<img
-				src="img/19-destruktor.jpg"
-				alt="Destruktor"
-				class="invertable"
-			/>
+
+			<p>
+				<code>
+					<span class="p">class</span> <span class="y">Line</span> {
+					<br />
+
+					&#160; &#160; <span class="p">public:</span> <br />
+					&#160; &#160; &#160; &#160;
+					<span class="p">void</span>
+					<span class="b">setLength</span>(<span class="p"
+						>double</span
+					>
+					len); <br />
+					&#160; &#160; &#160; &#160;
+					<span class="p">double</span>
+					<span class="b">getLength</span>(<span class="p">void</span
+					>); <br />
+					&#160; &#160; &#160; &#160; <span class="b">Line</span>();
+					<span class="comment">// deklarace konstruktoru</span>
+					<br />
+					&#160; &#160; &#160; &#160; ~<span class="b">Line</span>();
+					<span class="comment">// deklarace destruktoru</span>
+					<br />
+					&#160; &#160; <span class="p">private:</span> <br />
+					&#160; &#160; &#160; &#160;
+					<span class="p">double</span> length; <br />
+
+					};
+				</code>
+			</p>
+
 			<h2>Statické a dynamické instance třídy</h2>
 			<h3>Staticky definovaná instance třídy</h3>
 			<p>
@@ -325,29 +456,30 @@
 				<b>tečka(.)​</b>, zatím co u dynamické definice se používá
 				<b>šipka(→)</b>.
 			</p>
-			<img
-				src="img/19-staticky-definovana-trida.jpg"
-				alt="Staticky definovaná instance třídy"
-				class="invertable"
-			/>
+
+			<p>
+				<code>
+					<span class="p">Time</span> t(<span class="y">12</span>,
+					<span class="y">0</span>, <span class="y">0</span>); <br />
+
+					t.<span class="b">GetTime</span>(); <br />
+				</code>
+			</p>
 
 			<h3>Dynamicky definovaná instance třídy</h3>
 			<p>
 				Dynamicky definovaná třída ​je v podstatě ukazatel na objekt,
 				proto také ten jiný přístup ke členům
 			</p>
-
-			<h2>Kopírovací konstruktor</h2>
 			<p>
-				je konstruktor, který vytvoří objekt pomocí jiného objektu
-				stejné třídy, který je již vytvořen. Pokud tento konstruktor
-				není ve třídě definován, kompilátor si ho sám vytvoří.
+				<code>
+					<span class="p">Time</span>* t = <span class="p">new</span>
+					<span class="b">Time</span>(<span class="y">12</span>,
+					<span class="y">0</span>, <span class="y">0</span>); <br />
+
+					t-><span class="b">GetTime</span>();
+				</code>
 			</p>
-			<img
-				src="img/19-kopirovaci-konstruktor.jpg"
-				alt="Kopírovací konstruktor"
-				class="invertable"
-			/>
 		</main>
 
 		<script src="../smooth-scroll.min.js"></script>

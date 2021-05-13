@@ -31,6 +31,10 @@
 
 		<nav>
 			<a href="../">Rozcestník</a>
+			<a href="#pole">Pole</a>
+			<a href="#struktura">Struktura</a>
+			<a href="#enum">Enum</a>
+			<a href="#union">Union</a>
 		</nav>
 
 		<main>
@@ -61,10 +65,13 @@
 
 			<p>
 				<code>
-					<span class="p"
-						>char text[] = {'k', 'a', 'r', 'e', 'l', '\0'};</span
-					><br />
-					<span class="p">char text[] = "karel";</span>
+					<span class="p">char</span> text[] = {<span class="g"
+						>'k'</span
+					>, <span class="g">'a'</span>, <span class="g">'r'</span>,
+					<span class="g">'e'</span>, <span class="g">'l'</span>,
+					<span class="g">'\0'</span>};<br />
+					<span class="p">char</span> text[] =
+					<span class="g">"karel"</span>;
 				</code>
 			</p>
 
@@ -79,7 +86,8 @@
 
 			<p>
 				<code>
-					<span class="p">string text = "karel";</span>
+					<span class="p">string</span> text =
+					<span class="g">"karel"</span>;
 				</code>
 			</p>
 
@@ -130,7 +138,7 @@
 				</li>
 			</ul>
 
-			<h2>Pole</h2>
+			<h2 id="pole">Pole</h2>
 			<p>
 				Pole je datová struktura, která dokáže uchovávat více prvků
 				stejného datového typu na jednom místě. Každý prvek má přidělený
@@ -144,7 +152,25 @@
 				a dosadit do něj specifickou hodnotu.
 			</p>
 
-			<img src="img/17-pole.jpg" alt="Pole" class="invertable" />
+			<p>
+				<code>
+					<span class="comment">// type name [elements]</span><br />
+					<span class="p">int</span> foo [<span class="y">5</span>];
+					<br />
+
+					<span class="p">int</span> foo [<span class="y">5</span>] =
+					{<span class="y">16</span>, <span class="y">2</span>,
+					<span class="y">77</span>, <span class="y">40</span>,
+					<span class="y">12071</span>};
+
+					<br /><br />
+					<span class="comment">// accessing</span>
+					<br />
+					foo[<span class="y">2</span>] = <span class="y">75</span>;
+					<br />
+					x = foo[<span class="y">2</span>];
+				</code>
+			</p>
 
 			<h3>Délka pole</h3>
 			<p>
@@ -159,7 +185,7 @@
 				kolik prvků se v poli vlastně nachází.
 			</p>
 
-			<h2>Struktura</h2>
+			<h2 id="struktura">Struktura</h2>
 			<p>
 				Struktura je datová struktura, která dokáže uchovávat více
 				proměnných nebo metod pod jedním jménem. Je velmi podobná třídě
@@ -170,13 +196,25 @@
 				následně jménem proměnné nebo metody.
 			</p>
 
-			<img
-				src="img/17-struktura.jpg"
-				alt="Struktura"
-				class="invertable"
-			/>
+			<p>
+				<code>
+					<span class="p"> struct </span> product {
+					<br />
+					&#160; &#160; <span class="p">int</span> weight; <br />
+					&#160; &#160; <span class="p">double</span> price; <br />
 
-			<h2>Enum <span class="n low">(česky: výčtový typ)</span></h2>
+					};
+					<br />
+					<br />
+
+					product apple; <br />
+					product banana, melon;
+				</code>
+			</p>
+
+			<h2 id="enum">
+				Enum <span class="n low">(česky: výčtový typ)</span>
+			</h2>
 			<p>
 				Enum umožňuje vytvoření vlastního datového typu. Můžeme
 				definovat co se v námi vytvořeném datovém typu může nacházet.
@@ -184,9 +222,23 @@
 				uchovávání přistupových pravomocí, směrů nebo třeba barev.
 			</p>
 
-			<img src="img/17-enum.jpg" alt="Enum" class="invertable" />
+			<p>
+				<code>
+					<span class="p"> enum </span> Color {red, green, blue};
+					<br />
 
-			<h2>Union</h2>
+					<span class="p"> enum </span> access_t {read =
+					<span class="y">1</span>, write = <span class="y">2</span>,
+					exec = <span class="y">4</span>}; <br />
+
+					<span class="p"> enum </span> direction {left =
+					<span class="g">"l"</span>, right =
+					<span class="g">"r"</span>};
+					<br />
+				</code>
+			</p>
+
+			<h2 id="union">Union</h2>
 			<p>
 				Vzhledově se podobá struktuře. Jedná se ovšem o datovou
 				strukturu, ve které všechny prvky obsazují stejný fyzický
@@ -194,7 +246,18 @@
 				v jeden čas. Velikost unionu se rovná velikosti největšího
 				prvku, který se v něm nachází.
 			</p>
-			<img src="img/17-union.jpg" alt="Union" class="invertable" />
+
+			<p>
+				<code>
+					<span class="p"> union </span> mytypes_t {
+					<br />
+					&#160; &#160; <span class="p">char</span> c; <br />
+					&#160; &#160; <span class="p">int</span> i; <br />
+					&#160; &#160; <span class="p">float</span> f; <br />
+
+					} mytypes;
+				</code>
+			</p>
 		</main>
 
 		<script src="../smooth-scroll.min.js"></script>

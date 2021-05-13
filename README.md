@@ -42,19 +42,15 @@
 -   [x] 15 - Kuba
 -   [ ] 16 - David
 -   [x] 17 - Kuba
-    -   [ ] -   David - upravit
-        -   [ ] -   Přidat kotvy
-        -   [ ] -   Upravit velikost obrázků ať odpovídá tomu v .pdf
-        -   [ ] -   Komprese obrázků
-        -   [ ] -   Upravit barvy v **_code_**
-        -   [ ] -   Možná změnit margin v h1, h2, h3 (viz. komentář v kódu)
+    -   [x] -   David - upravit
+        -   [x] -   Přidat kotvy
+        -   [x] -   Upravit barvy v **_code_**
+        -   [x] -   Možná změnit margin v h1, h2, h3 (viz. komentář v kódu)
 -   [ ] 18 - David
 -   [x] 19 - Kuba
-    -   [ ] -   David - upravit
-        -   [ ] -   Přidat kotvy
-        -   [ ] -   Upravit velikost obrázků ať odpovídá tomu v .pdf
-        -   [ ] -   Komprese obrázků
-        -   [ ] -   Upravit **_code_**
+    -   [x] -   David - upravit
+        -   [x] -   Přidat kotvy
+        -   [x] -   Upravit **_code_**
 -   [ ] 20 - David
     -   [ ] získat!!!
 -   [ ] 21 - Kuba
