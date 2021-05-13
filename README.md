@@ -46,7 +46,7 @@
         -   [ ] -   Přidat kotvy
         -   [ ] -   Upravit velikost obrázků ať odpovídá tomu v .pdf
         -   [ ] -   Komprese obrázků
-        -   [ ] -   Upravit barvy v **_<code>_**
+        -   [ ] -   Upravit barvy v **_code_**
         -   [ ] -   Možná změnit margin v h1, h2, h3 (viz. komentář v kódu)
 -   [ ] 18 - David
 -   [x] 19 - Kuba
@@ -54,7 +54,7 @@
         -   [ ] -   Přidat kotvy
         -   [ ] -   Upravit velikost obrázků ať odpovídá tomu v .pdf
         -   [ ] -   Komprese obrázků
-        -   [ ] -   Upravit **_<code>_**
+        -   [ ] -   Upravit **_code_**
 -   [ ] 20 - David
     -   [ ] získat!!!
 -   [ ] 21 - Kuba
