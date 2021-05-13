@@ -45,6 +45,7 @@
     -   [ ] -   David - upravit
         -   [ ] -   Přidat kotvy
         -   [ ] -   Upravit velikost obrázků ať odpovídá tomu v .pdf
+        -   [ ] -   Komprese obrázků
         -   [ ] -   Upravit barvy v **_<code>_**
         -   [ ] -   Možná změnit margin v h1, h2, h3 (viz. komentář v kódu)
 -   [ ] 18 - David
