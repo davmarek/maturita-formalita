@@ -49,7 +49,12 @@
         -   [ ] -   Upravit barvy v **_<code>_**
         -   [ ] -   Možná změnit margin v h1, h2, h3 (viz. komentář v kódu)
 -   [ ] 18 - David
--   [ ] 19 - Kuba
+-   [x] 19 - Kuba
+    -   [ ] -   David - upravit
+        -   [ ] -   Přidat kotvy
+        -   [ ] -   Upravit velikost obrázků ať odpovídá tomu v .pdf
+        -   [ ] -   Komprese obrázků
+        -   [ ] -   Upravit **_<code>_**
 -   [ ] 20 - David
     -   [ ] získat!!!
 -   [ ] 21 - Kuba

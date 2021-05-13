@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>19. ZÁKLADY OBJEKTOVÉHO PROGRAMOVÁNÍ V C++</title>
+
+		<link rel="stylesheet" href="../main.css" />
+		<script src="../main.js" defer></script>
+	</head>
+	<body>
+		<div id="theme-switcher"></div>
+		<a id="scroll-up" href="#" class="hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="feather feather-arrow-up"
+			>
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</a>
+
+		<nav>
+			<a href="../">Rozcestník</a>
+		</nav>
+
+		<main>
+			<h1>19. ZÁKLADY OBJEKTOVÉHO PROGRAMOVÁNÍ V C++</h1>
+			<h2>Vznik objektově orientovaného programování</h2>
+			<p>
+				První počítače dostávaly příkazy ve formě strojového kódu, což
+				pro lidi, kteří se o IT nezajímali bylo naprosto
+				nepředstavitelné, ale software ani hardware nebyl na takové
+				úrovni, aby příkazy pro procesor dosáhly nějaké větší
+				složitosti.
+			</p>
+			<p>
+				S vývojem počítačů se kladly větší nároky i na programy a
+				vyvinulo se nestrukturované paradigma, tedy jakýsi soubor
+				příkazů, který procesor vykonával, a vzniklo tak strukturované
+				programování, tedy seznam přikazů, které procesor vykonává podle
+				jejich pořadí od shora dolů.
+			</p>
+			<p>
+				Ke vzniku objektově orientovaného programování napomohl neustálý
+				vývoj počítačových systémů a samotných počítačů. S přibývajícími
+				nároky na programátory v komplexnosti programů se strukturovaně
+				programovaný kód stávál nepřehledným, při větších objemech kódu
+				i neudržovatlný a proto se musel vytvořit nový přístup k
+				programování. Objektově orientovaný přístup k programování.
+			</p>
+			<h2>Podstata objektově orientovaného programování</h2>
+			<p>
+				Objektově orientované programování se zakládá na několika
+				základních pilířích a dává se v něm důraz na znovupoužitelnost
+				kódu a dává programátorovi jistou vrstvu abstrakce nad
+				programem.
+			</p>
+
+			<img src="img/19-point.jpg" alt="Point" class="invertable" />
+
+			<p>
+				V tomto přístupu k programování se programátor snaží popsat svět
+				jak ho vidí on a ne jak ho vidí počítač a píše program z pohledu
+				člověka a to mu dává tu jistou abstrakci.
+			</p>
+
+			<p>
+				Základní jednotka objektového programování je <b>objekt</b>​.
+				Jedná se o entitu, která odpovídá objektům z reálného světa.
+				Například Pes, pes má 4 nohy, hlavu, oči a může mít i jméno,
+				ještě k tomu štěká. Objekt by se v programovaní popsal Atributy
+				(vlastnostmi objektu) a Metodami(schopnostmi objektu).
+			</p>
+
+			<img src="img/19-objekt.jpg" alt="Objekt" class="invertable" />
+
+			<p>
+				Z těchto objektů programátor postupně vytváří hierarchii
+				objektů, které mezi sebou mohou komunikovat a v hierarchii na
+				sobě být nějakým způsobem závislé. O tuto hierarchii se starají
+				tři zmíněné pilíře a to jsou:
+			</p>
+
+			<h3>1. Zapouzdření</h3>
+			<p>
+				- Jedná se o uschování atributů nebo metod objektu od okolních
+				objektů pomocí přístupových modifikátorů, může sloužit pro účel
+				nadřazenosti v hierarchii, ale je také důležité při zabezpečení
+				programu a kontrolujeme tak, k čemu má program vlastně sám bez
+				zásahu programátora přístup a také chrání program před špatným
+				použití takto schovaných metod nebo proměnných.
+			</p>
+
+			<h4>Přístupové modifikátory</h4>
+			<ul>
+				<li>
+					1. public
+					<ul>
+						<li>přístupné odkudkoliv</li>
+					</ul>
+				</li>
+				<li>
+					2. private
+					<ul>
+						<li>
+							proměnná nebo metoda není přístupná nikde jinde než
+							ve třídě, ve které byla definována
+						</li>
+						<li>
+							pokud ve
+							<b
+								>třídě(v jiných datových strukturách může
+								fungovat jinak)</b
+							>
+							nespecifikujeme přístupový modifikátor, program
+							proměnnou nebo metodu sám definuje na private
+						</li>
+						<li>
+							pokud chceme k private proměnné přistoupit z jiné
+							třídy musíme vytvořit public metodu, ve třídě kde je
+							proměnná definována, která s ní může manipulovat
+						</li>
+					</ul>
+				</li>
+				<li>
+					3. protected
+					<ul>
+						<li>
+							v c++ nejsou žádné balíčky, takže neplést s javou (:
+						</li>
+						<li>
+							proměnné a metody s modifikátorem protected jsou
+							přístupné pro třídu, ve které jsou definovány a ve
+							třídě, která dědí od třídy ve které jsou definovány.
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h3>2. Dědičnost</h3>
+			<p>
+				- Tvoří vlastně celou hierarchii objektů a stará se tak o celou
+				vrstvu abstrakce nad programem. Jedná se o dědění atributů a
+				metod z rodičovské třídy a třída, která dědí se tak stává dědící
+				třídou. Využívá se u objektů, které sdílí více stejných atributů
+				nebo metod a podporuje se tak znovu použitelnost kódu.
+			</p>
+
+			<h3>3. Polymorfismus</h3>
+			<p>
+				- Nám umožňuje používat stejné atributy a metody pro různé druhy
+				objektů. Například u geometrických tvarů si můžeme vytvořit
+				rodičovskou třídu geometrickyObjekt a dvě dědící třídy čtverec a
+				obdélník, pokud bychom chtěli vypočítat obsah obou dědících tříd
+				museli bychom udělat dvě různojmené metody. Polymorfismus
+				zajisti to, že můžeme udělat jen jednu metodu v rodičovské třídě
+				a každá dědící třída už si přepíše svou implementaci teto
+				metody, tedy vzorec na výpočet obsahu čtverce a obdélníku.
+			</p>
+
+			<h2>Třída vs Instance třídy</h2>
+			<p>
+				<b>Třída</b> ​je vzor, podle kterého se objekt následně vytváří.
+				Definuji se v ni vsechny atributy a metody.
+			</p>
+
+			<p>
+				<b>Instance</b> třídy je objekt vytvořen podle třídy. Instance
+				třídy mají tedy strukturu třídy, podle které byly vytvořeny, ale
+				liší se svými daty, jako například jménem.
+			</p>
+
+			<h2>Deklarace třídy</h2>
+			<p>
+				Jak je zmíněno výš, třída je vlastně jen vzor, podle kterého se
+				poté vytvářejí samotné objekty. Samotná třída v sobě tedy
+				neuchovává data, ale pouze specifikuje jaké data v sobě objekt
+				bude uchovávat a jaké činnosti bude moct objekt dělat.
+			</p>
+			<p>
+				Definice třídy začíná klíčovým slovem <b>class</b>​, jménem
+				třídy a tělem třídy, které je uzavřené složenými závorkami. Celá
+				deklarace třídy musí být ukončena středníkem, nebo seznamem
+				objektů, které ze třídy chceme vytvořit.
+			</p>
+			<img
+				src="img/19-deklarace-tridy.jpg"
+				alt="Deklarace třídy"
+				class="invertable"
+			/>
+
+			<h2>Definice objektu</h2>
+			<p>
+				Je ve zkratce operace, kdy se vytváří samotný objekt, podle
+				předložené třídy. Takže se definice objektu skládá ze jména
+				třídy, podle které se náš objekt vytvoří a jménem námi
+				vytvořeného objektu.
+			</p>
+
+			<img
+				src="img/19-definice-objektu.jpg"
+				alt="Definice objektu"
+				class="invertable"
+			/>
+
+			<h2>Přístup ke členům objektu</h2>
+			<p>
+				K členským proměnným a metodám se přistupuje v c++ pomocí tečky
+				(.​). Celý přístup k proměnné nebo metodě vypadá tak, že
+				označíme, do kterého objektu chceme přistoupit a pak jen zvolíme
+				proměnnou, ke které chceme přistoupit a která se nachází v námi
+				zvoleném objektu. Takto přímo lze přistoupit pouze k proměnným s
+				modifikátorem <b>public</b>​. Pokud se jedná o
+				<b>private</b> nebo <b>protected</b> a chceme k nim přistoupit,
+				tak musíme vytvořit <b>public</b> metody, které s nimi budou
+				moct manipulovat. Nazývají se <b>getry</b> a <b>setry</b>.
+				<b>Getry</b> na získání hodnoty proměnné a <b>Setry</b>​ na
+				nastavení hodnoty proměnné
+			</p>
+			<img
+				src="img/19-pristup-ke-clenum-objektu.jpg"
+				alt="Přístup ke členům objektu"
+				class="invertable"
+			/>
+
+			<h2>Definice metod</h2>
+			<p>
+				Metoda třídy je definována v jejím těle pomocí jejího
+				návratového typu, jejího jména, parametrů,které metoda přijímá v
+				kulatých závorkách a jejím tělem, uzavřeným ve složených
+				závorkách.
+			</p>
+			<img src="img/19-metoda.jpg" alt="Metoda" class="invertable" />
+
+			<p>
+				Metodu můžeme definovat v těle třídy a nebo mimo tělo třídy
+				pomocí operátoru (::) (<b>scope resolution operator</b>​) .
+				Pokud však nedefinujeme metodu v těle třídy, musíme v ní udělat
+				předlohu metody.
+			</p>
+
+			<img
+				src="img/19-predloha-metody.jpg"
+				alt="Předloha metody"
+				class="invertable"
+			/>
+
+			<p>
+				Metody v objektu mají přístup ke všem proměnným a to i k
+				proměnným s jinými modifikátory než <b>public</b>​, což se hodí
+				při manipulaci s <b>private</b> nebo
+				<b>protected</b> proměnnýma.
+			</p>
+
+			<h2>Const metoda</h2>
+
+			<p>
+				Metoda označená klíčovým slovem <b>const</b> může pouze číst
+				členské proměnné a nemůže je nijak upravit. Používá se k ochraně
+				před nechtěným změněním proměnných v objektu.
+			</p>
+
+			<p>
+				<code>
+					<!-- Upravit -->
+					//Sample 04: Const Member Function int GetArea() const{
+					return m_len * m_width; }
+				</code>
+			</p>
+
+			<h2>Ukazatel this</h2>
+			<p>
+				Každý objekt má v c++ k dispozici přístup ke své adrese pomocí
+				ukazatele <b>this​</b>. Ukazatel this je bezpodmínečně přístupný
+				všem členským metodám a tak v nich tedy takto můžeme ukázat na
+				objekt, který danou metodu volá.
+			</p>
+
+			<img
+				src="img/19-ukazatel-this.jpg"
+				alt="Ukazatel this"
+				class="invertable"
+			/>
+
+			<h2>Konstruktor</h2>
+			<p>
+				<b>Kostruktor</b> je speciální metoda, která nese stejné jméno
+				jako třída, ve které se nachází a spouští se pokaždé, když je ze
+				třídy vytvořen objekt. Základní konstruktor nemá parametry, ale
+				pokud potřebujeme můžeme mu je přidat a použít tak kostruktor
+				pro dosazení počátečních hodnot do objektu
+			</p>
+
+			<h2>Destruktor</h2>
+			<p>
+				<b>Destruktor</b> je stejný jako konstruktor jen s drobnými
+				rozdíly. Prvním z nich je, že před destruktor se píše
+				<b>~ (tilda)</b> a druhým je to, že se destruktor volá při
+				ničení objektu, tedy stavu, kdy na objekt nic neukazuje a
+				garbage collector ho smaže nebo při manuálním smazání.
+			</p>
+			<img
+				src="img/19-destruktor.jpg"
+				alt="Destruktor"
+				class="invertable"
+			/>
+			<h2>Statické a dynamické instance třídy</h2>
+			<h3>Staticky definovaná instance třídy</h3>
+			<p>
+				Staticky definovaná instance třídy se zničí na konci bloku kódu,
+				ve kterém je definována zatím co o zničení
+				<b>dynamicky definované instanci třídy</b> rozhoduje programátor
+				pomocí příkazu <b>delete[]</b>​. Rozdílný je taky přístup ke
+				členům instancí. Při statické definici se používá
+				<b>tečka(.)​</b>, zatím co u dynamické definice se používá
+				<b>šipka(→)</b>.
+			</p>
+			<img
+				src="img/19-staticky-definovana-trida.jpg"
+				alt="Staticky definovaná instance třídy"
+				class="invertable"
+			/>
+
+			<h3>Dynamicky definovaná instance třídy</h3>
+			<p>
+				Dynamicky definovaná třída ​je v podstatě ukazatel na objekt,
+				proto také ten jiný přístup ke členům
+			</p>
+
+			<h2>Kopírovací konstruktor</h2>
+			<p>
+				je konstruktor, který vytvoří objekt pomocí jiného objektu
+				stejné třídy, který je již vytvořen. Pokud tento konstruktor
+				není ve třídě definován, kompilátor si ho sám vytvoří.
+			</p>
+			<img
+				src="img/19-kopirovaci-konstruktor.jpg"
+				alt="Kopírovací konstruktor"
+				class="invertable"
+			/>
+		</main>
+
+		<script src="../smooth-scroll.min.js"></script>
+		<script>
+			var scroll = new SmoothScroll('a[href*="#"]');
+		</script>
+	</body>
+</html>
