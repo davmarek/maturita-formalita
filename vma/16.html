@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>16. Základy jazyka C++</title>
+
+		<link rel="stylesheet" href="../main.css" />
+		<script src="../main.js" defer></script>
+	</head>
+	<body>
+		<div id="theme-switcher"></div>
+		<a id="scroll-up" href="#" class="hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="feather feather-arrow-up"
+			>
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</a>
+
+		<nav>
+			<a href="../">Rozcestník</a>
+			<a href="#try-catch">Try, catch, finally</a>
+			<a href="#vicevlaknove">Vícevláknové</a>
+		</nav>
+
+		<main>
+			<h1>16. Základy jazyka C++</h1>
+
+			<p>
+				Z editoru jde kód který píše programátor, syntaxí c++ se svými
+				úpravami, stylováním / odřádkováním, komentáři a popřípadě
+				dokumentací jednotlivých funkcí. Všechen tento kód je uložen do
+				souboru s koncovkou .cpp, který je následně poslán do
+				kompilátoru. Než se však do kompilátoru dostane, projde přes
+				preprocesor, který ke kódu připojí hlavičkové soubory s kocovkou
+				.h. Poté se kompilátor postará o přeložení kódu do strojového
+				kódu, který uloží do souboru s kocovkou .o nebo .obj. Jedná se o
+				objektový soubor, který drží zatím pouze přeložený strojový kód
+				a nelze zatím nijak spustit. Dále je vygenerován soubor .lis,
+				který v sobě uchovává veškeré chyby a nedokonalosti, které se
+				při kompilaci kódu vyskytly. Soubor .o nebo .obj je následně
+				poslán do linkeru, ve kterém se připojí veškeré knihovny, které
+				program potřebuje a linker ví, kde je najít. Dále už z linkeru
+				vyjde spustitelný soubor .exe, který může ještě procházet skrze
+				ladící program, který umožňuje zastavit chod programu v určitý
+				moment a je možné sledovat veškeré proměnné v určitý moment
+				chodu programu.
+			</p>
+
+			<h2>Základní typy proměnných</h2>
+			<p>
+				<b>Text (char, wchar_t):</b> Může reprezentovat jedno
+				písmeno/znak (A, $). Nejvíc základní typ je char, který se
+				ukládá pouze do jednoho bytu. Jiné datové typy mohou poskytnout
+				místo pro více písmen/znaků(wchar_t).
+			</p>
+
+			<p>
+				<b>Celá čísla(int):</b> Mohou ukládat celá čísla(7, 1245), mohou
+				mít různorodé velikosti i například podle toho jestli je
+				proměnná long, signed nebo unsigned, poté záleží pouze na tom,
+				jestli chceme, aby se do proměnné ukládalo číslo s mínusovou
+				hodnotou nebo ne.
+			</p>
+			<p>
+				<b>Čísla s desetinnou čárkou(float, double):</b>
+				Čísla s desetinnou čárkou jsou uložena v datových typech float
+				nebo double, lze také učit požadovanou přesnost desetinných
+				míst.
+			</p>
+			<p>
+				<b>Boolean(bool):</b> V C++ zkrácený bool může reprezentovat
+				pouze dva stavy, a to true nebo false.
+			</p>
+
+			<h2>Druhy cyklů</h2>
+			<h3>for</h3>
+			<p>
+				Používá se k určitému počtu opakování bloku kódu. Skládá se z
+				proměnné určující číslo cyklu, podmínky, která určuje kdy se má
+				cyklus zastavit a iterace proměnné čísla cyklu.
+			</p>
+
+			<h3>while</h3>
+			<p>
+				Cyklus opakující blok kódu pokud jsou na počátku cyklu splněny
+				všechny podmínky.
+			</p>
+			<h3>do .. while</h3>
+			<p>
+				Cyklus opakující blok kódu pokud jsou na konci cyklu splněny
+				všechny podmínky.
+			</p>
+
+			<h3>vnořený cyklus</h3>
+			<p>
+				cykly jde vnořovat do sebe, pokud k tomu dojde, nejdříve se
+				prochází cykly vnitřní a poté se postupně program dostává k
+				cyklům vnějším.
+			</p>
+
+			<h3>Klíčové příkazy cyklů</h3>
+			<p><b>Break:</b> přeruší momentální cyklus <br /></p>
+			<p>
+				<b>Continue:</b> přeskočí momentální cyklus
+				<br />
+			</p>
+			<p>
+				<b>goto:</b> v novodobém programování odsuzovaná funkce, slouží
+				k poskakování mezi řádky programu podle daného označení (label)
+			</p>
+
+			<h2>Příkazy pro větvení programu</h2>
+			<h3>if</h3>
+			<p>
+				slouží k určování podmínek, pokud se podmínka splní(je
+				pravdivá), program vykoná blok kódu, pokud ne tak program
+				pokračuje dál a to buď na blok kódu else nebo další příkazy.
+			</p>
+
+			<h3>else</h3>
+			<p>
+				slouží jako podmínka která se vykoná pouze pokud se nesplní
+				tvrzení v bloku if
+			</p>
+
+			<h3>switch</h3>
+			<p>
+				uchovává v sobě bloky kódu označené čísly nebo písmeny, podle
+				toho jaký je zadán vstup se vykoná příslušně označený blok kódu.
+				(blok kódu-case, každý case musí být ukončen slovem break)
+			</p>
+
+			<h2>Logické operátory</h2>
+			<p>s pomocí logických operátorů lze řetězit podmínky za sebe</p>
+
+			<p>
+				<b>AND( && )</b> : aby byla podmínka pravdivá je zapotřebí, aby
+				byly pravdivé všechny tvrzení
+			</p>
+			<table>
+				<tr class="left">
+					<th>A</th>
+					<th>B</th>
+					<th>A && B</th>
+				</tr>
+
+				<tr>
+					<td>pravda</td>
+					<td>pravda</td>
+					<td>pravda</td>
+				</tr>
+				<tr>
+					<td>pravda</td>
+					<td>nepravda</td>
+					<td>nepravda</td>
+				</tr>
+				<tr>
+					<td>nepravda</td>
+					<td>pravda</td>
+					<td>nepravda</td>
+				</tr>
+				<tr>
+					<td>nepravda</td>
+					<td>nepravda</td>
+					<td>nepravda</td>
+				</tr>
+			</table>
+
+			<p>
+				<b>OR( || )</b> : aby byla podmínka pravdivá stačí, aby bylo
+				pravdivé pouze jedno tvrzení
+			</p>
+			<table>
+				<tr class="left">
+					<th>A</th>
+					<th>B</th>
+					<th>A || B</th>
+				</tr>
+
+				<tr>
+					<td>pravda</td>
+					<td>pravda</td>
+					<td>pravda</td>
+				</tr>
+				<tr>
+					<td>pravda</td>
+					<td>nepravda</td>
+					<td>pravda</td>
+				</tr>
+				<tr>
+					<td>nepravda</td>
+					<td>pravda</td>
+					<td>pravda</td>
+				</tr>
+				<tr>
+					<td>nepravda</td>
+					<td>nepravda</td>
+					<td>nepravda</td>
+				</tr>
+			</table>
+
+			<p>
+				<b>Negace( ! )</b> : obrátí výsledek tvrzení, pokud je pravdivé
+				stane se z něj lživé a naopak.
+			</p>
+
+			<h2>Aritmetické operátory</h2>
+			<table>
+				<tr>
+					<td class="code">+</td>
+					<td>sčítání</td>
+				</tr>
+
+				<tr>
+					<td class="code">-</td>
+					<td>odčítání</td>
+				</tr>
+
+				<tr>
+					<td class="code">*</td>
+					<td>násobení</td>
+				</tr>
+
+				<tr>
+					<td class="code">/</td>
+					<td>dělení</td>
+				</tr>
+
+				<tr>
+					<td class="code">%</td>
+					<td>modulo (zbytek po dělení)</td>
+				</tr>
+			</table>
+
+			<h2>Složené přiřazení</h2>
+			<p>
+				x += y → x = x + y <br />
+				x -= y → x = x - y <br />
+				x *= y → x = x * y <br />
+				x /= y → x = x / y <br />
+				x %= y → x = x % y
+			</p>
+
+			<p>
+				Inkrementace a Dekrementace => x++, x--, ++x, --x <br />
+				Relační operátory <, >, <=, >=, ==, !=
+			</p>
+
+			<h2>Datové proudy (cin,cout)</h2>
+			<p>
+				O tuto funkci se stará knihovna iostream, která slouží k
+				ovládání veškerého vstupu a výstupu, ale také třeba logování,
+				posílání chyb, čtení a zápis do souborů.
+			</p>
+
+			<p>
+				<b>Cin</b> slouží k získání uživatelského vstupu. Zapisujeme jej
+				<b>cin >> proměnná</b>.
+			</p>
+
+			<p>
+				<b>Cout</b> slouží k výstupu programu, tedy veškeré zprávy,
+				které program uživateli poskytuje. Zapisujeme
+				<b>cout &lt;&lt; proměnná</b>.
+			</p>
+
+			<p>
+				Šipky při zápisu datových proudů slouží k určení směru proudu, v
+				případě <b>cin</b> tedy z objektu do proměnné a v případě
+				<b>cout</b> z programu do objektu datového proudu.
+			</p>
+
+			<h2>Generace náhodného čísla</h2>
+			<p>
+				O generaci náhodného čísla se starají v c++ dvě funkce, z
+				knihovny <b>cstdlib, srand() a rand()</b>. Nejdříve musíme
+				inicializovat random seed funkcí srand(time(NULL)) s parametrem
+				času, který získáme přidáním knihovny <b>ctime</b> a ten nám
+				zajistí jistou náhodnost tohoto seedu. Poté již funkce
+				<b>rand()</b> může vygenerovat náhodné číslo mezi hodnotou
+				<b>0 a RAND_MAX</b>.
+			</p>
+
+			<h2>Definice funkce</h2>
+			<p>
+				Funkce musí mít definovaný prototyp na začátku souboru. To
+				znamená, že musí být znám návratový typ funkce, název funkce,
+				datové typy a počet parametrů parametrů, které ovšem nemusí být
+				pojmenovány. Definice těla funkce není v prototypu nutná. Poté
+				můžeme funkci definovat na konci souboru, pod funkcí main, nebo
+				můžeme všechny funkce definovat na místo vytváření prototypů na
+				počátku souboru.
+			</p>
+
+			<h2>Rekurze</h2>
+			<p>
+				Jedná se o zacyklení funkce. Takováto funkce je volána sama na
+				sebe, to znamená, že funkce se sama na sebe odkazuje ve svém
+				těle. Je ovšem nutná podmínka, při které se cyklus rekurze
+				ukončí a metoda vrátí konečnou hodnotu, v opačném případě by se
+				funkce dostala do nekonečného cyklu.
+			</p>
+
+			<p>
+				<code>
+					#include &lt;iostream&gt; <br />
+					<span class="p">using namespace</span> std; <br /><br />
+
+					<span class="p">void</span>
+					<span class="b">numberFunction</span>(<span class="p"
+						>int</span
+					>
+					i) { <br />
+					&#160; &#160; cout &lt;&lt;
+					<span class="g">"The number is: "</span> &lt;&lt; i &lt;&lt;
+					endl;
+					<br />
+					&#160; &#160; i++; <br />
+					&#160; &#160; <span class="p">if</span>(i &lt;
+					<span class="y">10</span> ) { <br />
+					&#160; &#160; &#160; &#160;
+					<span class="b">numberFunction</span>(i); <br />
+					&#160; &#160; }
+					<br />
+					}
+
+					<br /><br />
+
+					<span class="p">int</span> <span class="b">main</span>() {
+					<br />
+					&#160; &#160; <span class="p">int</span> i =
+					<span class="y">0</span>; <br />
+					&#160; &#160; <span class="b">numberFunction</span>(i);
+					<br />
+					<br />
+					&#160; &#160; <span class="p">return</span>
+					<span class="y">0</span>;
+					<br />
+					}
+				</code>
+			</p>
+
+			<h2>Práce se soubory</h2>
+			<p>
+				Pro čtení nebo zápis do souboru je třeba soubor nejprve otevřít
+				pomocí jednoho z objektů <b>ofstream</b> nebo
+				<b>fstream (ifstream</b> pro otevření souboru pouze pro čtení).
+				Na jeden z těchto objektů si poté zavoláme metodu
+				<b>open()</b> a do parametrů napíšeme lokaci a název souboru a
+				můžeme přidat mód, ve kterém chceme soubor otevřít. Zápis nebo
+				čtení ze souboru probíhá skrze operátory datových proudů (<< a
+				>>), které se použijí stejně jako u <b>cin</b> a
+				<b>cout</b> pouze s tím rozdílem, že se použijí objekty pro
+				práci se soubry(<b>of/if/f stream</b>). Po ukončení práce se
+				souborem je potřeba jej zavřít pomocí funkce <b>close()</b>,
+				kterou si zavoláme na objekt, s kterým pracujeme.
+			</p>
+
+			<p>
+				<b>ofstream</b>: reprezentuje výstupní datový proud, slouží k
+				vytváření souborů a zápisu do souborů
+			</p>
+			<p>
+				<b>ifstream</b>: reprezentuje vstupní datový proud, slouží ke
+				čtení souborů
+			</p>
+			<p>
+				<b>fstream</b>: reprezentuje oba datové proudy, můžeme ho použít
+				jak ke čtení tak k zápisu do souboru a také k vytváření souborů.
+				Jedná se o kombinaci obou tříd <b>ofstream</b> a
+				<b>ifstream</b>.
+			</p>
+
+			<h3>Manipulátory pro soubory</h3>
+			<p>
+				<b>ios::app: (append mode)</b> Otevře soubor v módu, kdy veškerý
+				zápis do souboru probíhá až za obsah, který se v souboru již
+				nachází. Tento mód hledá konec souboru před každým zápisem a tím
+				se liší od ::ate módu
+			</p>
+			<p>
+				<b>ios::ate:(at the end mode)</b> Otevře soubor v módu, kdy
+				veškerý zápis do souboru probíhá až za obsah, který se v souboru
+				již nachází, ale pouze při otevření souboru, poté je možné
+				posouvat místo, kde zápis nebo čtení začíná na různá místa v
+				souboru. Tento mód hledá konec souboru při otevření souboru a
+				poté se může posunout na jiné místo na rozdíl od ::app módu,
+				který je za každých okolností na konci souboru.
+			</p>
+
+			<p><b>ios::in:(input mode)</b> Otevře soubor v módu pro čtení.</p>
+
+			<p><b>ios::out:(output mode)</b> Otevře soubor v módu pro zápis.</p>
+			<p>
+				<b>ios::trunc:(truncate mode)</b> Otevře soubor v módu, kdy
+				pokud soubor existuje, tak je všechen obsah vymazán a je
+				předpokládáno, že je soubor prázdný a zápis začíná od nulové
+				pozice, tedy začátku souboru.
+			</p>
+			<p>
+				<b>ios::binary:(binary mode)</b> Otevře soubor v módu, kdy
+				program bude předpokládat že datový proud bude binárního rázu a
+				nebude počítat s textem.
+			</p>
+
+			<h2>Metody seekg, seekp, tellg, tellp</h2>
+			<p>
+				Objekty pro práci se soubory mají tyto metody, aby bylo možné
+				posouvat místo zápisu nebo čtení o určitý počet bytů a také aby
+				bylo možné tuto pozici nějak získat.
+			</p>
+			<p><b>seekg</b>: posune pozici čtení o určitý počet bytů.</p>
+			<p><b>seekp</b>: posune pozici zápisu o určitý počet bytů.</p>
+			<p><b>tellg</b>: vrací pozici čtení.</p>
+			<p><b>tellp</b>: vrací pozici zápisu.</p>
+			<p>
+				<b>ios::beg</b>: uchovává počáteční pozici zápisu, lze použít
+				pro relativní posunutí od počátku zápisu/čtení
+			</p>
+			<p>
+				<b>ios::cur</b>: uchovává momentální pozici zápisu, lze použít
+				pro relativní posunutí od momentální pozici zápisu/čtení
+			</p>
+			<p>
+				<b>ios::end</b>: uchovává konečnou pozici zápisu, lze použít pro
+				relativní posunutí od konce zápisu/čtení
+			</p>
+		</main>
+
+		<script src="../smooth-scroll.min.js"></script>
+		<script>
+			var scroll = new SmoothScroll('a[href*="#"]');
+		</script>
+	</body>
+</html>
