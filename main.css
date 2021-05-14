@@ -93,7 +93,11 @@ h1 + h2 {
 p + h2,
 p + h3,
 p + h4,
-p + h5 {
+p + h5,
+table + h2,
+table + h3,
+table + h4,
+table + h5 {
 	margin-top: 1.6em;
 }
 ul + h2,
