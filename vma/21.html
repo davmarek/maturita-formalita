@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>21. DATABÁZOVÉ SYSTÉMY</title>
+
+		<link rel="stylesheet" href="../main.css" />
+		<script src="../main.js" defer></script>
+	</head>
+	<body>
+		<div id="theme-switcher"></div>
+		<a id="scroll-up" href="#" class="hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="feather feather-arrow-up"
+			>
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</a>
+
+		<nav>
+			<a href="../">Rozcestník</a>
+			<a href="#historie-vyvoje-dat">Historie vývoje zpracování dat</a>
+			<a href="#relacni-model-dat">Relační model dat</a>
+			<a href="#mysql">MySQL</a>
+		</nav>
+
+		<main>
+			<h1>21. DATABÁZOVÉ SYSTÉMY</h1>
+			<h2>Základní pojmy</h2>
+			<h3>Data</h3>
+			<p>
+				Data jsou získané a zachycené údaje popisující realitu. Jsou to
+				fyzicky zaznamenané výsledky pozorování reality, fakta, poznatky
+				nebo znalosti a vědomosti. Interpretací dat a jejich vztahů
+				pomocí znalostí vznikají informace.
+			</p>
+			<h3>Informace</h3>
+			<p>
+				Informace jsou údaje o prostředí, jeho stavu a procesech v něm
+				probíhajících. Informace snižuje nebo odstraňuje neurčitost.
+				Množství informace lze charakterizovat tím, jak se přijetím
+				změní míra neurčitosti na straně příjemce informace.
+			</p>
+			<h3>Databáze</h3>
+			<p>
+				Systém s pevnou datovou strukturou, který umožňuje uchovávat
+				data. Soubory mezi sebou mohou být propojeny různými vztahy nebo
+				klíči. Celkově jde o software, který umožňuje přístup a
+				manipulaci s uloženými daty.
+			</p>
+			<h3>Entita</h3>
+			<p>
+				Je prvek z reálného světa (např. člověk, stroj, zvíře, město),
+				který je popsán svými vlastními charakteristikami nebo
+				vlastnostmi. Ty se většinou považují za atributy (např. jméno,
+				příjmení, stav, plat, hmotnost, počet končetin, jejich délka … a
+				tak)
+			</p>
+			<h3>Atributy</h3>
+			<p>
+				Atributy popisují entity. Jedná se o jejich jedinečné vlastnosti
+				jako jméno, příjmení, barva vlasů atd.
+			</p>
+			<h3>Perzistence dat</h3>
+			<p>
+				Zajištění, aby data byla nepoškozena a bezpečně uchována I po
+				ukončení běhu aplikace.
+			</p>
+			<h3>Integrita dat</h3>
+			<p>
+				Zachování stejnosti a kompletnosti dat při jejich přenosu.
+				Zachování dat pro jejich zamyšlené použití.
+			</p>
+			<h3>Konzistence dat</h3>
+			<p>
+				Data vyjadřují smysluplnou hodnotu, která popisuje reálný svět.
+				Nekonzistentním stavem může být například záporný věk osoby.
+			</p>
+			<h3>SŘBD</h3>
+			<p>
+				Systém řízení báze dat (kdo z toho má kurva něco pochopit …
+				anglicky DBSM – database management system). Je to software,
+				který zajišťuje rozhraní pro práci s databází. Společně s
+				databází se nazývá databázový systém.
+			</p>
+			<p>
+				Takovýto systém musí být schopný řídit a definovat strukturu
+				dat. Udržovat datovou integritu a konzistenci a také je udržovat
+				perzistentní. Měl by také umět spravovat uživatele databázového
+				systému a jejich přístup k určitým typům dat nebo informací.
+			</p>
+			<h2 id="historie-vyvoje-dat">Historie vývoje zpracování dat</h2>
+			<ul>
+				<li>Klasické kartotéky</li>
+				<li>Děrné štítky při počítání lidu v USA</li>
+				<li>První databázový jazyk COBOL</li>
+				<li>Síťové databáze</li>
+				<li>Hierarchické databáze</li>
+				<li>
+					Relační databáze a SQL – poprvé pohled na data jako na
+					tabulky
+				</li>
+				<li>
+					Objektové databáze – neuspěly, proto vznikl kompromis,
+					objektově relační databáze
+				</li>
+				<li>Objektově-relační databáze</li>
+			</ul>
+			<h2>Rozdělení datových modelů</h2>
+			<p>
+				Databáze se rozdělují podle způsobu ukládání dat a vazeb mezi
+				nimi a dají se tak rozdělit na několik základních typů.
+			</p>
+			<h2>Základní principy datových modelů</h2>
+			<h3>Hierarchický</h3>
+			<p>
+				Uspořádává data do stromové struktury. Záznam představuje uzel
+				ve struktuře. Vztahy mezi záznamy jsou pouze na základní bázi
+				rodič-potomek
+			</p>
+			<img
+				src="img/21-hierarchicky-model.jpg"
+				alt="Hierarchický model"
+				class="invertable"
+			/>
+			<h3>Síťový</h3>
+			<p>
+				Je pouze zobecněním hierarchického modelu. Přidává mnohonásobné
+				vztahy.
+			</p>
+			<img
+				src="img/21-sitovy-model.jpg"
+				alt="Síťový model"
+				class="invertable"
+			/>
+			<h3>Relační</h3>
+			<p>
+				Model má jednoduchou strukturu, data jsou organizována v
+				tabulkách, které se skládají z řádků a sloupců. V těchto
+				tabulkách jsou prováděny všechny databázové operace.
+			</p>
+			<img
+				src="img/21-relacni-model.jpg"
+				alt="Relační model"
+				class="invertable"
+			/>
+			<h3>Objektově orientovaný</h3>
+			<p>
+				Je inspirován objektově orientovaným programováním. Záznam je v
+				databázi reprezentován objektem a jeho hodnotami, které jsou
+				definovány v programovácím jazyce, který podporuje objektově
+				orientované programování.
+			</p>
+			<h2 id="relacni-model-dat">Relační model dat</h2>
+			<h3>Pojmy</h3>
+			<ul>
+				<li>Tabulky – relace, dvourozměrné struktury</li>
+				<li>Sloupce v tabulkách – atributy</li>
+				<li>Řádky – záznamy</li>
+				<li>Atributy mají určený datový typ</li>
+			</ul>
+			<h3>Typy klíčů</h3>
+			<p>
+				<b>Kandidátní –</b> <br />hodnota, která jednoznačně dokáže
+				identifikovat daný záznam a může se tak stát primárním klíčem
+			</p>
+			<p>
+				<b>Alternativní –​</b> <br />kandidátní klíče, které nejsou
+				vybrány jako primární
+			</p>
+			<p>
+				<b>Primární –</b> <br />jednoznačný identifikátor záznamu. Může
+				jím být jeden nebo více sloupců. Klíče musí obsahovat hodnotu a
+				nesmí být NULL. Často se využívají uměle generované a
+				automaticky inkrementované hodnoty.
+			</p>
+			<p>
+				<b>Cizí –</b> <br />slouží pro vyjádření vztahů (relací) mezi
+				databázovými tabulkami. Jedná se o atribut nebo skupinu
+				atributů, které umožní identifikovat záznamy tabulek, které
+				spolu navzájem souvisí.
+			</p>
+			<h3>Relační operace</h3>
+			<p>
+				<b>Spojení –</b> <br />Výsledná tabulka obsahuje jen ty záznamy
+				z obou zdrojových relací, které se shodují v položkách, přes
+				které se spojení provádí.
+			</p>
+			<p>
+				<b>Selekce​ –</b> <br />Označuje, ktere zaznamy se maji vratit …
+				podmíka WHERE atd
+			</p>
+			<p>
+				<b>Projekce​ –</b> <br />Označuje, ktere sloupce se maji vratit
+				… SELECT *, SELECT a,b,c
+			</p>
+			<h3>Vztahy mezi tabulkami</h3>
+			<p>
+				<b>Unární vztah ​–</b> <br />relace je spojena sama se sebou.
+				Typickým příkladem je vztah zaměstnance a jeho nadřízeného, kdy
+				nadřízený je také jedním ze zaměstnanců, pročež také může mít
+				nadřízeného. Vztah se realizuje vložením primárního klíče relace
+				zaměstnanec ve formě cizího klíče opět do relace zaměstnanec.
+			</p>
+			<p>
+				<b>Binární vztah ​–</b> <br />klasický vztah mezi dvěma relacemi
+			</p>
+			<p>
+				<b>Ternární vztah ​–</b> <br />vztah mezi třemi relacemi
+				najednou.
+			</p>
+			<p><b>N-ární vztah ​–</b> <br />vztah mezi n-relacemi zároveň.</p>
+			<h2 id="mysql">MySQL a využití</h2>
+			<p>
+				MySQL je open-source systém pro správu relačních databází SQL.
+				MySQL je populární variantou databázového systému pro spoustu
+				webů a webových aplikací, které využívájí LAMP stack pro svůj
+				vývoj. Databáze MySQL uchovává data v tabulkách, které mezi
+				sebou mohou mít různé druhy definovaných vztahů a mají
+				definovanou svoji vlastní strukturu, názvy a počet sloupců. Dále
+				také spravuje uživatele a jejich pravomoce pro přístupu k
+				jednotlivým tabulkám či datům.
+			</p>
+			<p>
+				MySQL využívá pro manipulaci a přístup k datům jazyk SQL, jak
+				napovídá název. Tento jazyk umožňuje zobrazovat, modifikovat a
+				nebo mazat data z databáze. Jde pomocí něj vytvářet komplexní
+				příkazy, které spojují několik tabulek a stovky záznamů na
+				porovnávání nebo získávání dat.
+			</p>
+		</main>
+
+		<script src="../smooth-scroll.min.js"></script>
+		<script>
+			var scroll = new SmoothScroll('a[href*="#"]');
+		</script>
+	</body>
+</html>

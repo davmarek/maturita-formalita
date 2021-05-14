@@ -53,7 +53,8 @@
         -   [x] -   Upravit **_code_**
 -   [ ] 20 - David
     -   [ ] získat!!!
--   [ ] 21 - Kuba
+-   [x] 21 - Kuba
+    -   [ ] - David - komprese obrázků
 -   [ ] 22 - David
 -   [ ] 23 - Kuba
 -   [ ] 24 - David
