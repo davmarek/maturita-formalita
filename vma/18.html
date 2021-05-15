@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>18. Ukazatele v C++</title>
+
+		<link rel="stylesheet" href="../main.css" />
+		<script src="../main.js" defer></script>
+	</head>
+	<body>
+		<div id="theme-switcher"></div>
+		<a id="scroll-up" href="#" class="hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="feather feather-arrow-up"
+			>
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</a>
+
+		<nav>
+			<a href="../">Rozcestník</a>
+			<a href="#deklarace">Deklarace</a>
+			<a href="#new-delete">New, delete</a>
+			<a href="#uka-funkci">Ukazatel na funkci</a>
+		</nav>
+
+		<main>
+			<h1>18. Ukazatele v C++</h1>
+
+			<h2>Proměnná <span class="low">vs</span> Ukazatel</h2>
+
+			<p>
+				<span class="b">Proměnná</span> je prostor v paměti, který ke
+				kterému můžeme přistoupit podle jeho jména, jména proměnné.
+				<span class="b">Ukazatel</span> naopak odkazuje na přesné místo
+				v paměti, kde se takováto proměnná nachází a umožňuje nám ji
+				upravovat přímo v paměti.
+			</p>
+			<p>
+				<span class="b">Proměnná</span> dokáže uchovávat hodnotu, která
+				je uložena na své adrese v paměti.
+			</p>
+			<p>
+				<span class="b">Ukazatel</span> uchovává přesnou adresu místa,
+				kde se proměnná nebo místo pro ni vytvořené nachází.
+			</p>
+
+			<h2 id="deklarace">
+				Deklarace, inicializace a přístup k obsahu ukazatele
+			</h2>
+
+			<p>
+				Při deklaraci musíme jako první určit
+				<span class="b">datový typ</span> ukazatele aby program věděl na
+				jaký datový typ ukazatel vlastně ukazuje (ukazatelé nemají
+				datový typ, ale data na které ukazují ano a proto se musí datový
+				typ deklarovat). Dále napíšeme
+				<span class="b">hvězdičku</span> a
+				<span class="b"> jméno ukazatele </span>.
+			</p>
+
+			<p>
+				<code>
+					<span class="p">int</span> * number; <br />
+					<span class="p">char</span> * character; <br />
+					<span class="p">double</span> * decimal; <br />
+				</code>
+			</p>
+
+			<p>
+				Ukazatel uchovává adresu paměti, takže ho můžeme inicializovat
+				adresou již vytvořené proměnné nebo můžeme místo v paměti pro
+				proměnnou vytvořit sami. Adresu proměnné získáme tak, že před
+				název proměnné napíšeme <span class="b">ampersand(&)</span>.
+				Pokud chceme vytvořit prostor pro proměnnou sami, použijeme
+				slovo <span class="b">new</span> a
+				<span class="b">datový typ</span>, který chceme v paměti
+				uchovávat a tím se nám v paměti vytvoří dostatečně velký prostor
+				pro daný datový typ. Dále může být ukazatel inicializován jiným,
+				již inicializovaným ukazatelem.
+			</p>
+
+			<table>
+				<tr>
+					<th></th>
+					<th>Hodnota</th>
+					<th>Adresa</th>
+				</tr>
+				<tr>
+					<th>Proměnná</th>
+					<td class="code">nazevX</td>
+					<td class="code">&nazevX</td>
+				</tr>
+				<tr>
+					<th>Ukazatel</th>
+					<td class="code">*nazevY</td>
+					<td class="code">nazevY</td>
+				</tr>
+			</table>
+
+			<p>
+				<code>
+					pointer = new type <br />
+					pointer = new type [pocet_prvku]
+				</code>
+			</p>
+			<p>
+				<code>
+					<span class="p">int</span> cislo =
+					<span class="r">10</span>; <br />
+
+					<span class="p">int</span> * ukazatel; <br />
+					ukazatel1 = &amp;cislo; <br />
+
+					<br />
+
+					<span class="p">int</span> * foo; <br />
+					ukazatel1 = <span class="p">new int</span> [<span class="r"
+						>5</span
+					>]; <br />
+				</code>
+			</p>
+
+			<p>
+				Pokud chceme nastavit hodnotu proměnné, na kterou ukazatel
+				ukazuje, musíme před jméno ukazatele napsat
+				<span class="b">hvězdičku</span> a tak se dostaneme přímo k
+				hodnotě, která se nachází na adrese, kterou ukazatel uchovává.
+			</p>
+
+			<p>
+				<code> *ukazatel = <span class="r">10</span>; </code>
+			</p>
+
+			<h2 id="new-delete">New, delete, dynamická alokace paměti</h2>
+			<p>
+				Slovo <span class="b">new</span> vytvoří prostor v paměti, který
+				se rovná velikosti datového typu, na který ukazatel ukazuje.
+				Pokud chceme vytvořit prostor v paměti pro pole daného datového
+				typu, tak při inicializaci ukazatele napíšeme za
+				<span class="b">new</span> a
+				<span class="b">datový typ, hranaté závorky</span> a určíme pro
+				kolik prvků pole se má alokovat paměť. Takto dynamicky alokované
+				místo v paměti se zde bude nacházet až do té doby, než jej
+				smažeme.
+			</p>
+
+			<p>
+				Slovo <span class="b">delete</span> smaže námi vytvořený prostor
+				v paměti a jeho obsah. Pokud jsme v paměti udělali prostor pro
+				pole prvků musíme za <span class="b">delete</span> napsat
+				hranaté závorky(<span class="b">delete[]</span>) a tak smažeme
+				celé pole. Pokud tak neuděláme, dojde ke smazání pouze prvního
+				prvku tohoto pole.
+			</p>
+
+			<p>
+				<code>
+					<span class="p"> delete</span> ukazatel; <br />
+					<span class="p"> delete</span>[] ukazatel_pole;
+				</code>
+			</p>
+
+			<h2>Adresa pole</h2>
+			<p>
+				Pokud deklarujeme pole vytvoříme tak i adresu na první prvek
+				pole. Samotné pole je adresou, která odkazuje na první prvek
+				pole. Název pole v sobě uchovává tedy adresu na první prvek
+				pole, pokud před název pole napíšeme
+				<span class="b">ampersand(&)</span> dostaneme stejnou adresu.
+				Jediný rozdíl je, že pokud přidáme hodnotu k adrese získanou z
+				<span class="b">ampersandu(&)</span> program přeskočí celou
+				paměť ve které se nachází pole, zatím co u adresy získané jenom
+				z adresy názvu pole se posuna na druhý prvek pole.
+			</p>
+
+			<p>
+				<code>
+					<span class="p">int</span> pole[<span class="r">5</span>] =
+					{ <span class="r">5</span>, <span class="r">65</span>,
+					<span class="r">98</span>, <span class="r">47</span>,
+					<span class="r">52</span>
+					}; <br />
+					cout &lt;&lt; pole &lt;&lt; endl; <br />
+					cout &lt;&lt; &amp;pole &lt;&lt; endl; <br />
+					<span class="comment">// vypíše se stejná adresa</span>
+				</code>
+			</p>
+
+			<h2>Aritmetika ukazatelů</h2>
+			<p>
+				K adresám, které ukazatele uchovávají můžeme přičítat nebo
+				odečítat hodnoty a posouvat tak paměť, na kterou ukazatel
+				ukazuje. Takovéto operace jde využít například při dynamické
+				alokaci paměti pole, kde adresa na pole odkazuje na první prvek
+				pole, pokud tedy přičteme 1 dostaneme se na adresu paměti
+				druhého prvku pole.
+			</p>
+			<p>
+				Přičtení 1 k adrese ukazatele posune ukazatel o počet bitů
+				daného datového typu (každý datový type je jinak veliký, má jiný
+				počet bitů, které zabírá v paměti)
+			</p>
+
+			<img
+				src="img/18-aritmetika-ukazatelu.png"
+				alt="18-aritmetika-ukazatelu.png"
+				loading="lazy"
+				class="invertable"
+			/>
+
+			<h2>Ukazatele a práce s textovými řetězci</h2>
+			<p>
+				Ukazatele lze využít při vytváření dynamického pole charů. Od
+				uživatele získáme string a zjistíme jeho velikost, ke které
+				přičteme 1, kvůli tomu, že string v sobě obsahuje nulový
+				charakter(charakter, který ukončuje textový řetězec), který se
+				však nepočítá do délky stringu. Musíme ho tedy přičíst ručně.
+				Poté inicializujeme ukazatel pole charů s velikostí stringu+1.
+				Dále využijeme funkci <span class="b">strcpy()</span>, abychom
+				zkopírovali hodnotu stringu do vytvořené paměti ukazatele. K
+				stringu připojíme funkci <span class="b">c_str()</span>, která
+				vrací ukazatel na pole charů už i s nulovým charakterem. Funkce
+				<span class="b">strcpy()</span> tedy zkopíruje toho pole do
+				adresy ukazatele.
+			</p>
+
+			<p>
+				<code>
+					<span class="p">string</span> slovo =
+					<span class="g">"Ahoj"</span>; <br />
+
+					<span class="p">int</span> pocet_charu = name.<span
+						class="b"
+						>length</span
+					>() + <span class="r">1</span>; <br />
+					<br />
+
+					<span class="p">char</span> * kopie_slova =
+					<span class="p">new char</span>[pocet_charu]; <br />
+					<br />
+
+					<span class="b">strcpy</span>(kopie_slova, slovo.<span
+						class="b"
+						>c_str</span
+					>()); <br />
+				</code>
+			</p>
+
+			<h2>Ukazatele a práce se strukturou</h2>
+
+			<p>
+				Pokud chceme vytvořit ukazatel na strukturu, můžeme to udělat
+				tak, že mezi typ a název struktury připíšeme hvězdičku. S
+				takovýmto ukazatelem se pak pracuje uplně stejně jako se všemi
+				ostatními ukazateli. Jediné co se změní je práce se strukturou.
+				Konkrétně přístup k proměnným uložených ve struktuře. Nebudeme k
+				nim přistupovat pomocí “.“, ale pomocí
+				<span class="code">-></span>.
+			</p>
+
+			<h2>Pole jako parametr funkce</h2>
+			<p>
+				Do funkce lze přidat pole jako její parametr. Lze to udělat
+				několika způsoby. Prvním je, že do parametrů funkce přidáme pole
+				(<span class="b">int cisla[]</span>). Druhý způsobem to uděláme
+				tak, že do parametrů funkce budeme posílat ukazatel na pole.
+				Kompilátor oba tyto způsoby jako identické, protože v obou
+				případech se do funkce posílá ukazatel na první prvek pole (pole
+				int cisla[] uchovává adresu na první prvek pole, pokud do pole
+				pošleme adresu pole, také ukazuje na první prvek pole). Takže
+				posílání pole do funkce je vlastně jen ulehčení pro člověka.
+				Kompilátor v obou zápisech vidí ukazatel na pole. Proto ve
+				funkci, do které jsme poslali pole jako parametr, nemůžeme
+				ziistit velikost pole, protože se jedná pouze o ukazatel na pole
+				a ne o pole jako takové.
+			</p>
+
+			<h2 id="uka-funkci">Ukazatel na funkci</h2>
+			<p>
+				V C++ můžeme vytvořit ukazatel i na funkci. Nejčastěji se
+				používá při posílání funkce jako parametr jiné funkce. Ukazatel
+				na funkci se vytváří také pomocí * s tím rozdílem, že název
+				funkce s * je uzavřen v závorkách.
+			</p>
+			<p>
+				<code>
+					<span class="p">int</span> <span class="b">add</span>(<span
+						class="p"
+						>int</span
+					>
+					a, <span class="p">int</span> b) <br />
+					{ <span class="p">return</span> a + b; } <br />
+					<br />
+
+					<span class="p">int</span>
+					<span class="b">subtract</span>(<span class="p">int</span>
+					a, <span class="p">int</span> b) <br />
+					{ <span class="p">return</span> a - b; } <br />
+					<br />
+
+					<span class="p">int</span>
+					<span class="b">operace</span>(<span class="p">int</span> x,
+					<span class="p">int</span> y,
+					<span class="p">int</span> (*funkce) (<span class="p"
+						>int</span
+					>, <span class="p">int</span>)) <br />
+					{ <span class="p">return</span> (*funkce) (x, y); } <br />
+					<br />
+
+					<span class="p">int</span> <span class="b">main</span>()
+					{<br />
+
+					&#160;&#160; <span class="p">int</span> soucet =
+					<span class="b">operace</span>(<span class="r">5</span>,
+					<span class="r">7</span>, <span class="b">add</span>);
+					<br />
+					&#160;&#160; <span class="p">int</span> rozdil =
+					<span class="b">operace</span>(<span class="r">5</span>,
+					<span class="r">7</span>, <span class="b">subtract</span>);
+
+					<br />
+
+					}
+				</code>
+			</p>
+		</main>
+
+		<script src="../smooth-scroll.min.js"></script>
+		<script>
+			var scroll = new SmoothScroll('a[href*="#"]');
+		</script>
+	</body>
+</html>

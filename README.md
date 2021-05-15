@@ -47,7 +47,7 @@
         -   [x] -   Přidat kotvy
         -   [x] -   Upravit barvy v **_code_**
         -   [x] -   Možná změnit margin v h1, h2, h3 (viz. komentář v kódu)
--   [ ] 18 - David
+-   [x] 18 - David
 -   [x] 19 - Kuba
     -   [x] -   David - upravit
         -   [x] -   Přidat kotvy
