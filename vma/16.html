@@ -40,7 +40,7 @@
 
 			<p>
 				Z editoru jde kód který píše programátor, syntaxí c++ se svými
-				úpravami, stylováním / odřádkováním, komentáři a popřípadě
+				úpravami, stylováním/odřádkováním, komentáři a popřípadě
 				dokumentací jednotlivých funkcí. Všechen tento kód je uložen do
 				souboru s koncovkou .cpp, který je následně poslán do
 				kompilátoru. Než se však do kompilátoru dostane, projde přes
@@ -58,6 +58,13 @@
 				moment a je možné sledovat veškeré proměnné v určitý moment
 				chodu programu.
 			</p>
+
+			<img
+				src="img/16-diagram-programu-c.jpg"
+				alt="12-malir-diagonala.png"
+				loading="lazy"
+				class="invertable"
+			/>
 
 			<h2>Základní typy proměnných</h2>
 			<p>
@@ -316,8 +323,10 @@
 
 			<p>
 				<code>
-					#include &lt;iostream&gt; <br />
-					<span class="p">using namespace</span> std; <br /><br />
+					<span class="p">#include</span>
+					<span class="g">&lt;iostream&gt;</span> <br />
+					<span class="p">using namespace</span>
+					<span class="y">std</span>; <br /><br />
 
 					<span class="p">void</span>
 					<span class="b">numberFunction</span>(<span class="p"
@@ -384,6 +393,49 @@
 				<b>ifstream</b>.
 			</p>
 
+			<p>
+				<code>
+					<span class="p">#include</span>
+					<span class="g">&lt;fstream&gt;</span> <br />
+					<span class="p">#include</span>
+					<span class="g">&lt;iostream&gt;</span> <br />
+					<span class="p">using namespace</span>
+					<span class="y">std</span>; <br /><br />
+
+					<span class="p">int</span> <span class="b">main</span>() {
+					<br />
+
+					&#160; &#160;
+					<span class="comment">// výstupní datový proud </span>
+					<br />
+					&#160; &#160; ofstream outFile; <br />
+					<br />
+
+					&#160; &#160;
+					<span class="comment">// otevření souboru </span>
+					<br />
+					&#160; &#160; outFile.<span class="b">open</span>(<span
+						class="g"
+						>"soubor.txt"</span
+					>); <br />
+					<br />
+
+					&#160; &#160;
+					<span class="comment">// zapsání do souboru </span>
+					<br />
+					&#160; &#160; outFile &lt;&lt;
+					<span class="g">"nějaký text"</span> &lt;&lt; endl; <br />
+					<br />
+
+					&#160; &#160;
+					<span class="comment">// zavření souboru </span>
+					<br />
+					&#160; &#160; outFile.<span class="b">close</span>(); <br />
+					<br />
+					}
+				</code>
+			</p>
+
 			<h3>Manipulátory pro soubory</h3>
 			<p>
 				<b>ios::app: (append mode)</b> Otevře soubor v módu, kdy veškerý
@@ -437,6 +489,38 @@
 			<p>
 				<b>ios::end</b>: uchovává konečnou pozici zápisu, lze použít pro
 				relativní posunutí od konce zápisu/čtení
+			</p>
+
+			<p>
+				<code>
+					<span class="comment"
+						>// pozice na n-tém bytu od začátku
+					</span>
+					<br />
+					fileObject.<span class="b">seekg</span>(n); <br />
+					<br />
+
+					<span class="comment"
+						>// pozice o <i>n</i> bytů dopředu od aktuální pozice
+					</span>
+					<br />
+					fileObject.<span class="b">seekg</span>(n, ios::cur); <br />
+					<br />
+
+					<span class="comment"
+						>// pozice o <i>n</i> bytů zpět od konce souboru
+					</span>
+					<br />
+					fileObject.<span class="b">seekg</span>(n, ios::end); <br />
+					<br />
+
+					<span class="comment">// pozice na konci souboru </span>
+					<br />
+					fileObject.<span class="b">seekg</span>(<span class="r"
+						>0</span
+					>, ios::end); <br />
+					<br />
+				</code>
 			</p>
 		</main>
 
