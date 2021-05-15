@@ -97,16 +97,15 @@ p + h5,
 table + h2,
 table + h3,
 table + h4,
-table + h5 {
-	margin-top: 1.6em;
-}
+table + h5,
 ul + h2,
 ul + h3,
 ul + h4,
-ul + h5 {
-	margin-top: 1.6em;
-}
-
+ul + h5,
+ol + h2,
+ol + h3,
+ol + h4,
+ol + h5,
 a + h2,
 a + h3,
 a + h4,
