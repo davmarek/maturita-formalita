@@ -40,8 +40,8 @@
 -   [x] 13 - David
 -   [x] 14 - David
 -   [x] 15 - Kuba
--   [ ] 16 - David
-    -   [ ] dodělat code nakonci
+-   [x] 16 - David
+    -   [x] dodělat code nakonci
 -   [x] 17 - Kuba
     -   [x] -   David - upravit
         -   [x] -   Přidat kotvy
