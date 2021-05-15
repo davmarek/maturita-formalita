@@ -57,7 +57,8 @@
 -   [x] 21 - Kuba
     -   [ ] - David - komprese obrázků
 -   [ ] 22 - David
--   [ ] 23 - Kuba
+-   [x] 23 - Kuba
+    -   [ ] - David - obrázky 
 -   [ ] 24 - David
 -   [ ] 25 - Kuba
 
