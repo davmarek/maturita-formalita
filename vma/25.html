@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>25. BEZPEČNOST INFORMAČNÍCH SYSTÉMŮ</title>
+
+		<link rel="stylesheet" href="../main.css" />
+		<script src="../main.js" defer></script>
+	</head>
+	<body>
+		<div id="theme-switcher"></div>
+		<a id="scroll-up" href="#" class="hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="feather feather-arrow-up"
+			>
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</a>
+
+		<nav>
+			<a href="../">Rozcestník</a>
+			<a href="#ochrana-dat-a-zabezpeceni-pc"
+				>Ochrana dat a zabezpečení počítače</a
+			>
+			<a href="#utoky-a-typy-utocniku">Útoky a typy útočníků</a>
+			<a href="#malware-a-obrana-proti-nemu"
+				>Malware a obrana proti němu</a
+			>
+			<a href="#slavny-malware">Slavný malware</a>
+			<a href="#slavne-jmena">Slavné jména</a>
+		</nav>
+
+		<main>
+			<h1>25. BEZPEČNOST INFORMAČNÍCH SYSTÉMŮ</h1>
+			<h2>Informační systém a jeho bezpečnost</h2>
+			<p>
+				Informační systém je označení pro soubor technických prostředků
+				(hardwaru a softwaru), které dokážou poskytovat​ nebo
+				<b> udržovat​ data​ </b> či <b>informace</b>​ pro požadovaný
+				účel jeho uživatelům.
+			</p>
+			<p>
+				Informační systémy se mohou dělit podle několika skupin podle
+				jejich účelu, přístupnosti nebo stupně automatizace.
+			</p>
+			<p>Podle přístupnosti:</p>
+			<ul>
+				<li>
+					<b>Veřejné</b>
+					<ul>
+						<li>Jsou přístupné veřejnosti</li>
+						<li>Wikipedie, veřejné knihony</li>
+					</ul>
+				</li>
+				<li>
+					<b>Neveřejné </b>
+					<ul>
+						<li>
+							Nejsou přístupné veřejnosti, ale pouze určenému
+							okruhu uživatelů
+						</li>
+						<li>
+							Především se jedná o interní systémy firem nebo
+							organizací
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<p>Podle účelu:</p>
+			<ul>
+				<li>
+					<b>Podnikové </b>
+					<ul>
+						<li>Užívány v podnicích</li>
+						<li>Slouží pro pracovní procesy, pro zaměstnance</li>
+					</ul>
+				</li>
+				<li>
+					<b>Osobní </b>
+					<ul>
+						<li>
+							Informační systém, který slouží pro individuální
+							záležitosti
+						</li>
+					</ul>
+				</li>
+				<li>
+					<b>Managerské</b>
+					<ul>
+						<li>
+							Netříděné informace zobrazované v grafech, tabulkách
+							nebo reportech
+						</li>
+						<li>Především pro vyšší management firem</li>
+					</ul>
+				</li>
+				<li>
+					<b>Knihovní</b>
+					<ul>
+						<li>Správa knih v knihovně</li>
+					</ul>
+				</li>
+				<li>
+					<b>Geografické</b>
+					<ul>
+						<li>
+							Systém pro sběr, uchovávání, třídění a analýzu dat,
+							které znázorňují realitu pomocí map nebo
+							topografických údajů
+						</li>
+						<li>Může jít například o katastrální úřad</li>
+					</ul>
+				</li>
+				<li>
+					<b>Veřejno správní</b>
+					<ul>
+						<li>Podporuje činnost výkonu výkonu veřejné zprávy</li>
+					</ul>
+				</li>
+			</ul>
+			<p>Podle automatizace:</p>
+			<ul>
+				<li>
+					<b>Neautomatizované</b>
+					<ul>
+						<li>
+							Systémy, které mají za úkol komunikovat a
+							interagovat s uživatelem
+						</li>
+						<li>
+							Data se v nich dají lehce najít a snaží se a by data
+							byly zobrazeny pro uživatele ve smysluplné formě
+						</li>
+						<li>O zadání informací se tak tedy stará uživatel</li>
+					</ul>
+				</li>
+				<li>
+					<b>Automatizované</b>
+					<ul>
+						<li>
+							Systém, který je plně automatizovaný nevyžaduje
+							zásah vnějších sil nebo interakci s uživatelem
+						</li>
+						<li>
+							Pracuje pouze se vstupními daty, ze kterých dokáže
+							vypracovat výsledek, který je uživateli předložen
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<p>
+				Takovéto informační systémy by měly mít patřičné zabezpečení
+				proti vnějším útokům nebo špatnému zadaní dat do systému
+				samotným uživatelem. Počítačovou bezpečností se rozumí stav, při
+				kterém je dosaženo
+				<b> dostupnosti​, integritě​, důvěrnosti a odpovědnosti​ </b
+				>.Tyto čtyři stavy zabraňují ztrátě nebo zneužití našeho systému
+				a dat v něm uložených.
+			</p>
+			<ul>
+				<li>
+					<b>Dostupnost​ –</b> data jsou dostupná autorizovaným
+					uživatelům.
+				</li>
+				<li>
+					<b>Integrita​ -</b> změnu dat smí provádět pouze
+					autorizovaní uživatelé
+				</li>
+				<li>
+					<b>Důvěrnost​ -</b> přístup k datům, mají pouze autorizovaní
+					uživatelé
+				</li>
+				<li>
+					<b>Odpovědnost​ –</b> uživatelé jsou odpovědní za své
+					aktivity
+				</li>
+			</ul>
+			<h2 id="ochrana-dat-a-zabezpeceni-pc">
+				Ochrana dat a zabezpečení počítače
+			</h2>
+			<p>
+				Data je nutno chránit před kompromitací, modifikací nebo
+				zničením.
+			</p>
+			<ul>
+				<li><b>Kompromitace​ -</b>chráníme důvěrnost dat</li>
+				<li>
+					<b>Modifikace​ -</b>chráníme data proti neoprávněné změně
+				</li>
+				<li>
+					<b>Zničení​ -</b>chráníme data proti úmyslnému či
+					neúmyslnému zničení
+				</li>
+			</ul>
+			<p>
+				Systémy bychom měly ochránit před neoprávněným <b>fyzickým</b> i
+				<b>logickým přístupem</b>, například
+				<b>ověřením identity uživatele</b>​, k datům, ke kterým by neměl
+				mít přístup. Ochránit data je třeba i při přenosu na síti.
+				Takovéto bezpečnosti se dá docílit například programy pro
+				ochranu systému jako <b>antivir</b> nebo <b>firewall</b> a
+				samotné data můžeme ochránit <b>šifrovacími</b> ​nebo
+				<b>hashovacími</b> funkcemi​.
+			</p>
+			<p>
+				Celý systém bychom měli také <b>monitorovat</b>​, aby mohl být
+				útok včas zjištěn, pokud už k průniku do systému dojde.
+			</p>
+			<h2>Hrozby</h2>
+			<p>
+				Hrozba je vlastnost prostředí, která může potencionálně způsobit
+				narušení bezpečnosti našeho systému.
+			</p>
+			<ul>
+				<li>
+					<b>Neúmyslné </b>
+					<ul>
+						<li>Porucha hardwaru</li>
+						<li>Přírodní katastrofy</li>
+						<li>Výpadek napájení</li>
+						<li>Selhání obsluhy</li>
+					</ul>
+				</li>
+				<li>
+					<b>Úmyslné</b>
+					<ul>
+						<li>
+							Krádež hardwaru, jeho úmyslné poškození nebo zničení
+						</li>
+						<li>Neoprávněná manipulace s daty</li>
+						<li>Krádež software</li>
+						<li>Viry</li>
+					</ul>
+				</li>
+			</ul>
+			<h2 id="utoky-a-typy-utocniku">Útoky a typy útočníků</h2>
+			<p>
+				Všemožné útoky dokáží využít slabin systému a zneužít je pro
+				získání informací nebo získání úplné kontroly nad cílovou
+				informační technologií nebo člověkem. Útoky mohou být provedeny
+				na počítačový systém, ale také na samotného člověka, ze kterého
+				jsou tak vylákány třeba citlivé informace. Při takovýchto
+				útocích může jít o <b>krádež</b>​, <b>zneužití</b> nebo
+				<b> neoprávněné užití dat​ </b>, <b>sabotáž</b>​,
+				<b>vydírání</b> nebo <b>špionáž</b>​. Útoky mohou být rozděleny
+				také na pasivní a aktivní. U pasivních se používá různých forem
+				odposlechů(<b>spyware​, packet sniffing</b>​), které nevzbudí
+				tak velké podezření protože nemanipulují s daty na cílovém
+				systému. U aktivních útoků se útočník aktivně účastní při
+				napadení daného systému, může jít například o
+				<b>crackování</b> hesel nebo <b>DDoS​</b>.
+			</p>
+			<p>
+				Útočníci mohou mít více úmyslů jak s ukradenými daty nebo
+				napadeným systémem naloží. Můžeme je rozdělit do několika
+				hlavních kategorií.
+			</p>
+			<ul>
+				<li>
+					<b>Black hat</b>
+					<ul>
+						<li>
+							Je útočník, který daný systém chce zničit nebo
+							naprosto vyřadit z provozu a snaží se způsobit druhé
+							straně co největší škody jak už finanční nebo datové
+						</li>
+					</ul>
+				</li>
+				<li>
+					<b>Gray hat</b>
+					<ul>
+						<li>Je útočník, který útočí za účelem se obohatit</li>
+						<li>
+							Většinou krade data aby je mohl prodat na černém
+							trhu nebo proniká do systémů a po administrátorech
+							poté požaduje určitou částku za opravu dané chyby
+						</li>
+					</ul>
+				</li>
+				<li>
+					<b>White hat </b>
+					<ul>
+						<li>
+							Je útočník, který testuje bezpečnost systémů bez
+							jakéhokoliv úmyslu krást nebo ničit data
+						</li>
+						<li>
+							Často se jedná o experty, kteří testují systémy a
+							jsou za to různými korporacemi placeni
+						</li>
+						<li>Užívá se také označení etický hacker</li>
+					</ul>
+				</li>
+			</ul>
+			<h2>Hesla a biometrika</h2>
+			<p>
+				Hesla slouží pro <b>autentizaci</b> uživatele, což znamená
+				jednoznačné určení identity daného uživatele. Autentizace může
+				zahrnovat tři faktory. <b>Znalost</b> (heslo, pin, gesto),
+				<b>Vlastnictví</b> (certifikát, mobil, karta, doklad
+				totožnosti), <b>Biometrie</b> (otisk prstu, rozpoznání obličeje,
+				snímání sítnice). Všech těchto faktorů lze využít třeba i
+				najednou.
+			</p>
+			<p>
+				Hesla by měly splňovat určité podmínky pro to, aby mohla být
+				označeny jako “silná”. Základními pravidly je užití velkých a
+				malých písmen, číslic a dostatečného počtu znaků. Heslo by se
+				také nemělo objevit na seznamu nejpoužívanějších hesel na
+				internetu a nemělo by obsahovat často používané či předvídatelné
+				fráze či slova.
+			</p>
+			<p>
+				Biometrika je technika identifikace lidí na základě jejich
+				osobních charakteristik či vlastností. Může jít například o
+				vlastnosti těla nebo chování. Příkladem může být otisk prstu
+				nebo třeba dynamika podpisu. Charakteristiky člověka se odlišují
+				v míře spolehlivosti. Takovéto údaje však leze zapomenout nebo
+				ztratit a nekladou tak požadavky na uživatele, ale je pro ně
+				nutný speciální hardware a software, který nemusí být
+				stoprocentně spolehlivý.
+			</p>
+			<h2>Zálohování a archivace dat</h2>
+			<p>
+				Zálohování je operace, při které se vytváří kopie dat, aby
+				uživatel předešel jejich úplné ztrátě. Uživatel počítá s blízkým
+				využitím zálohovaných dat. Zpravidla se jedná o krátkodobé
+				uchovávání dat.
+			</p>
+			<p>
+				Archivace je operace, při které se také vytváří kopie dat, ale
+				nepočítá se s tím, že data budou v blizské době využity nebo
+				požadovány. Zpravidla se jedná o dlouhodobé uchovávání dat.
+			</p>
+			<h2>Pravidla pro zálohování</h2>
+			<ul>
+				<li>Je to nejúčinnější způsob ochrany dat</li>
+				<li>
+					Pro zálohování se používají specializované zálohovací
+					programy
+				</li>
+				<li>
+					Zálohovací programy jsou součástí operačních systémů,
+					programy od jiných výrobců mohou mít větší rychlost a více
+					funkcí
+				</li>
+				<li>
+					Je třeba zvolit co nejtrvanlivější médium, které se mohou
+					lišit od potřebné doby uchování dat
+				</li>
+			</ul>
+			<h2 id="malware-a-obrana-proti-nemu">
+				Malware a obrana proti němu
+			</h2>
+			<p>
+				Malware je počítačový program, který se šíří bez vědomí
+				uživatele a jeho úkolem je především škodit a šířit se.
+				Přítomností v systému může způsobit zpomalení počítače, změnu
+				informací nebo dat, zobrazování nežádoucího obsahu.
+			</p>
+			<p>
+				Program může například ovládnout napadený systém, vykonávat akce
+				bez souhlasu uživatele a posílat tak například spam z napadeného
+				počítače nebo se počítač může stát jedním z účastníků při DDoS
+				útocích. Může také například zašifrovat nebo úplně zničit data
+				za jejichž obnovu může požadovat finanční částku. Může také
+				zůstat nezpozorován a dál se šířit v síti a pouze krást
+				informace a posílat je útočníkům.
+			</p>
+			<h2>Antivir</h2>
+			<p>
+				Je software, který má za účel identifikaci, odstranění a
+				eliminaci počítačových virů a jiného škodlivého softwaru. Může
+				procházet soubory na lokálním disku a porovnávat je z databází
+				virů nebo může aktivně monitorovat aktivitu sítě a odchytávat
+				tak hrozby ještě předtím, než vůbec dojde k jejich zápisu na
+				disk. Jedním z příkladů antivirových programů může být AVG, ESET
+				nebo AVAST
+			</p>
+			<h2>Sociální inženýrství</h2>
+			<p>
+				Způsob manipulace lidí za účelem provedení určité akce
+				ovlivňovanou osobu nebo získaní informace od ovlivněné osoby.
+				Může mít několik forem, některé jsou přímé některé méně.
+			</p>
+			<ul>
+				<li>
+					<b>Pretexting </b>
+					<ul>
+						<li>
+							Aplikace vymyšleného scénáře s cílem přesvědčit oběť
+							k učinění dané akce nebo k získání potřebné
+							informace
+						</li>
+					</ul>
+				</li>
+				<li>
+					<b>Phishing</b>
+					<ul>
+						<li>
+							Jedná se o techniku, kdy je nasazen software, který
+							se tváří jako známá stránka nebo aplikace a pouze
+							čeká, než se nepozorní uživatelé nachytají a zadají
+							své přihlašovací údaje do falešné aplikace.
+						</li>
+					</ul>
+				</li>
+				<li>
+					<b>Baiting</b>
+					<ul>
+						<li>
+							Infikované fyzické zařízení je zanecháno na místě,
+							které chce útočník infikovat, s popiskem vzbuzující
+							zvědavost. Když se chce oběť na obsah fyzického
+							zařízení podívat infikuje tak svůj počítač a
+							potencionálně i celý informační systém, ke kterému
+							je připojen.
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<h2>Typy malwaru</h2>
+			<ul>
+				<li>
+					Backdoor
+					<ul>
+						<li>
+							otevře některé porty počítače a naslouchá na nich
+							povelům zvenčí
+						</li>
+					</ul>
+				</li>
+				<li>
+					Trojský kůň
+
+					<ul>
+						<li>
+							Umožní získat útočníkovi přístup do počítače a
+							pracovat s ním.
+						</li>
+						<li>
+							Password-stealing
+							<ul>
+								<li>
+									monitoruje zadaná přihlašovací jména a hesla
+								</li>
+							</ul>
+						</li>
+						<li>
+							Destruktivní
+							<ul>
+								<li>
+									likvidace dat - mazání, přepisování,
+									šifrování, nebo i zformátování celého disku
+									s daty
+								</li>
+							</ul>
+						</li>
+						<li>
+							Dropper
+							<ul>
+								<li>
+									Uchovává v sobě jiné viry a po infikaci
+									počítače je vypouští
+								</li>
+							</ul>
+						</li>
+						<li>
+							Downloader
+							<ul>
+								<li>Stahuje další viry do počítače</li>
+							</ul>
+						</li>
+						<li>
+							Proxy
+							<ul>
+								<li>
+									Promění infikovaný počítač na mail server a
+									posílá spam
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					Dataminer
+
+					<ul>
+						<li>
+							Program, který shromažďuje data o činnosti uživatele
+							počítače
+						</li>
+					</ul>
+				</li>
+				<li>
+					Keylogger
+
+					<ul>
+						<li>
+							Software, který snímá stisky jednotlivých kláves
+						</li>
+					</ul>
+				</li>
+				<li>
+					Červ
+					<ul>
+						<li>
+							Nevyžadují aktivitu uživatele, čekají v počítači, na
+							to až uživatel nenainstaluje záplatu potřebnou pro
+							ochranu proti červům
+						</li>
+						<li>Velmi agresivní, rychle se replikuje</li>
+					</ul>
+				</li>
+				<li>
+					Rootkit
+					<ul>
+						<li>
+							Běží v jádru operačního systému, skrývá se v něm
+							před antivirovými programy a protože je součástí
+							operačního systému, tak se špatně odstraňuje i
+							detekuje
+						</li>
+					</ul>
+				</li>
+				<li>
+					Boti
+					<ul>
+						<li>
+							Používají se k distribuovaným útokům DoS nebo Spamu
+						</li>
+					</ul>
+				</li>
+				<li>
+					Logická bomba
+
+					<ul>
+						<li>
+							Typicky ničí data, spouští se při splnění podmínky
+						</li>
+					</ul>
+				</li>
+				<li>
+					Ransomware
+
+					<ul>
+						<li>
+							omezuje uživatelům přístup k jejich počítačovému
+							systému nebo souborům a požaduje za přístup výkupné
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<h2 id="slavny-malware">Slavný malware</h2>
+			<h3>Christmas Tree</h3>
+			<ul>
+				<li>První síťová epidemie</li>
+				<li>Ukazoval obrázek vánočního stromu a přál pěkné vánoce</li>
+				<li>Současně se rozesílal uživatelům sítě</li>
+			</ul>
+			<h3>Morris Worm</h3>
+			<ul>
+				<li>
+					Jeden z prvních červů, který pro šíření používal internet
+				</li>
+				<li>
+					Původním úmyslem bylo spočítat počítače připojené k
+					internetu
+				</li>
+				<li>
+					Zahltil počítače připojené k internetu, virus se mohl více
+					replikovat na jeden počítač
+				</li>
+				<li>
+					Morris je prvním človekem, který byl kvůli takovéto věci
+					obviněn
+				</li>
+			</ul>
+			<h3>ILOVEYOU</h3>
+			<ul>
+				<li>E-mailový červ</li>
+				<li>Rozesílal textový soubor jako přílohu v emailu</li>
+				<li>Hledal čísla a hesla od kreditních karet</li>
+			</ul>
+			<h3>Stuxnet</h3>
+			<ul>
+				<li>Profesionálně vytvořený červ</li>
+				<li>
+					Měl napadat jaderné elektrárny v Íránu, speciálně průmyslové
+					systémy SCADA
+				</li>
+				<li>
+					Kaspersky označuje tento vir jako začátek éry kybernetických
+					válek
+				</li>
+			</ul>
+			<h2>Etický hacker</h2>
+			<p>
+				Expert v oblasti IT, který je najmut firmou, aby úmyslně zkusil
+				najít slabiny v systému firmy nebo korporace. Poté co je najde
+				může korporace chyby systému opravit.
+			</p>
+			<h2 id="slavne-jmena">Slavné jména</h2>
+			<h3>Julian Assange</h3>
+			<p>Zakladatel wikileaks.org</p>
+			<h3>Edward Snowden</h3>
+			<p>
+				Bývalý zaměstnanec CIA, který odhalil celosvětový systém pro
+				sledování
+			</p>
+		</main>
+
+		<script src="../smooth-scroll.min.js"></script>
+		<script>
+			var scroll = new SmoothScroll('a[href*="#"]');
+		</script>
+	</body>
+</html>
