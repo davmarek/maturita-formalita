@@ -60,7 +60,7 @@
 -   [x] 23 - Kuba
     -   [ ] - David - obrázky 
 -   [ ] 24 - David
--   [ ] 25 - Kuba
+-   [x] 25 - Kuba
 
 ---
 
