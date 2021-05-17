@@ -3,19 +3,25 @@
 ## DVK
 
 -   [x] 1
+    -   [ ] přidat obrázky
 -   [x] 2
 -   [x] 3
+    -   [ ] ARCHITEKTURA - svatby z cihel = stavby z cihel?
 -   [x] 4
 -   [x] 5
 -   [x] 6
 -   [x] 7
+    -   [ ] umění dnešní dnešní moravy :D
 -   [x] 8
 -   [x] 9
 -   [x] 10
+    -   [ ] RANÁ RENESANCE - pořád vycházíme s baziliky = pořád vycházíme z baziliky
 -   [x] 11
     -   [ ] dodělat obrázkové karty
 -   [x] 12
+    -   [ ] do Evropy se postává porcelán = do Evropy se dostává porcelán
 -   [x] 13
+    -   [ ] SOCHAŘSTVÍ  leknutí - matnost = lesknutí - matnost
 -   [x] 14
 -   [x] 15
 -   [x] 16
