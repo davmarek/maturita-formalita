@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>20. Pokročilé techniky objektového programování</title>
+
+		<link rel="stylesheet" href="../main.css" />
+		<script src="../main.js" defer></script>
+	</head>
+	<body>
+		<div id="theme-switcher"></div>
+		<a id="scroll-up" href="#" class="hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="feather feather-arrow-up"
+			>
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</a>
+
+		<nav>
+			<a href="../">Rozcestník</a>
+			<a href="#pritel">Spřátlenost</a>
+			<a href="#dedicnost">Dědičnost</a>
+			<a href="#public-private-protected">public, private, protected</a>
+			<a href="#polymorfismus">Polymorfismus</a>
+		</nav>
+
+		<main>
+			<h1>20. Pokročilé techniky objektového programování</h1>
+
+			<h2>Agregace</h2>
+			<ul>
+				<li>
+					Mluvíme o agregaci pokud nějaká třída obsahuje jiné třídy
+					(také se jím říká komponenty).
+				</li>
+				<li>
+					Pomocí agregace můžeme tvořit složitější třídy pomocí
+					jednodušších.
+				</li>
+				<li>
+					Konstruktory se v takovém případě chovají tak, že dříve, než
+					se spustí konstruktor třídy, jejíž instanci vytváříme,
+					nejprve se vytvoří instance tříd, které tato třída obsahuje
+					(jejich konstruktory se tedy volají dříve). Volání
+					destruktorů probíhá přesně opačně.
+				</li>
+			</ul>
+
+			<h3>Příklad</h3>
+			<p>
+				<code>
+					<span class="p">#include</span>
+					<span class="g">&lt;iostream&gt;</span> <br />
+
+					<span class="p">#define</span> SIZEARRAY 3 <br />
+
+					<span class="p">using namespace</span> std; <br />
+					<br />
+
+					<span class="p">class</span> <span class="y">CA</span>{
+					<br />
+
+					&#160; &#160; <span class="p">private</span>: <br />
+
+					&#160; &#160; &#160; &#160;
+					<span class="p">int</span> m_iNumber; <br />
+
+					&#160; &#160; <span class="p">public</span>: <br />
+
+					&#160; &#160; &#160; &#160;
+					<span class="y">CA</span>():<span class="b">m_iNumber</span
+					>(SIZEARRAY) <br />
+
+					&#160; &#160; &#160; &#160; &#160; &#160; {
+					<span class="p">cout</span> &lt;&lt;
+					<span class="g">"Konstruktor CA\n"</span>;}
+					<br />
+
+					&#160; &#160; &#160; &#160; ~<span class="y">CA</span>(){
+					<span class="p">cout</span> &lt;&lt;
+					<span class="g">"Destruktor CA\n"</span>;}
+					<br />
+
+					&#160; &#160; &#160; &#160;
+					<span class="p">void</span>
+					<span class="b">SetNumber</span>(<span class="p">int</span>
+					a){m_iNumber = a;} <br />
+
+					&#160; &#160; &#160; &#160;
+					<span class="p">int</span>
+					<span class="b">GetNumber</span>(<span class="p">void</span
+					>) <span class="p">const</span> {<span class="p"
+						>return</span
+					>
+					m_iNumber;} <br />
+
+					}; <br />
+
+					<br />
+
+					<span class="p">class</span> <span class="y">CB</span> {
+					<br />
+
+					&#160; &#160; <span class="p">private</span>: <br />
+
+					&#160; &#160; &#160; &#160;
+					<span class="y">CA</span> m_CA[SIZEARRAY]; <br />
+
+					&#160; &#160; <span class="p">public</span>: <br />
+
+					&#160; &#160; &#160; &#160; <span class="y">CB</span>() {
+					<span class="p">cout</span> &lt;&lt;
+					<span class="g">"Konstruktor CB\n"</span>;}
+					<br />
+
+					&#160; &#160; &#160; &#160; ~<span class="y">CB</span>(){
+					<span class="p">cout</span> &lt;&lt;
+					<span class="g">"Destruktor CB\n"</span>;}
+					<br />
+
+					<br />
+
+					&#160; &#160; &#160; &#160;
+					<span class="p">int</span> <span class="b">Suma</span>(void)
+					<span class="p">const</span>{ <br />
+
+					&#160; &#160; &#160; &#160;
+					<span class="p">int</span> iSuma = 0; <br />
+
+					&#160; &#160; &#160; &#160; <span class="p">for</span>(<span
+						class="p"
+						>int</span
+					>
+					i = 0; i &lt; SIZEARRAY; i++) <br />
+
+					&#160; &#160; &#160; &#160; &#160; &#160; iSuma +=
+					m_CA[i].<span class="b">GetNumber</span>(); <br />
+
+					<br />
+
+					&#160; &#160; <span class="p">return</span> iSuma; <br />
+
+					}; <br />
+
+					<span class="p">int</span> <span class="b">main</span>(<span
+						class="p"
+						>void</span
+					>) { <br />
+
+					&#160; &#160; <span class="y">CB</span> a; <br />
+
+					&#160; &#160; <span class="p">cout</span> &lt;&lt;
+					<span class="g">"\n "</span> &lt;&lt; a.<span class="b"
+						>Suma</span
+					>() &lt;&lt; <span class="g">"\n\n"</span> &lt;&lt;
+					<span class="p">endl</span>; <br />
+
+					&#160; &#160; <span class="p">return</span>
+					<span class="y">0</span>; <br />
+
+					}
+				</code>
+			</p>
+
+			<h3>Vypíše se</h3>
+
+			<p>
+				<code>
+					Konstruktor CA Konstruktor CA Konstruktor CA <br />
+					Konstruktor CB <br />
+					9 <br />
+					Destruktor CB <br />
+					Destruktor CA Destruktor CA Destruktor CA <br />
+				</code>
+			</p>
+
+			<h2 id="pritel">Spřátelená funkce a spřátelená třída</h2>
+			<ul>
+				<li>
+					Spřátelená funkce není členem třídy, ale má přístup k jejím
+					privátním prvkům.
+				</li>
+				<li>
+					<b>friend</b> - povoluje přístup metodám a funkcím
+					(spřátelené)
+				</li>
+				<li>
+					<b>publicXfriend</b> - public zpřístupní datový člen všem
+					funkcím a metodám, frind pouze některým (zvoleným)
+				</li>
+			</ul>
+
+			<h3>Příklad</h3>
+			<p>
+				<code>
+					<span class="p">#include</span>
+					<span class="g">&lt;iostream&gt;</span> <br />
+					<br />
+
+					<span class="p">class</span>
+					<span class="y">myclass</span> {
+					<br />
+
+					&#160; &#160; <span class="p">private</span>: <br />
+
+					&#160; &#160; &#160; &#160;
+					<span class="p">int</span> n, d; <br />
+
+					&#160; &#160; <span class="p">public</span>: <br />
+
+					&#160; &#160; &#160; &#160;
+					<span class="y">myclass</span>(<span class="p">int</span> i,
+					<span class="p">int</span> j) { n = i; d = j; } <br />
+
+					&#160; &#160; &#160; &#160;
+					<span class="comment">// spratelena funkce</span>
+					<br />
+					&#160; &#160; &#160; &#160;
+					<span class="p">friend int</span>
+					<span class="b">isfactor</span>(<span class="y"
+						>myclass</span
+					>
+					ob);
+
+					<br />
+
+					}; <br />
+
+					<br />
+
+					<span class="p">int</span>
+					<span class="b">isfactor</span>(<span class="p"
+						>myclass
+					</span>
+					ob) { <br />
+
+					&#160; &#160; <span class="p">if</span>(!(ob.n % ob.d))
+					<span class="p">return</span> <span class="y">1</span>;
+					<br />
+
+					&#160; &#160; <span class="p">else return</span>
+					<span class="y">0</span>; <br />
+
+					} <br />
+					<br />
+
+					<span class="p">int</span> <span class="b">main</span>(<span
+						class="p"
+						>void</span
+					>) { <br />
+
+					&#160; &#160; <span class="y">myclass</span> ob1(<span
+						class="y"
+						>10</span
+					>, <span class="y">2</span>), ob2(<span class="y">13</span>,
+					<span class="y">3</span>); <br />
+					<br />
+
+					&#160; &#160; <span class="p">if</span>(<span class="b"
+						>isfactor</span
+					>(ob1)) <span class="p">cout</span> &lt;&lt;
+					<span class="g"> "10 je delitelne 2\n"; </span> <br />
+
+					&#160; &#160; <span class="p">else cout</span> &lt;&lt;
+					<span class="g">"10 neni delitelne 2\n"</span>;
+					<br />
+					<br />
+
+					&#160; &#160; <span class="p">if</span>(<span class="b"
+						>isfactor</span
+					>(ob2)) <span class="p">cout</span> &lt;&lt;
+					<span class="g"> "13 je delitelne 3\n"; </span> <br />
+
+					&#160; &#160; <span class="p">else cout</span> &lt;&lt;
+					<span class="g">"13 neni delitelne 3\n"</span>;
+					<br />
+					<br />
+
+					&#160; &#160; <span class="p">return</span>
+					<span class="y">0</span>; <br />
+
+					}
+				</code>
+			</p>
+
+			<p>
+				Musíme si uvědomit, že spřátelená funkce není členem třídy
+				jejímž je přítelem. Není tedy možné volat spřátelenou funkci s
+				využitím jména objektu a tečkového či šipkového operátoru.
+				Přestože tedy spřátelená funkce zná privátní prvky třídy, s níž
+				je spřátelená, může k nim přistupovat pouze přes objekty třídy.
+			</p>
+			<p>
+				Spřátelená funkce není dědičná. Proto, když základní třída
+				obsahuje spřátelenou funkci, pak tato třída není spřátelena s
+				odvozenou funkcí. Dále platí že spřátelená funkce může být
+				spřátelena s více třídami.
+			</p>
+
+			<h2 id="dedicnost">Dědičnost</h2>
+
+			<h3>Jednoduchá dědičnost</h3>
+			<ul>
+				<li>Základní vztah mezi třídami</li>
+				<li>
+					Objekt dědí vlastnosti z jiného objektu a přidává si svoje
+					vlastní
+				</li>
+				<li>
+					Vytváření nových tříd (odvozená), které se odvozují od tříd
+					jiných (bázová, rodičovská)
+				</li>
+				<li>Jednoduchá dědičnost = třída dědí pouze z jedné třídy</li>
+			</ul>
+
+			<h4>Syntaxe</h4>
+			<p>
+				<code>
+					<span class="comment"
+						>// třída NakladniVozidlo dědí z třídy Vozidlo</span
+					>
+					<br />
+					<span class="p">class</span>
+					<span class="y">NakladniVozidlo</span> :
+					<span class="p">public</span>
+					<span class="y">Vozidlo</span>{ <br />
+					… <br />
+					};
+				</code>
+			</p>
+
+			<h4>Konstruktory při dědění</h4>
+			<ul>
+				<li>konstruktory i destruktory jsou metody, které se nedědí</li>
+				<li>
+					při vytváření instance nějaké třídy se nejprve vyvolá
+					bezparametrický konstruktor nejvyšší nadtřídy, poté jejího
+					potomka, atd.
+				</li>
+				<li>
+					můžeme vyvolat libovolný konstruktor předka v konstruktoru
+					potomka
+				</li>
+				<li>
+					Abychom mohli vyvolat konkrétní konstruktor třídy
+					rodičovské, musíme předat příslušný počet parametrů.
+				</li>
+				<li>
+					za názvem konstruktoru odvozené třídy se zapíše název
+					rodičovské třídy s danými parametry
+				</li>
+			</ul>
+			<p>
+				<code>
+					<span class="p">class</span>
+					<span class="y">NakladniVozidlo</span> :
+					<span class="p">public</span>
+					<span class="y">Vozidlo</span>{ <br />
+					&#160;&#160; public: <br />
+					&#160;&#160; &#160;&#160;
+					<span class="y">NakladniVozidlo</span> (<span class="p"
+						>int</span
+					>
+					a) : <span class="y">Vozidlo</span>(a) <br />
+					&#160;&#160; &#160;&#160; &#160;&#160; {
+					<span class="comment"> /* Tělo konstruktoru */ </span> }
+					<br />
+					&#160;&#160; <span class="comment">// Tělo třídy</span>
+					<br />
+					}; <br />
+				</code>
+			</p>
+
+			<h4>Destruktory při dědění</h4>
+
+			<ul>
+				<li>stejně jako konstruktory se nedědí</li>
+				<li>
+					stejně jako u konstruktorů jsou volány i destruktory předků
+				</li>
+				<li>volají se v opačném pořadí</li>
+			</ul>
+
+			<h3>Vícenásobná dědičnost</h3>
+			<ul>
+				<li>nová třída, která dědí z více než jednoho předka</li>
+				<li>stejné pravidla jako jednuduchá dědičnost</li>
+				<li>vzniká však několik problémů</li>
+			</ul>
+
+			<h4>Příklad</h4>
+			<p>
+				<code>
+					<span class="p">class</span>
+					<span class="y">Potomek</span> :
+					<span class="p">public</span>
+					<span class="y">Predek1</span>,
+					<span class="p">public</span>
+					<span class="y">Predek2</span> … <br />
+					{};
+				</code>
+			</p>
+
+			<h4>Konstruktory při dědění</h4>
+			<ul>
+				<li>stejně jako u jednoduché dědičnosti, nedědí se</li>
+				<li>
+					Pokud nepoužíváme virtuální dědění, nejprve se volá
+					konstruktor nejvyšší nadtřídy
+				</li>
+				<li>
+					Pokud bychom využili virtuálního dědění, bude se konstruktor
+					virtuální nadtřídy volat pouze jednou
+				</li>
+			</ul>
+
+			<h4>Destruktory při dědění</h4>
+
+			<ul>
+				<li>chovají se podobně jako konstuktory</li>
+				<li>volají se v opačném pořadí</li>
+			</ul>
+
+			<h4>Problémy s vícenásobnou dědičností</h4>
+
+			<h5>1. Konflikt jmen</h5>
+			<ul>
+				<li>
+					Jde o problém, jaké atributy a metody dědit, jestliže se
+					vyskytují ve více předcích se stejným názvem
+				</li>
+				<li>
+					třída zdědí všechny atributy a metody i v případě, že mají
+					stejné jméno
+				</li>
+				<li>
+					přistupuje se k položce pomocí tak zvaného úplného jména
+				</li>
+			</ul>
+
+			<p>
+				<code>
+					<span class="p">class</span>
+					<span class="y">C</span> :
+					<span class="p">public</span>
+					<span class="y">A</span>,
+					<span class="p">public</span>
+					<span class="y">B</span><br />
+					{}; <br />
+					<br />
+
+					<span class="p">int</span> <span class="b">main</span>() {
+					<br />
+					&#160;&#160; <span class="y">C</span> c; <br />
+					&#160;&#160; c.<span class="y">A</span>::<span class="b"
+						>nastav</span
+					>(<span class="y">10</span>); <br />
+					&#160;&#160; c.<span class="y">B</span>::<span class="b"
+						>nastav</span
+					>(<span class="y">20</span>); <br />
+					&#160;&#160;
+					<span class="comment">
+						/* pokud odstraníme následující komentář, překladač
+						<br />
+						&#160;&#160; nás chybou upozorní na nejednoznačnost */
+					</span>
+					<br />
+
+					&#160;&#160; <span class="comment">// c.nastav(0);</span>
+					<br />
+
+					}
+				</code>
+			</p>
+
+			<h5>2. Opakovaná dědičnost</h5>
+			<ul>
+				<li>mezi dvěmi třídami existuje více než jedna cesta</li>
+				<li>Podle obrázku vlevo třída D obsahuje dva atributy int a</li>
+				<li>
+					Pokud chceme mít atribut a ve třídě D pouze jednou, musíme
+					třídu A udělat virtuální nadtřídou (u dědění se používá
+					klíčové slovíčko virtual)
+				</li>
+			</ul>
+
+			<img
+				src="img/20-opakovana-dedicnost.png"
+				alt="20-opakovana-dedicnost.png"
+				loading="lazy"
+				class="invertable half"
+			/>
+
+			<p>
+				<code>
+					<span class="p">class</span> A
+					<span class="comment">// virtuální nadtřída</span> <br />
+					{ <span class="p">int</span> A; }; <br />
+					<br />
+					<span class="p">class</span> B :
+					<span class="p">virtual public</span> A <br />
+					{}; <br />
+					<br />
+					<span class="p">class</span> C :
+					<span class="p">virtual public</span> A <br />
+					{}; <br />
+					<br />
+					<span class="p">class</span> D :
+					<span class="p">public</span> B,
+					<span class="p">public</span> C <br />
+					{};
+				</code>
+			</p>
+
+			<h5>3. Konstruktory a destruktory</h5>
+			<br />
+
+			<h2 id="public-private-protected">
+				Direktivy public, private, protected
+			</h2>
+			<h3>Public</h3>
+			<ul>
+				<li>přístupné odkludkoliv</li>
+				<li>značí veřejné dědění</li>
+				<li>nejtypičtěští způsob dědění</li>
+				<li>
+					potomek získá věškeré veřejné a chráněné členy rodičovské
+					třídy se stejnými oprávněními, s jakými byly deklarovány v
+					rodičovské třídě
+				</li>
+			</ul>
+
+			<h3>private</h3>
+			<ul>
+				<li>
+					proměnná nebo metoda není přístupná nikde jinde než ve
+					třídě, ve které byla definována
+				</li>
+				<li>soukromé dědění</li>
+				<li>
+					pokud nespecifikujeme přístupový modifikátor, program
+					proměnnou nebo metodu sám definuje na private
+				</li>
+			</ul>
+
+			<h3>protected</h3>
+			<ul>
+				<li>
+					k položkám bude mít přístup pouze členové třídy a třídy
+					odvozené (zděděné)
+				</li>
+				<li>přístupnost je dána i způsobem dědění</li>
+			</ul>
+
+			<h2>Způsoby dědění</h2>
+
+			<p>
+				V jazyce C++ existují tři možnosti, jak dědit. Tyto možnosti se
+				liší v závislosti na tom, zda budou jednotlivé metody a atributy
+				v potomkovi viditelné. Tyto způsoby jsou private, public
+				(nejčastější) a protected.
+			</p>
+
+			<table>
+				<tr>
+					<td></td>
+					<th>private v předkovi</th>
+					<th>protected v předkovi</th>
+					<th>public v předkovi</th>
+				</tr>
+
+				<tr>
+					<td>private dědění</td>
+					<td>nepřístupné potomkovi</td>
+					<td>private v potomkovi</td>
+					<td>private v potomkovi</td>
+				</tr>
+
+				<tr>
+					<td>protected dědění</td>
+					<td>nepřístupné potomkovi</td>
+					<td>protected v potomkovi</td>
+					<td>protected v potomkovi</td>
+				</tr>
+
+				<tr>
+					<td>public dědění</td>
+					<td>nepřístupné potomkovi</td>
+					<td>protected v potomkovi</td>
+					<td>public v potomkovi</td>
+				</tr>
+			</table>
+
+			<h2 id="polymorfismus">Polymorfismus</h2>
+			<ul>
+				<li>mnohotvarost</li>
+				<li>stejné jméno může mít mnoho forem</li>
+				<li>
+					Různé třídy v dědické hierarchii mohou obsahovat metody,
+					které mají stejný název i parametry (pouze návratová hodnota
+					může být jiná)
+				</li>
+			</ul>
+
+			<h3>Překrývání</h3>
+			<ul>
+				<li>
+					při volání metody se provede ta, která odpovídá instanci
+					příslušné třídy, kterou vytváříme
+				</li>
+			</ul>
+
+			<p>
+				<code>
+					<span class="p">int</span> <span class="b">main</span>() {
+					<br />
+					&#160;&#160;
+					<span class="comment"
+						>//Třídy Savec a Pes mají stejnou metodu Zvuk(),<br />
+						&#160;&#160; ale každá vypíše něco jiného</span
+					>
+					<br />
+					&#160;&#160; <span class="y">Savec</span> savec1; <br />
+					&#160;&#160; <span class="y">Pes</span> pes1; <br />
+					<br />
+					&#160;&#160; savec1.<span class="b">Zvuk</span>(); <br />
+					&#160;&#160;
+					<span class="comment">// Vypíše se „Zvuk třídy Savec“</span>
+					<br />
+					<br />
+					&#160;&#160; pes1.<span class="b">Zvuk</span>(); <br />
+					&#160;&#160;
+					<span class="comment">// Vypíše se „Zvuk třídy Pes“</span>
+					<br />
+					<br />
+					&#160;&#160; <span class="p">return</span>
+					<span class="y">0</span>; <br />
+					}
+				</code>
+			</p>
+			<br />
+
+			<ul>
+				<li>
+					rodičovskou metodu můžeme zavolat i z instance jejího
+					potomka, plným uvedením jejího názvu
+				</li>
+			</ul>
+
+			<p>
+				<code>
+					<span class="p">int</span> <span class="b">main</span>() {
+					<br />
+
+					&#160;&#160; <span class="y">Pes</span> pes1;
+					<br />
+					&#160;&#160;
+					<span class="comment"
+						>//Zavolá se metoda Zvuk u rodičovské třídy
+						<b>Savec</b></span
+					>
+					<br />
+
+					&#160;&#160; pes1.<span class="y">Savec</span
+					><span class="b">Zvuk</span>(); <br />
+
+					<br />
+					&#160;&#160; <span class="p">return</span>
+					<span class="y">0</span>; <br />
+					}
+				</code>
+			</p>
+
+			<h3>Virtuální metody</h3>
+			<ul>
+				<li>klíčové slovo <b>virtual</b></li>
+				<li>metody, které nechceme definovat (slouží jako šablona)</li>
+			</ul>
+
+			<h3>Časná a pozdní vazba</h3>
+			<h4>Časná vazba</h4>
+			<ul>
+				<li>
+					metoda, která se bude volat, se již rozhodne v době
+					kompilace programu
+				</li>
+				<li>pokud příslušné metody neoznačíme jako virtuální</li>
+				<li>překladač hledá metodu v rodičovské třídě</li>
+			</ul>
+			<p>
+				<code>
+					<span class="p">int</span> <span class="b">main</span>() {
+					<br />
+					&#160;&#160; <span class="y">Savec</span> *savec1; <br />
+					&#160;&#160; savec1 = <span class="p">new</span>
+					<span class="y">Pes</span>; <br />
+					&#160;&#160;
+					<span class="comment"
+						>// naprosto korektní, protože Pes je zároveň i
+						Savec</span
+					>
+					<br />
+					<br />
+
+					&#160;&#160; <span class="p">delete</span> savec1; <br />
+					&#160;&#160; <span class="p">return</span>
+					<span class="y">0</span>; <br />
+					}
+				</code>
+			</p>
+
+			<h4>Pozdní vazba</h4>
+			<ul>
+				<li>
+					metoda, která se bude volat, se rozhodne až v době běhu
+					programu
+				</li>
+				<li>dochází to u tzv. virutálních metod</li>
+				<li>
+					Program si vytváří tabulku virtuálních metod (v-tabulka) pro
+					každý objekt daného typu. Tato tabulka obsahuje ukazatele na
+					jednotlivé virtuální funkce
+				</li>
+				<li>
+					z v-tabulky se zjistí, která metoda má být doopravdy volána
+					(adresa je uložena ve v-tabulce)
+				</li>
+			</ul>
+			<p>
+				<code>
+					<span class="p">int</span> <span class="b">main</span>() {
+					<br />
+					&#160;&#160; <span class="y">Savec</span> *savec1; <br />
+					&#160;&#160; savec1 = <span class="p">new</span>
+					<span class="y">Pes</span>; <br />
+
+					&#160;&#160; savec1-><span class="b">Zvuk</span>(); <br />
+
+					&#160;&#160;
+					<span class="comment">// Vypíše se „Zvuk třídy Pes“</span>
+					<br />
+
+					&#160;&#160;
+					<span class="comment"
+						>// pokud by metody Zvuk nebyly virtuální, vypsalo</span
+					>
+					<br />
+
+					&#160;&#160;
+					<span class="comment">// by se „Zvuk třídy Savec“</span>
+					<br />
+					<br />
+
+					&#160;&#160; <span class="p">delete</span> savec1; <br />
+					&#160;&#160; <span class="p">return</span>
+					<span class="y">0</span>; <br />
+					}
+				</code>
+			</p>
+
+			<h4>Omezení</h4>
+			<ul>
+				<li>virutální metoda nemůže být vložená (inline)</li>
+				<li>konstruktor nemůže být virtuální</li>
+				<li>
+					pokud třída má v. metodu, destroktur by měl být virtuální
+					(jinak bude volán "nesprávný" destruktor)
+				</li>
+			</ul>
+
+			<h3>Abstraktní třída</h3>
+			<ul>
+				<li>Třída, která má alespoň jednu čirou metodu</li>
+				<li>nemůžeme vytvářet instance</li>
+			</ul>
+
+			<p>
+				<code>
+					<span class="comment">// abstraktní třída</span> <br />
+					<span class="p">class</span>
+					<span class="y">GrafickyUtvar</span> { <br />
+					&#160;&#160; <span class="p">public</span>: <br />
+					&#160;&#160; &#160;&#160;
+					<span class="comment">// čirá metoda</span> <br />
+					&#160;&#160; &#160;&#160;
+					<span class="p">virtual float</span>
+					<span class="b">dejObvod</span>() =
+					<span class="y">0</span>; <br />
+					};
+				</code>
+			</p>
+
+			<h3>Čirá metoda</h3>
+			<ul>
+				<li>metoda, která nemá žádné tělo</li>
+				<li>nelze ji vyvolat</li>
+				<li>může být jen metoda virtuální</li>
+			</ul>
+			<p>
+				<code>
+					<span class="p">virtual float</span>
+					<span class="b">dejObvod</span>() =
+					<span class="y">0</span>; // čirá metoda
+				</code>
+			</p>
+
+			<h3>Přetěžování operátorů</h3>
+			<ul>
+				<li>
+					v C++ můžeme operátory přetěžovat, jako obyčejnou funkci
+					(dva parametry, vrací výsledek)
+				</li>
+				<li>jednotlivé operátory se musí lišit v typech parametrů</li>
+				<li>
+					Pokud přetížíme binární operátor (má dva operandy), musí být
+					opět binární
+				</li>
+				<li>
+					Pro operátory platí stejná priorita ať jsou přetížené či
+					nikoliv
+				</li>
+				<li>Nelze přetěžovat operátory . .* :: ?:</li>
+			</ul>
+
+			<h4>Jak přetěžovat</h4>
+			<ul>
+				<li>
+					Buď jako členské metody tříd nebo jako samostatné funkce
+				</li>
+				<li>
+					Binární operátor přetížen jako funkce bude mít dva
+					parametry, unární jen jeden
+				</li>
+				<li>
+					Binární operátor přetížený jako metoda bude mít jen jeden
+					parametr, druhým bude this. Unární operátor přetížený jako
+					členská metoda nebude mít parametr, protože jeho jediným
+					parametrem je this
+				</li>
+			</ul>
+
+			<h4>Prexifové++</h4>
+			<ul>
+				<li>klíčové slovo <b>operator</b></li>
+				<li>např. ++i</li>
+			</ul>
+
+			<p>
+				<code>
+					<span class="comment"
+						>// v metodě dané třídy by mohlo vypadat
+						následovně:</span
+					>
+					<br />
+
+					<span class="p">class</span> <span class="y">Citac</span>{
+					<br />
+					&#160;&#160; <span class="p">private</span>: <br />
+					&#160;&#160; &#160;&#160; <span class="p">int</span> cislo;
+					<br />
+					&#160;&#160; <span class="p">public</span>: <br />
+					&#160;&#160; &#160;&#160;
+					<span class="y">Citac</span>():cislo(<span class="y">0</span
+					>){} <br />
+					&#160;&#160; &#160;&#160;
+					<span class="p">void</span> operator++() { ++<span class="p"
+						>this</span
+					>->Cislo; }
+					<br />
+					}; <br />
+					<br />
+					<span class="p">void</span> main(){ <br />
+					&#160;&#160; <span class="y">Citac</span> i; <br />
+					&#160;&#160;
+					<span class="comment">
+						// proměnná <i>cislo</i> se v instanci zvýší o 1
+					</span>
+					<br />
+					&#160;&#160; ++i;
+
+					<br />
+					}
+				</code>
+			</p>
+
+			<h4>Postfixové++</h4>
+			<ul>
+				<li>klíčové slovo <b>operator</b></li>
+				<li>např. i++</li>
+			</ul>
+
+			<h4>Operátor sčítání</h4>
+			<ul>
+				<li>binární (obdobně jako operátory - * /)</li>
+				<li>jeden parametr</li>
+			</ul>
+
+			<p>
+				<code>
+					<span class="y">Citac</span> operator+(<span class="y"
+						>Citac</span
+					>
+					druhy) { <br />
+					&#160;&#160; <span class="y">Citac</span> pomoc; <br />
+					&#160;&#160; pomoc.<span class="b">NastavHodnotu</span
+					>(cislo + druhy.<span class="b">DejHodnotu</span>()); <br />
+					<br />
+					&#160;&#160; <span class="p">return</span> pomoc; <br />
+					} <br />
+					<br />
+					<span class="comment"
+						>// Mimo třídu můžeme např. použít:</span
+					>
+					<br />
+
+					<span class="y">Citac</span> a, b; <br />
+					<span class="y">Citac</span> c = a + b;
+				</code>
+			</p>
+
+			<h4>Operátor porovnání</h4>
+			<ul>
+				<li>můžeme porovnávat dva objekty</li>
+				<li>
+					To, zda jsou dvě instance stejné, zjišťujeme podle rovnosti
+					atributů
+				</li>
+			</ul>
+
+			<p>
+				<code>
+					<span class="y">bool</span> operator==(<span class="y"
+						>Citac</span
+					>
+					druhy) { <br />
+					&#160;&#160; <span class="p">if</span>(cislo == druhy.<span
+						class="b"
+						>DejHodnotu</span
+					>()) <br />
+					&#160;&#160; &#160;&#160;
+					<span class="p">return</span> true; <br />
+
+					&#160;&#160; <span class="p">else</span><br />
+
+					&#160;&#160; &#160;&#160;
+					<span class="p">return</span> true; <br />
+					} <br />
+					<br />
+
+					<span class="comment"
+						>//Mimo třídu můžeme např. použít:</span
+					>
+					<br />
+
+					<span class="y">Citac</span> a, b; <br />
+					<span class="p">if</span>(a == b)
+				</code>
+			</p>
+
+			<h2>Zdroj</h2>
+			<p>
+				<a
+					href="https://github.com/keson3948/Maturita2021_CHC/blob/main/oborove_otazky/20-Pokrocile_techniky_objektoveho_programovani.md"
+					target="_blank"
+				>
+					https://github.com/keson3948/Maturita2021_CHC/blob/main/oborove_otazky/20-Pokrocile_techniky_objektoveho_programovani.md
+				</a>
+			</p>
+		</main>
+
+		<script src="../smooth-scroll.min.js"></script>
+		<script>
+			var scroll = new SmoothScroll('a[href*="#"]');
+		</script>
+	</body>
+</html>
