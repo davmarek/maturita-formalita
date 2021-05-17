@@ -32,10 +32,12 @@
 -   [x] 3 - Kuba
 -   [x] 4 - David
 -   [x] 5 - Kuba
+-   [ ] 6 - SPOLEČNĚ
 -   [x] 7 - David
 -   [x] 8 - Kuba
 -   [x] 9 - David
 -   [x] 10 - Kuba (PHP)
+-   [ ] 11 - SPOLEČNĚ
 -   [x] 12 - David
 -   [x] 13 - David
 -   [x] 14 - David
@@ -52,13 +54,12 @@
     -   [x] -   David - upravit
         -   [x] -   Přidat kotvy
         -   [x] -   Upravit **_code_**
--   [ ] 20 - David
-    -   [ ] získat!!!
+-   [x] 20 - David
 -   [x] 21 - Kuba
-    -   [ ] - David - komprese obrázků
+    -   [ ] - Kuba - komprese obrázků na [compress.io](https://compressor.io/)
 -   [ ] 22 - David
 -   [x] 23 - Kuba
-    -   [ ] - David - obrázky 
+    -   [ ] - Kuba - obrázky - [compress.io](https://compressor.io/)
 -   [ ] 24 - David
 -   [x] 25 - Kuba
 
