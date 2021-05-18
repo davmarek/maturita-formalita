@@ -2,7 +2,7 @@ import os
 
 classes = ""
 
-with open(os.path.dirname(os.path.abspath(__file__)) + "\list_to_convert.txt") as f:
+with open(os.path.dirname(os.path.abspath(__file__)) + "\list_to_convert.txt", encoding="utf-8") as f:
     strings = f.readlines()
 
 array = ["<li>"+string.strip()+"</li>"

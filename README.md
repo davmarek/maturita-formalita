@@ -66,7 +66,7 @@
 -   [x] 22 - David
 -   [x] 23 - Kuba
     -   [x] - Kuba - obrázky - [compress.io](https://compressor.io/)
--   [ ] 24 - David
+-   [x] 24 - David
 -   [x] 25 - Kuba
 
 ---
