@@ -57,7 +57,7 @@
 -   [x] 20 - David
 -   [x] 21 - Kuba
     -   [ ] - Kuba - komprese obrázků na [compress.io](https://compressor.io/)
--   [ ] 22 - David
+-   [x] 22 - David
 -   [x] 23 - Kuba
     -   [ ] - Kuba - obrázky - [compress.io](https://compressor.io/)
 -   [ ] 24 - David
