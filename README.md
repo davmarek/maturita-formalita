@@ -3,19 +3,25 @@
 ## DVK
 
 -   [x] 1
+    -   [ ] přidat obrázky
 -   [x] 2
 -   [x] 3
+    -   [ ] ARCHITEKTURA - svatby z cihel = stavby z cihel?
 -   [x] 4
 -   [x] 5
 -   [x] 6
 -   [x] 7
+    -   [ ] umění dnešní dnešní moravy :D
 -   [x] 8
 -   [x] 9
 -   [x] 10
+    -   [ ] RANÁ RENESANCE - pořád vycházíme s baziliky = pořád vycházíme z baziliky
 -   [x] 11
     -   [ ] dodělat obrázkové karty
 -   [x] 12
+    -   [ ] do Evropy se postává porcelán = do Evropy se dostává porcelán
 -   [x] 13
+    -   [ ] SOCHAŘSTVÍ  leknutí - matnost = lesknutí - matnost
 -   [x] 14
 -   [x] 15
 -   [x] 16
@@ -56,10 +62,10 @@
         -   [x] -   Upravit **_code_**
 -   [x] 20 - David
 -   [x] 21 - Kuba
-    -   [ ] - Kuba - komprese obrázků na [compress.io](https://compressor.io/)
+    -   [x] - Kuba - komprese obrázků na [compress.io](https://compressor.io/)
 -   [x] 22 - David
 -   [x] 23 - Kuba
-    -   [ ] - Kuba - obrázky - [compress.io](https://compressor.io/)
+    -   [x] - Kuba - obrázky - [compress.io](https://compressor.io/)
 -   [ ] 24 - David
 -   [x] 25 - Kuba
 
