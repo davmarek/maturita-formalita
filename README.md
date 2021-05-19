@@ -54,6 +54,10 @@
 -   článkové zápisy používají jen **_<p\>_**
 -   ukázka kódu **_<code\>_** je ve vlastním **_<p\>_**
 
+## Docela ppč Word-to-HTML convertor
+
+[Zde klikni frajere](https://www.textfixer.com/html/convert-word-to-html.php)
+
 ## CSS text classky
 
 Tyto classky jdou použít na vše. Především se používá na **_<ul\>_** nebo pro odnačení části textu tagem **_<span\>_**.
