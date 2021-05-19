@@ -6,7 +6,6 @@
     - [ ] přidat obrázky
 - [x] 11
     - [ ] dodělat obrázkové karty
-- [x] 12
 
 ## VMA
 - [x] David (1,4,7,9,12,13,14,16,18,20,22,24)
