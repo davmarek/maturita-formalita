@@ -489,4 +489,9 @@ td {
 		width: 100%;
 		overflow: hidden;
 	}
+
+	.code,
+	code {
+		font-size: 0.8em;
+	}
 }
