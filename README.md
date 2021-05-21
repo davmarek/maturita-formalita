@@ -23,6 +23,7 @@
 -   [x] 13
     -   [ ] SOCHAŘSTVÍ  leknutí - matnost = lesknutí - matnost
 -   [x] 14
+    -   [ ] chybí obrázky
 -   [x] 15
 -   [x] 16
 -   [x] 17
