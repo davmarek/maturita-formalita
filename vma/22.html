@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>22. Dotazovací jazyk SQL</title>
+
+		<link rel="stylesheet" href="../main.css" />
+		<script src="../main.js" defer></script>
+	</head>
+	<body>
+		<div id="theme-switcher"></div>
+		<a id="scroll-up" href="#" class="hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="feather feather-arrow-up"
+			>
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</a>
+
+		<nav>
+			<a href="../">Rozcestník</a>
+			<a href="#datove-typy">Datové typy</a>
+			<a href="#omezeni">Integritní omezení</a>
+			<a href="#prikazy">Příkazy</a>
+			<a href="#spojovani">Spojování</a>
+		</nav>
+
+		<main>
+			<h1>22. Dotazovací jazyk SQL</h1>
+			<h2>Historie SQL</h2>
+			<ul>
+				<li>
+					IBM vyvinula sadu příkazů pro ovládání databází
+					<b>SEQUEL</b>
+					(Structured English Query Language)
+				</li>
+				<li>
+					Oracle Corporation přinesla svou platformu
+					<b>Oracle Database</b>
+				</li>
+				<li>IBM uvedla <b>SQL/DS</b> a <b>DB2</b></li>
+				<li>
+					Další systémy - <b>Progres</b>, <b>Informix</b> a
+					<b>SyBase</b>
+				</li>
+				<li>
+					Všechny používaly varianty jazyka <b>SEQUEL</b>, který se
+					později přejmenoval na <b>SQL</b>
+				</li>
+			</ul>
+
+			<h2 id="datove-typy">Datové typy v SQL</h2>
+			<h3>Základní kategorie</h3>
+			<ul>
+				<li>Číselné typy</li>
+				<li>Řetězcové typy</li>
+				<li>Typy pro datum a čas</li>
+			</ul>
+
+			<h3>Číselné typy</h3>
+			<ul>
+				<li>TINYINT</li>
+				<li>SMALLINT</li>
+				<li>MEDIUMINT</li>
+				<li>INT</li>
+				<li>BIG INT</li>
+				<li>FLOAT</li>
+				<li>DOUBLE</li>
+				<li>DECIMAL</li>
+			</ul>
+
+			<p>
+				Číselné typy se liší možnou velikostí uchovávaného čísla nebo
+				jeho desetinnými čísly.
+			</p>
+
+			<h3>Řetězcové typy</h3>
+			<ul>
+				<li>CHAR</li>
+				<li>VARCHAR</li>
+				<li>TINYBLOB</li>
+				<li>BLOB</li>
+				<li>MEDIUMBLOB</li>
+				<li>LONGBLOB</li>
+				<li>TINYTEXT</li>
+				<li>TEXT</li>
+				<li>MEDIUMTEXT</li>
+				<li>LONGTEXT</li>
+			</ul>
+			<p>
+				Řetězcové typy se liší možným počtem uchovaných znaků nebo
+				porovnáváním jejich velikostí. (některé porovnávají některé ne).
+			</p>
+
+			<h3>Datumy a časy</h3>
+			<ul>
+				<li>DATE</li>
+				<li>TIME</li>
+				<li>DATETIME</li>
+				<li>TIMESTAMP</li>
+				<li>YEAR</li>
+			</ul>
+			<p>
+				Liší se formátem zapisování. TIMESTAMP do sebe vloží aktuální
+				čas při změně záznamu, ve kterém se nachází.
+			</p>
+
+			<h2>Modifikátory</h2>
+			<ul>
+				<li>
+					<b>NULL</b>
+					<ul>
+						<li>Sloupec může zůstat prázdný</li>
+					</ul>
+				</li>
+				<li>
+					<b>NOT NULL</b>
+					<ul>
+						<li>Sloupec nemůže zůstat prázdný</li>
+					</ul>
+				</li>
+				<li>
+					<b>UNSIGNED</b>
+					<ul>
+						<li>
+							Sloupec nemůže mít záporné hodnoty a může tak
+							obsahovat více čísel v plusových hodnotách
+						</li>
+					</ul>
+				</li>
+				<li>
+					<b>SIGNED</b>
+					<ul>
+						<li>
+							Sloupec může obsahovat záporné hodnoty, sníží se
+							jeho nejvyšší možná hodnota v kladných hodnotách
+						</li>
+					</ul>
+				</li>
+				<li>
+					<b>AUTO_INCREMENT</b>
+					<ul>
+						<li>
+							Každý záznam přičítá k poslednímu 1 a automaticky se
+							tak s každým přidaným záznamem zvedá hodnota v daném
+							sloupci
+						</li>
+					</ul>
+				</li>
+				<li>
+					<b>DEFAULT</b>
+					<ul>
+						<li>
+							Označuje jakou hodnotu bude mít sloupec, pokud do
+							něj žádnou hodnotu nedosadíme
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2 id="omezeni">Integritní omezení</h2>
+			<p>
+				Udržují databázi ve stavu, kdy jsou ve všech polích pravdivé a
+				validní informace. Integritní omezení způsobí například to, že
+				když je do databáze vložen záznam s prázdným polem a daný
+				sloupec má nastaveno omezení NOT NULL, tak databáze daný záznam
+				odmítne
+			</p>
+			<ul class="b">
+				<li>DEFAULT</li>
+				<li>NOT NULL</li>
+				<li>
+					PRIMARY KEY
+					<ul>
+						<li class="n">
+							Hodnota primárního klíče musí být jedinečná
+						</li>
+					</ul>
+				</li>
+				<li>
+					FOREIGN KEY
+					<ul class="n">
+						<li>Hodnota cizího klíče musí být jedinečná</li>
+						<li>Odkazuje na záznamy z jiných tabulek(relací)</li>
+					</ul>
+				</li>
+				<li>
+					UNIQUE
+					<ul>
+						<li class="n">
+							Hodnota daného sloupce musí být jedinečná
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2 id="prikazy">
+				Příkazy pro práci s databází, tabulkami a sloupci
+			</h2>
+			<ul>
+				<li>CREATE DATABASE db_name;</li>
+				<li>USE db_name;</li>
+				<li>DROP DATABASE db_name;</li>
+				<li>
+					CREATE TABLE table_name (column_name column_datatype
+					column_modificators);
+				</li>
+				<li>
+					ALTER TABLE table_name (DROP/ALTER/MODIFY) column_name
+					column_datatype;
+				</li>
+				<li>DROP TABLE table_name;</li>
+			</ul>
+
+			<h2>Příkazy pro manipulaci s daty</h2>
+			<ul>
+				<li>
+					INSERT INTO table_name (column_name, column_name) VALUES
+					(value, value)
+				</li>
+				<li>
+					UPDATE table_name SET column_name = value WHERE condition;
+				</li>
+				<li>DELETE FROM table_name WHERE condition;</li>
+			</ul>
+
+			<h2>Příkaz SELECT</h2>
+			<ul>
+				<li>
+					Slouží pro sběr dat z databáze a sesbírané data zobrazí
+					příkaz v tabulce výsledků
+				</li>
+				<li>
+					SELECT (column_name or * or SQL aggregate function) FROM
+					table_name WHERE condition;
+					<ul>
+						<li>* označí všechny sloupce v dané tabulce</li>
+						<li>
+							Column_name označí pouze daný sloupec v dané tabulce
+						</li>
+						<li>
+							Do příkazu se může dát také SQL funkce, například
+							funkcí COUNT() můžeme spočítat počet záznamů
+							(COUNT(*))
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2 id="spojovani">Spojování tabulek</h2>
+			<ul>
+				<li>
+					Slouží ke spojení záznamů z dvou nebo více tabulek, na
+					základě pojení pomocí cizích klíčů
+				</li>
+
+				<li>Používá se k tomu příkaz JOIN</li>
+			</ul>
+
+			<p>
+				<code>
+					<span class="p">SELECT</span> Orders.OrderID,
+					Customers.CustomerName, Orders.OrderDate <br />
+
+					<span class="p">FROM</span> Orders <br />
+					<span class="p">INNER JOIN</span> Customers
+
+					<span class="p">ON</span> Orders.CustomerID =
+					Customers.Customer ID;
+				</code>
+			</p>
+
+			<h2>Agregační funkce</h2>
+			<p>
+				Tyto funkce umožní provést akce na hodnotách a vrácení výsledku
+				v jedné číselné hodnotě
+			</p>
+
+			<ul class="b">
+				<li>
+					AVG()
+					<ul>
+						<li class="n">spočítá průměr hodnot</li>
+					</ul>
+				</li>
+
+				<li>
+					COUNT()
+					<ul>
+						<li class="n">spočítá počet záznamů v dané tabulce</li>
+					</ul>
+				</li>
+
+				<li>
+					MIN()
+					<ul>
+						<li class="n">vrátí minimální hodnotu</li>
+					</ul>
+				</li>
+
+				<li>
+					MAX()
+					<ul>
+						<li class="n">vrátí maximální hodnotu</li>
+					</ul>
+				</li>
+				<li>
+					SUM()
+
+					<ul>
+						<li class="n">vrátí součet všech hodnot</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2>Skalární funkce</h2>
+			<ul>
+				<li>Vrací jednu specifickou hodnotu</li>
+				<li>
+					Může přijmout více parametrů, provede kalkulaci a poté vrátí
+					jednu hodnotu
+				</li>
+			</ul>
+
+			<h3>Typy</h3>
+			<ul>
+				<li>Funkce pro práci s řetězci</li>
+				<li>Funkce pro práci s čísly</li>
+				<li>Funkce pro práci s datumem</li>
+				<li>Funkce na konvertování</li>
+				<li>Funkce na zpracovávání NULL hodnoty</li>
+			</ul>
+
+			<h3>Příklady</h3>
+			<ul>
+				<li>
+					<b>CONCAT</b>
+					<ul>
+						<li>
+							Funkce vrátí jeden string spojený ze dvou nebo více
+							řetězců
+						</li>
+						<li>
+							SELECT CONCAT(“Karel”, “je”, “nej”) => Kareljenej
+						</li>
+					</ul>
+				</li>
+				<li>
+					<b>LENGTH</b>
+					<ul>
+						<li>Funkce vrátí délku řetězce</li>
+						<li>SELECT LENGTH(“Ahoj ja jsem karel”) => 18</li>
+					</ul>
+				</li>
+				<li>
+					<b>ROUND</b>
+					<ul>
+						<li>Zaokrouhlí hodnotu</li>
+						<li>SELECT ROUND(59.9) => 60</li>
+					</ul>
+				</li>
+			</ul>
+		</main>
+
+		<script src="../smooth-scroll.min.js"></script>
+		<script>
+			var scroll = new SmoothScroll('a[href*="#"]');
+		</script>
+	</body>
+</html>

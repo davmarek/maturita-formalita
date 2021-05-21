@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>24. Kryptologie</title>
+
+		<link rel="stylesheet" href="../main.css" />
+		<script src="../main.js" defer></script>
+	</head>
+	<body>
+		<div id="theme-switcher"></div>
+		<a id="scroll-up" href="#" class="hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="feather feather-arrow-up"
+			>
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</a>
+
+		<nav>
+			<a href="../">Rozcestník</a>
+		</nav>
+
+		<main>
+			<h1>24. Kryptologie</h1>
+
+			<h2>Kryptologie</h2>
+			<p>
+				Věda, která se zabývá šifrováním ze všech úhlů pohledu. Věda o
+				matematických technikách spojených s hledisky informační
+				bezpečnosti, jako je důvěrnost, integrita dat, autentizace a
+				autorizace.
+			</p>
+
+			<h2>Kryptografie</h2>
+			<p>
+				Věda o šifrování a dešifrování dat za pomoci matematických
+				metod.
+			</p>
+
+			<h2>Kryptoanalýza</h2>
+			<p>
+				Věda zabývající se metodami zjištění původní informace ze
+				zašifrované bez znalosti klíče. Věda o analýze slabin
+				šifrovacích systémů.
+			</p>
+
+			<h2>Steganografie</h2>
+			<p>
+				Věda zabývající se utajením komunikace prostřednictvím ukrytí
+				zprávy. Zpráva je ukryta tak, aby si pozorovatel neuvědomil, že
+				komunikace vůbec probíhá. Nemění obsah zprávy, jen tajnou
+				informaci maskuje
+			</p>
+
+			<h2>Rozdělení šifer</h2>
+			<ul>
+				<li>
+					Klasické
+					<ul>
+						<li>
+							Všechny jsou symetrické, používají jeden sdílený
+							klíč
+						</li>
+					</ul>
+				</li>
+				<li>
+					Mechanické
+					<ul>
+						<li>Například kufřík na kód</li>
+					</ul>
+				</li>
+				<li>
+					Moderní
+					<ul>
+						<li>Symetrické, asymetrické, hybridní</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2>Další dělení</h2>
+			<ul>
+				<li>
+					Kód a kódová kniha
+					<ul>
+						<li>
+							Kódová kniha je slovníkem, ve kterém jsou vybraná
+							slova nebo věty otevřeného textu nahrazované kódy
+						</li>
+					</ul>
+				</li>
+				<li>
+					Transpoziční šifry
+
+					<ul>
+						<li>Přeskládání znaků zprávy jiným způsobem</li>
+						<li>
+							Znalost postupu umožňuje text zpětně
+							sestavit/dešifrovat
+						</li>
+					</ul>
+				</li>
+				<li>
+					Substituční šifry
+					<ul>
+						<li>Nahrazení znaků zprávy jinými znaky</li>
+						<li>Je zachována pozice písmen</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h3>Druhy substitučních šifer</h3>
+
+			<h4>Monoalfabetická (jednoduchá) substituční šifra</h4>
+			<ul>
+				<li>
+					Každý znak otevřeného textu je nahrazen příslušným znakem
+					šifrovaného textu
+				</li>
+				<li>Caesarova šifra, Atbash, přeházená abeceda</li>
+			</ul>
+
+			<h4>Homofonní substituční šifra</h4>
+			<ul>
+				<li>
+					Jeden znak otevřeného textu může být nahrazen jedním z
+					několika možných znaků šifrovaného textu. Znak A může být
+					nahrazen např. 11,17, 84 apod.
+				</li>
+				<li>
+					Počet znaků zašifrovaného textu pro jeden otevřeného textu
+					se může lišit
+				</li>
+			</ul>
+
+			<h4>Polygramová substituční šifra</h4>
+			<ul>
+				<li>
+					Šifrování probíhá mezi skupinami znaků . Skupina AA může být
+					nahrazena skupinou JS, AB skupinou LM atd.
+				</li>
+				<li>Playfair (anglický čtverec), Bifid, Hillova šifra</li>
+			</ul>
+			<h4>Polyalfabetická substituční šifra</h4>
+			<ul>
+				<li>
+					Skládá se z několika jednoduchých šifer, které se pro
+					jednotlivé znaky otevřeného textu postupně střídaj
+				</li>
+				<li>Vigenerův čtverec</li>
+			</ul>
+
+			<h2>Historie</h2>
+			<ul>
+				<li><b>Egypt</b> - hieroglyfy</li>
+				<li>
+					<b>Atbaš</b> - jednoduchá substituční šifra, posunutá
+					abeceda
+				</li>
+				<li>
+					<b>Scytale</b> - hůl, na niž se namotala páska z látky,
+					papyru či pergamenu, na ni se napsal text. Páska se pak
+					odeslala příjemci, jenž musel mít hůl o stejném průměru, aby
+					namotanou pásku mohl přečíst
+				</li>
+				<li>
+					<b>Polybiův čtverec</b> - převodu znaků na dvojici čísel
+					(1-5) pomocí čtverce, do kterého se zapisují znaky abecedy
+				</li>
+				<li>
+					<b>Caesarova šifra</b> - každý znak se nahradí znakem, který
+					je v abecedě o 3 pozice za ním
+				</li>
+				<li>
+					<b>Frekvenční analýza</b> - první arabská metoda
+					kryptoanalýzy, která spočívá procentuální vyjádření výskytu
+					písmen v daném jazyce
+				</li>
+				<li>
+					<b>Vigenérova šifra</b> - používá více šifrových abeced,
+					které se při šifrování pravidelně střídají, každé písmeno
+					může být reprezentováno ne jedním, ale několika jinými,
+					velké množství klíčů, které kryptoanalytik není schopen
+					vyzkoušet
+				</li>
+				<li><b>Morseova abeceda</b></li>
+				<li>
+					<b>Vernamova šifra</b> - použití jednorázového náhodně
+					vygenerovaného hesla, které má stejnou délku jako zpráva
+					sama, zvaná též „one-time pad“(jednorázová tabulka)
+				</li>
+				<li>
+					<b>Enigma</b> - Stroj připomínající psací stroj, Šifrovací
+					mechanismus se skládá z prostoru, na jehož stranách jsou dvě
+					kola, mezi která se vkládají další tři kola. Obě krajní kola
+					mají 26 kontaktů, které odpovídají jednotlivým písmenům
+					abecedy. Tři vnitřní kola se vybírají z pěti možných různých
+					kol. Vždy, když je stisknuto písmeno na klávesnici, tak se
+					první kolo otočí o jednu pozici. Poté, co se první okolo
+					otočí 26x, otočí se druhé a nakonec třetí. Dostáváme tak
+					celkem 26x26x26, tj. 17 576 různých stavů.
+				</li>
+			</ul>
+
+			<h2>Symetrické a asymetrické šifrování</h2>
+			<h3>Symetrické</h3>
+			<ul>
+				<li>odesílatel i příjemce používají stejný klíč</li>
+				<li>dešifrovací algoritmus je inverzí šifrovacího</li>
+				<li>
+					jednoduchost šifrovacího a dešifrovacího algoritmu, rychlost
+				</li>
+				<li>
+					pro tajnou komunikaci je nutné si bezpečným kanálem předem
+					předat klíč
+				</li>
+				<li>
+					Příklady:
+					<ul>
+						<li>
+							Proudové
+							<ul>
+								<li>
+									Zpracovávají text po jednotlivých bitech
+								</li>
+								<li>FISH, RC4</li>
+							</ul>
+						</li>
+						<li>
+							Blokové
+
+							<ul>
+								<li>Šifrují data po blocích dané délky</li>
+								<li>DES, Tripple DES, AES, IDEA, BLOWFISH</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h3>Asymetrické</h3>
+			<ul>
+				<li>
+					odesílatel použije jiný klíč než příjemce (např. soukromý a
+					veřejný klíč)
+				</li>
+				<li>algoritmy šifrování a dešifrování jsou obecně různé</li>
+				<li>
+					odpadá nutnost přenosu (distribuce) klíče, pro více
+					uživatelů není potřeba tolik klíčů
+				</li>
+				<li>
+					velmi vysoké výpočetní nároky, nízká rychlost (10tis. až
+					100tis. krát pomalejší)
+				</li>
+				<li>Příklad: RSA</li>
+			</ul>
+
+			<h2>Útoky proti šifrám</h2>
+
+			<ul>
+				<li>
+					Útoky přímo na šifrovací algoritmus (na jeho matematickou
+					část)
+				</li>
+				<li>
+					<ul>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					Znalost zašifrovaného textu
+					<ul>
+						<li>
+							Máme k dispozici několik zašifrovaných textů, můžeme
+							využívat informace - statistické rozbory,
+							pravděpodobnost.
+						</li>
+					</ul>
+				</li>
+				<li>
+					Znalost otevřeného textu
+					<ul>
+						<li>
+							Máme šifrované zprávy i otevřený text a chceme
+							získat klíč, podle kterého je zpráva šifrována
+						</li>
+					</ul>
+				</li>
+				<li>
+					Zvolený otevřený text
+					<ul>
+						<li>
+							útočník získá k libovolnému zvolenému otevřenému
+							textu odpovídající šifrovaný text a může získat
+							informace o klíči
+						</li>
+					</ul>
+				</li>
+				<li>
+					Frekvenční analýza
+					<ul>
+						<li>
+							V celém šifrovaném textu se vyčíslí počet a
+							pravděpodobnost každého znaku a seřadí se do
+							sloupcového grafu
+						</li>
+						<li>
+							Podle vzorů jazyků určíme, jaké znaky odpovídají
+							písmenům daného jazyka
+						</li>
+					</ul>
+				</li>
+				<li>
+					Útok hrubou silou
+					<ul>
+						<li>
+							Útok založený na vyzkoušení všech možných kombinací
+							daného hesla nebo textového řetězce
+						</li>
+						<li>
+							Čím delší, tím je útok více náročnější na výkon
+							hardwaru
+						</li>
+					</ul>
+				</li>
+				<li>
+					Slovníkový útok
+					<ul>
+						<li>Vylepšený útok hrubou silou</li>
+						<li>Zkouší hesla z předpřipraveného slovníku</li>
+						<li>
+							Spoléhá na “hloupost” uživatele, uživatel chce mít
+							dobře zapamatovatelné heslo
+						</li>
+					</ul>
+				</li>
+				<li>
+					Sociometrické útoky
+					<ul>
+						<li>
+							Využití metod sociálního inženýrství – využití
+							lidského faktoru, neznalosti, manipulace
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2>Hashovací funkce</h2>
+
+			<p>
+				Jsou to funkce, které umí udělat vzorek jakéhokoli souboru, aby
+				byl závislý na všech bitech původního souboru. Hash je
+				algoritmus, který vygeneruje digitální otisk souboru. Výstupem
+				funkce je hash o pevné délce. Hashovací (vzorkovací) funkce jsou
+				velmi důležité pro kryptografii a tvorbu digitálních podpisů.
+			</p>
+			<p>
+				Obecně se hashovací funkce používají pro kontrolu zachování
+				integrity dat, digitální podpisy, kontrolu uložených hesel a
+				porovnávání obsahu dvou kopií dat. Nejpoužívanější hashovací
+				funkce jsou MD5 (prolomená), SHA-1(prolomená),
+				SHA-2(neprolomená) a bcrypt(neprolomená).
+			</p>
+
+			<h2>Elektronický podpis</h2>
+			<p>
+				Elektronický podpis zajišťuje několik různých věcí. První z těch
+				důležitějších je zajištění integrity dokumentu. Pokud obdržíme
+				elektronicky podepsaný dokument, lze ověřit, že od jeho podpisu
+				nebyl změněn. Elektronický podpis lze použít i k tomu, aby
+				příjemce dokázal ověřit, že odesílatel je opravdu tím, za koho
+				se vydává
+			</p>
+			<p>
+				Elektronický podpis je kousek binárních dat, který lze připojit
+				k dokumentu. K vytvoření podpisu potřebujete podpisový klíč. Ten
+				má dvě části ‒ soukromou a veřejnou. Ty lze vytvořit zároveň,
+				ale jedna z druhé nelze spočítat.
+			</p>
+		</main>
+
+		<script src="../smooth-scroll.min.js"></script>
+		<script>
+			var scroll = new SmoothScroll('a[href*="#"]');
+		</script>
+	</body>
+</html>

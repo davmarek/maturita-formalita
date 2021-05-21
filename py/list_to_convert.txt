@@ -1,0 +1,5 @@
+odesílatel použije jiný klíč než příjemce (např. soukromý a veřejný klíč)
+algoritmy šifrování a dešifrování jsou obecně různé
+odpadá nutnost přenosu (distribuce) klíče, pro více uživatelů není potřeba tolik klíčů
+velmi vysoké výpočetní nároky, nízká rychlost (10tis. až 100tis. krát pomalejší)
+Příklad: RSA

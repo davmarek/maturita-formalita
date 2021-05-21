@@ -2,6 +2,7 @@
 
 ## DVK
 
+
 -   [x] 1
     -   [ ] přidat obrázky
 -   [x] 2
@@ -31,44 +32,42 @@
 -   [x] 19
 -   [x] 20
 
-## VMA
+- [x] 1
+    - [ ] přidat obrázky
+- [x] 11
+    - [ ] dodělat obrázkové karty
 
--   [x] 1 - David
--   [ ] 2 - SW právo a legislativa v ČR
-    -   [ ] získat!!!
--   [x] 3 - Kuba
--   [x] 4 - David
--   [x] 5 - Kuba
--   [ ] 6 - SPOLEČNĚ
--   [x] 7 - David
--   [x] 8 - Kuba
--   [x] 9 - David
--   [x] 10 - Kuba (PHP)
--   [ ] 11 - SPOLEČNĚ
--   [x] 12 - David
--   [x] 13 - David
--   [x] 14 - David
--   [x] 15 - Kuba
--   [x] 16 - David
-    -   [x] dodělat code nakonci
--   [x] 17 - Kuba
-    -   [x] -   David - upravit
-        -   [x] -   Přidat kotvy
-        -   [x] -   Upravit barvy v **_code_**
-        -   [x] -   Možná změnit margin v h1, h2, h3 (viz. komentář v kódu)
--   [x] 18 - David
--   [x] 19 - Kuba
-    -   [x] -   David - upravit
-        -   [x] -   Přidat kotvy
-        -   [x] -   Upravit **_code_**
--   [x] 20 - David
--   [x] 21 - Kuba
-    -   [x] - Kuba - komprese obrázků na [compress.io](https://compressor.io/)
--   [ ] 22 - David
--   [x] 23 - Kuba
-    -   [x] - Kuba - obrázky - [compress.io](https://compressor.io/)
--   [ ] 24 - David
--   [x] 25 - Kuba
+
+## VMA
+- [x] David (1,4,7,9,12,13,14,16,18,20,22,24)
+- [x] Kuba (3,5,8,10,15,17,19,21,23,25)
+
+- [ ] 2 - SW právo a legislativa v ČR
+    - [ ] získat!!!
+- [ ] 6 - SPOLEČNĚ
+- [ ] 11 - SPOLEČNĚ
+
+## AJ
+
+- [ ] 2 - 
+- [ ] 3 - 
+- [ ] 4 - 
+- [ ] 5 - 
+- [ ] 6 - 
+- [ ] 7 - 
+- [ ] 8 - 
+- [ ] 9 - 
+- [ ] 10 - 
+- [ ] 11 - 
+- [ ] 12 - 
+- [ ] 13 - 
+- [ ] 14 - 
+- [ ] 15 - 
+- [ ] 16 - 
+- [ ] 17 - 
+- [ ] 18 - 
+- [ ] 19 - 
+- [ ] 20 - 
 
 ---
 
@@ -85,6 +84,10 @@
 -   odrážkové zápisy používají **_<ul\>_** a v nich jen **_<li\>_**
 -   článkové zápisy používají jen **_<p\>_**
 -   ukázka kódu **_<code\>_** je ve vlastním **_<p\>_**
+
+## Docela ppč Word-to-HTML convertor
+
+[Zde klikni frajere](https://www.textfixer.com/html/convert-word-to-html.php)
 
 ## CSS text classky
 
