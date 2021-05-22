@@ -495,3 +495,7 @@ td {
 		font-size: 0.8em;
 	}
 }
+
+audio {
+	width: 100%;
+}
