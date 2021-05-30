@@ -416,6 +416,373 @@
 				</li>
 				<li class="b">Je tedy potřeba dost času na „dohodnutí se“</li>
 			</ul>
+
+			<h2>Objekty a objektový přístup</h2>
+			<ul>
+				<li>
+					V tomto přístupu k
+					<b>
+						programování se programátor snaží popsat svět jak ho
+						vidí on
+					</b>
+					→ píše program z pohledu člověka
+				</li>
+				<li>Základní jednotka objektového programování je objekt</li>
+				<li>
+					Princip využívání tzv. <b>Zpráv (gettery a settery)</b>
+					<ul>
+						<li>
+							Jde o to, že se přímo nezískává daná hodnota, ale
+							používají se k tomu speciálně navrhnuté operace
+						</li>
+						<li>
+							Př. → v bance → <br />
+							vypisVlastika(), vklad(vlozenaCastka),
+							vyber(vybiranaCastka), vypisCastky(), apod.
+						</li>
+					</ul>
+				</li>
+				<li>
+					Jedná se o entitu, která odpovídá objektům z reálného světa
+					<ul>
+						<li>
+							Například Pes, pes má 4 nohy, hlavu, oči a může mít
+							i jméno, ještě k tomu štěká
+						</li>
+						<li>
+							Objekt by se v programovaní popsal Atributy
+							(vlastnostmi objektu) a Metodami (schopnostmi
+							objektu)
+						</li>
+						<li>
+							Z těchto objektů programátor postupně vytváří
+							hierarchii objektů, které mezi sebou mohou
+							komunikovat a v hierarchii na sobě být nějakým
+							způsobem závislé
+						</li>
+					</ul>
+				</li>
+				<li>
+					<b>Lze zde popisovat vlastně celé OOP</b> (modifikátory
+					přístupu, instance, objekt, třída, dědičnost
+					(specifikace/zobecnění), relace (primární a cizí klíč)
+				</li>
+			</ul>
+
+			<h2>Realizace UC <span class="low">("use case")</span></h2>
+			<ul>
+				<li class="b">
+					Typicky seznam akcí nebo událostí, které definují interakci
+					mezi uživatelem a systémem, pro který UC vytváříme
+				</li>
+				<li>Zorganizují se tak funkční požadavky</li>
+				<li>
+					Definují se výsledný produkt daných <b>interakcí</b>, včetně
+					všech akcí potřebných k dosažení výsledku
+					<b> (scénáře, které mohou nastat) </b>
+				</li>
+			</ul>
+
+			<img
+				src="img/23-realizace-uc.jpg"
+				alt="Hierarchický model"
+				class="invertable"
+			/>
+
+			<h2>Návrh uživatelského rozhraní</h2>
+			<ul>
+				<li>
+					Mělo by plnit předpoklady a požadavky uživatele
+					<ul>
+						<li>Uživatel pracuje většinou pouze s UI</li>
+						<li>
+							Špatný návrh může vést k chybám a pozdějšímu
+							nevyužívání sw dalšími uživateli
+						</li>
+					</ul>
+				</li>
+				<li>
+					Návrháři UI si musí být vědomi fyzických, mentálních omezení
+					uživatelů a principu, že uživatelé dělají chyby
+				</li>
+				<li>
+					<b>Lidský faktor v návrhu UI </b>
+					<ul>
+						<li>
+							<b>Krátkodobá paměť</b>
+							<ul>
+								<li>
+									Lidé jsou si pamatují cca 7 údajů –
+									informací. Když je více údajů, zvyšuje se
+									šance na chybu obsluhy
+								</li>
+							</ul>
+						</li>
+						<li>
+							<b>Lidé dělají chyby</b>
+							<ul>
+								<li>
+									Když uživatel způsobí chybou nějakou zprávu,
+									hlášku, zvýší se jeho stres a může udělat
+									další chybu →
+									<b>
+										je třeba vhodná volba komunikace a
+										chybových hlášek
+									</b>
+								</li>
+							</ul>
+						</li>
+						<li><b>Lidé jsou různí</b></li>
+					</ul>
+				</li>
+
+				<li>
+					<b>Statické UI</b>
+					<ul>
+						<li>
+							Obsah je prezentován
+							<b> vždy stejně bez ohledu na uživatele </b>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<b>Dynamické UI</b>
+					<ul>
+						<li>
+							Obsah se může prezentovat
+							<b>každému uživateli jinak</b> → na tomto principu
+							fungují veškeré
+							<b>webové aplikace, sociální sítě, apod.</b>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<b>Vizualizace dat </b>
+					<ul>
+						<li class="b">
+							Data lze zobrazovat různými způsoby: Grafy, obrázky,
+							texty
+						</li>
+					</ul>
+				</li>
+				<li>
+					<b>Chybové hlášky </b>
+					<ul>
+						<li>
+							Jelikož lze od uživatele očekávat chyby,
+							<b>
+								je potřeba od něj poté vyžádat jejich opravu
+							</b>
+						</li>
+						<li class="b">
+							Zdvořilost, výraznost, návrh opravy, příklady
+						</li>
+					</ul>
+				</li>
+				<li>
+					<b>Testování </b>
+					<ul>
+						<li class="b">
+							Každé UI by se mělo testovat přímo na uživateli
+						</li>
+						<li>
+							Často se předává seznam ve kterém jsou vypsány
+							požadavky, které po uživateli chceme
+						</li>
+						<li>
+							Ten se je pak snaží provést a sledujeme, jak
+							uživatel <b>postupuje</b>
+						</li>
+						<li class="b">
+							Výstupem může být počet chyb, videozáznam,
+							eyetracking záznam, záznam pohybu myší
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<h3>Příklady</h3>
+			<ul class="b">
+				<li>
+					Přímý výběr
+					<ul>
+						<li>např. ikony ve Windows</li>
+						<li>
+							Jednoduchost. Vhodné pouze tam, kde existuje
+							grafické rozhraní.
+						</li>
+					</ul>
+				</li>
+				<li>
+					Výběr z menu
+					<ul>
+						<li>Výhodnost pro předcházení chybám</li>
+						<li>Pomalé pro zkušené uživatele</li>
+						<li>Nejvíce využívané</li>
+					</ul>
+				</li>
+				<li>
+					Vyplňování formulářů
+
+					<ul>
+						<li>Vhodné pro vstup dat</li>
+						<li>Vstupy jsou kontrolovatelné</li>
+						<li>Různé systémy např. skladové apod.</li>
+					</ul>
+				</li>
+				<li>
+					Příkazový řádek
+
+					<ul>
+						<li>Rychlý a flexibilní přístup</li>
+						<li>Obtížné na naučení</li>
+						<li>Operační systémy apod.</li>
+					</ul>
+				</li>
+				<li>
+					Webové UI
+
+					<ul>
+						<li>
+							Prvky formuláře mohou být menu, textové políčka,
+							nabídky, zaškrtávací políčka apod.
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2>Bezpečnostně kritické systémy</h2>
+			<ul>
+				<li>
+					Kritický systém je takový systém jehož selhání může vést k
+					<b> ekonomickým ztrátám, poškození zařízení nebo zdraví </b>
+				</li>
+				<li class="b">
+					Provozní spolehlivost a dostupnost jsou naprosto nezbytné
+					ale ne samy o sobě dostačující podmínky
+				</li>
+				<li class="b">
+					Typy selhání BKS:
+					<ul>
+						<li>
+							Selhání hardware
+							<ul>
+								<li>špatný návrh, výrobě, krátká životnosti</li>
+							</ul>
+						</li>
+						<li>
+							Selhání software
+							<ul>
+								<li>
+									Chyby ve specifikaci, návrhu nebo
+									implementaci
+								</li>
+							</ul>
+						</li>
+						<li>
+							Selhání obsluhy
+							<ul>
+								<li class="n">
+									<b>Operátor</b> udělá chybu,
+									<b>nejčastější</b> příčina
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<h3>Provozní spolehlivost</h3>
+			<ul>
+				<li>
+					Skládá se čtyřech částí:
+					<ul class="b">
+						<li>
+							Dostupnosti
+							<ul>
+								<li>funkčnost v daném časovém termínu</li>
+								<li>čím déle funguje, tím je dostupnější</li>
+							</ul>
+						</li>
+						<li>
+							Spolehlivosti
+							<ul>
+								<li>pravděpodobnost selhání</li>
+								<li>
+									čím menší pravděpodobnost, tím větší
+									spolehlivost
+								</li>
+							</ul>
+						</li>
+						<li>
+							Bezpečnosti
+							<ul>
+								<li>
+									systém dokáže pracovat a nezpůsobit během
+									svého fungování nebezpečí
+								</li>
+							</ul>
+						</li>
+						<li>
+							Zabezpečení
+							<ul>
+								<li>
+									Schopnost systému chránit se před nehodami
+									nebo externím útokem
+								</li>
+								<li>
+									Důležité u systémů napojených na internet
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					Podpůrné parametry:
+					<ul class="b">
+						<li>
+							Opravitelnost
+
+							<ul>
+								<li>
+									Je možné systém opravit co nejrychleji a
+									nejlépe
+								</li>
+							</ul>
+						</li>
+						<li>
+							Udržovatelnost
+
+							<ul>
+								<li>
+									Je možné systém rozšiřovat, uzpůsobovat
+									novým požadavkům
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<h3>Možné následky v chybách v BKS</h3>
+			<ul>
+				<li>
+					Potlačení služby (např. DDOS)
+					<ul>
+						<li>
+							Běžná funkce systému není možná, z důvodu přetížení.
+						</li>
+					</ul>
+				</li>
+				<li>Poškození programů nebo dat</li>
+				<li>
+					Ztráta informací
+					<ul>
+						<li>
+							Zejména těch citlivých, které je potřeba chránit
+						</li>
+						<li>Smazání, přepsání (např. ransomware), odcizení</li>
+						<li>Účiným nástrojem je šifrování a zálohování</li>
+					</ul>
+				</li>
+			</ul>
 		</main>
 
 		<script src="../smooth-scroll.min.js"></script>
