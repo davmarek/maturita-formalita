@@ -333,7 +333,9 @@ main > ol > * + li {
 ul ul,
 ul ul li,
 ol ol,
-ol ol li {
+ol ol li,
+ol ul,
+ol ul li {
 	margin-top: 0;
 }
 
